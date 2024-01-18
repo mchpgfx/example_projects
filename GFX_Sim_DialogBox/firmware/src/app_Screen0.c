@@ -12,7 +12,7 @@ void event_Screen0_CancelButton_OnReleased(leButtonWidget* btn)
     Screen0_ScanningDialogBox->fn->setVisible(Screen0_ScanningDialogBox, LE_FALSE);
     
     //Show Stopped Dialog Box
-    Screen0_StoppedDialogBox->fn->setX(Screen0_StoppedDialogBox, 480);
+    Screen0_StoppedDialogBox->fn->setX(Screen0_StoppedDialogBox, 128);
 }
 
 void event_Screen0_OkButton_OnReleased(leButtonWidget* btn)

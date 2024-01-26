@@ -1,0 +1,17 @@
+# Generated File - Do Not Modify!
+[properties]
+sdk_min_ver = [1, 0, 0]
+config_name = "default"
+x_resolution = 480
+y_resolution = 320
+color_mode = "RGB565"
+layer_count = 1
+canvas = false
+sys_time = true
+bezel = false
+circular = false
+responsive = true
+rtos_enabled = false
+c_flags = "-O1"
+link_flags = "-sALLOW_MEMORY_GROWTH"
+applications = ["app",]

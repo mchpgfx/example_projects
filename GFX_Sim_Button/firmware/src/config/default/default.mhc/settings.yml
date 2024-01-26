@@ -1,0 +1,13 @@
+configName: default
+folderName: Sim_Button
+format_version: v1.0
+frameworkPath: C:\Users\c40450\harmony3
+processor: SAM9X60
+projectName: Sim_Button
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: SAM9X6_DFP\1.7.85

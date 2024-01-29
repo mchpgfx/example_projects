@@ -107,7 +107,7 @@ extern leImage buttonTDwn;
  * Baseline:     22
  * Style:        Antialias
  * Glyph Count:  95
- * Range Count:  10
+ * Range Count:  12
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSans_Regular;

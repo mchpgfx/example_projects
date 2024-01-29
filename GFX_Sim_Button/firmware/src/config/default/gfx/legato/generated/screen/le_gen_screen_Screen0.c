@@ -70,6 +70,7 @@ leResult screenShow_Screen0(void)
     Screen0_LabelWidget_0 = leLabelWidget_New();
     Screen0_LabelWidget_0->fn->setPosition(Screen0_LabelWidget_0, 160, 60);
     Screen0_LabelWidget_0->fn->setSize(Screen0_LabelWidget_0, 228, 30);
+    Screen0_LabelWidget_0->fn->setVisible(Screen0_LabelWidget_0, LE_FALSE);
     Screen0_LabelWidget_0->fn->setBackgroundType(Screen0_LabelWidget_0, LE_WIDGET_BACKGROUND_NONE);
     Screen0_LabelWidget_0->fn->setString(Screen0_LabelWidget_0, (leString*)&string_pressed);
     root0->fn->addChild(root0, (leWidget*)Screen0_LabelWidget_0);

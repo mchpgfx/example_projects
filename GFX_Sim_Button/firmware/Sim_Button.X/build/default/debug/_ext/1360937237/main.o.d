@@ -173,13 +173,13 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/default/peripheral/clk/plib_clk.h \
  ../src/config/default/peripheral/pio/plib_pio.h \
  ../src/config/default/peripheral/aic/plib_aic.h \
- ../src/config/default/system/time/sys_time.h \
  ../src/config/default/system/int/sys_int.h \
  ../src/config/default/system/cache/sys_cache.h \
  ../src/config/default/osal/osal.h \
  ../src/config/default/osal/osal_definitions.h \
  ../src/config/default/osal/osal_impl_basic.h \
- ../src/config/default/system/debug/sys_debug.h ../src/app.h
+ ../src/config/default/system/debug/sys_debug.h \
+ ../src/config/default/system/time/sys_time.h ../src/app.h
 
 ../src/config/default/definitions.h:
 
@@ -533,8 +533,6 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/config/default/peripheral/aic/plib_aic.h:
 
-../src/config/default/system/time/sys_time.h:
-
 ../src/config/default/system/int/sys_int.h:
 
 ../src/config/default/system/cache/sys_cache.h:
@@ -546,5 +544,7 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
 ../src/config/default/osal/osal_impl_basic.h:
 
 ../src/config/default/system/debug/sys_debug.h:
+
+../src/config/default/system/time/sys_time.h:
 
 ../src/app.h:

@@ -3541,7 +3541,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>de1d1fa3caad724c4de138e9c2017e8ef62d353c3ac5347b5896a91bf37aab79</hash>
+         <hash>3178aa186a14c18a3d0692b39c8d9cee8e69347c5219e42ed824ff22faa46a61</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -3733,7 +3733,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>3a75bc562fe1d5126da3f205bb5e19a14ce75298d9b166f9faa4bf95b0f59e0e</hash>
+         <hash>81faf06b6ad13e1a51736e3b58d52c328bd311424ba1a20ba037052a1cf99152</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -3765,11 +3765,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_stringtable.c</file>
-         <hash>8e4b4fd28e9b302847fe8003e53c8f5237f5ec1d5d20a88af3ce6d755fd149e1</hash>
+         <hash>a548d6751d0a9a90e05a4294b014b783573dba92559b190ded9a6c636e34315f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>6253e2d600d06d6c9b6bf817a3912eecfa249cf1bee8c07a0063cca53bc075a8</hash>
+         <hash>7a8b5cc4c5b2c9aeb56ee55d39873c5c0dcf4b97b69f352aed7ee5f110b70c2c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>

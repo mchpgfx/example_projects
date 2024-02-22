@@ -40,9 +40,10 @@ leResult screenShow_Screen0(void)
     root0->flags |= LE_WIDGET_IGNOREPICK;
 
     Screen0_BackgroundPanel = leWidget_New();
-    Screen0_BackgroundPanel->fn->setPosition(Screen0_BackgroundPanel, 0, -1);
+    Screen0_BackgroundPanel->fn->setPosition(Screen0_BackgroundPanel, 0, 0);
     Screen0_BackgroundPanel->fn->setSize(Screen0_BackgroundPanel, 800, 480);
     Screen0_BackgroundPanel->fn->setScheme(Screen0_BackgroundPanel, &WhiteScheme);
+    Screen0_BackgroundPanel->fn->setBorderType(Screen0_BackgroundPanel, LE_WIDGET_BORDER_LINE);
     root0->fn->addChild(root0, (leWidget*)Screen0_BackgroundPanel);
 
     Screen0_PanelWidget_0 = leWidget_New();
@@ -58,6 +59,8 @@ leResult screenShow_Screen0(void)
     Screen0_SliderWidget1->fn->setBackgroundType(Screen0_SliderWidget1, LE_WIDGET_BACKGROUND_NONE);
     Screen0_SliderWidget1->fn->setBorderType(Screen0_SliderWidget1, LE_WIDGET_BORDER_NONE);
     Screen0_SliderWidget1->fn->setOrientation(Screen0_SliderWidget1, LE_ORIENTATION_HORIZONTAL, LE_FALSE);
+    Screen0_SliderWidget1->fn->setMinimumValue(Screen0_SliderWidget1, -50);
+    Screen0_SliderWidget1->fn->setMaximumValue(Screen0_SliderWidget1, 50);
     Screen0_SliderWidget1->fn->setGripSize(Screen0_SliderWidget1, 20);
     Screen0_SliderWidget1->fn->setValueChangedEventCallback(Screen0_SliderWidget1, event_Screen0_SliderWidget1_OnValueChanged);
     Screen0_PanelWidget_0->fn->addChild(Screen0_PanelWidget_0, (leWidget*)Screen0_SliderWidget1);
@@ -67,6 +70,8 @@ leResult screenShow_Screen0(void)
     Screen0_SliderWidget2->fn->setSize(Screen0_SliderWidget2, 50, 125);
     Screen0_SliderWidget2->fn->setScheme(Screen0_SliderWidget2, &PanelScheme);
     Screen0_SliderWidget2->fn->setBackgroundType(Screen0_SliderWidget2, LE_WIDGET_BACKGROUND_NONE);
+    Screen0_SliderWidget2->fn->setMinimumValue(Screen0_SliderWidget2, -50);
+    Screen0_SliderWidget2->fn->setMaximumValue(Screen0_SliderWidget2, 50);
     Screen0_SliderWidget2->fn->setGripSize(Screen0_SliderWidget2, 20);
     Screen0_SliderWidget2->fn->setValueChangedEventCallback(Screen0_SliderWidget2, event_Screen0_SliderWidget2_OnValueChanged);
     Screen0_PanelWidget_0->fn->addChild(Screen0_PanelWidget_0, (leWidget*)Screen0_SliderWidget2);

@@ -1,0 +1,13 @@
+configName: default
+folderName: Widgets
+format_version: v1.0
+frameworkPath: C:\microchip\harmony3
+processor: SAM9X75
+projectName: Widgets
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: SAM9X7_DFP\1.1.120

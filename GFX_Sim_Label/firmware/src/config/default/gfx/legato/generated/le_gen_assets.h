@@ -59,16 +59,28 @@ extern "C" {
 extern const lePalette leGlobalPalette;
 
 /*****************************************************************************
+ * Legato Graphics Image Assets
+ *****************************************************************************/
+/*********************************
+ * Legato Image Asset
+ * Name:   mchp_large
+ * Size:   160x93 pixels
+ * Type:   RGB Data
+ * Format: RGB_565
+ ***********************************/
+extern leImage mchp_large;
+
+/*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/
 /*********************************
  * Legato Font Asset
  * Name:         Font0
  * Height:       21
- * Baseline:     9
+ * Baseline:     18
  * Style:        Plain
  * Glyph Count:  95
- * Range Count:  8
+ * Range Count:  10
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont Font0;
@@ -77,7 +89,7 @@ extern leRasterFont Font0;
  * Legato Font Asset
  * Name:         Font1
  * Height:       37
- * Baseline:     9
+ * Baseline:     18
  * Style:        Plain
  * Glyph Count:  95
  * Range Count:  9
@@ -89,7 +101,7 @@ extern leRasterFont Font1;
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   2
+ * String Count:   3
  *****************************************************************************/
 
 // language IDs
@@ -97,13 +109,15 @@ extern leRasterFont Font1;
 
 // string IDs
 #define stringID_White_scheme    0
-#define stringID_No_scheme    1
+#define stringID_AlphaBlending    1
+#define stringID_No_scheme    2
 
 extern const leStringTable stringTable;
 
 
 // string list
 extern leTableString string_White_scheme;
+extern leTableString string_AlphaBlending;
 extern leTableString string_No_scheme;
 
 void initializeStrings(void);

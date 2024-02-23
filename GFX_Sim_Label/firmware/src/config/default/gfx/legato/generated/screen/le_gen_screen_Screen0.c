@@ -5,6 +5,8 @@ static leWidget* root0;
 
 leWidget* Screen0_BackgroundPanel;
 leLabelWidget* Screen0_LabelWidget_0;
+leImageWidget* Screen0_ImageWidget_0;
+leLabelWidget* Screen0_LabelWidget_1;
 
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
@@ -39,10 +41,29 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_BackgroundPanel);
 
     Screen0_LabelWidget_0 = leLabelWidget_New();
-    Screen0_LabelWidget_0->fn->setPosition(Screen0_LabelWidget_0, 550, 130);
+    Screen0_LabelWidget_0->fn->setPosition(Screen0_LabelWidget_0, 100, 200);
+    Screen0_LabelWidget_0->fn->setSize(Screen0_LabelWidget_0, 225, 80);
     Screen0_LabelWidget_0->fn->setBorderType(Screen0_LabelWidget_0, LE_WIDGET_BORDER_BEVEL);
+    Screen0_LabelWidget_0->fn->setHAlignment(Screen0_LabelWidget_0, LE_HALIGN_CENTER);
     Screen0_LabelWidget_0->fn->setString(Screen0_LabelWidget_0, (leString*)&string_No_scheme);
     root0->fn->addChild(root0, (leWidget*)Screen0_LabelWidget_0);
+
+    Screen0_ImageWidget_0 = leImageWidget_New();
+    Screen0_ImageWidget_0->fn->setPosition(Screen0_ImageWidget_0, 475, 200);
+    Screen0_ImageWidget_0->fn->setSize(Screen0_ImageWidget_0, 225, 85);
+    Screen0_ImageWidget_0->fn->setBorderType(Screen0_ImageWidget_0, LE_WIDGET_BORDER_NONE);
+    Screen0_ImageWidget_0->fn->setImage(Screen0_ImageWidget_0, (leImage*)&mchp_large);
+    root0->fn->addChild(root0, (leWidget*)Screen0_ImageWidget_0);
+
+    Screen0_LabelWidget_1 = leLabelWidget_New();
+    Screen0_LabelWidget_1->fn->setPosition(Screen0_LabelWidget_1, 474, 200);
+    Screen0_LabelWidget_1->fn->setSize(Screen0_LabelWidget_1, 225, 85);
+    Screen0_LabelWidget_1->fn->setAlphaEnabled(Screen0_LabelWidget_1, LE_TRUE);
+    Screen0_LabelWidget_1->fn->setAlphaAmount(Screen0_LabelWidget_1, 250);
+    Screen0_LabelWidget_1->fn->setBorderType(Screen0_LabelWidget_1, LE_WIDGET_BORDER_BEVEL);
+    Screen0_LabelWidget_1->fn->setHAlignment(Screen0_LabelWidget_1, LE_HALIGN_CENTER);
+    Screen0_LabelWidget_1->fn->setString(Screen0_LabelWidget_1, (leString*)&string_AlphaBlending);
+    root0->fn->addChild(root0, (leWidget*)Screen0_LabelWidget_1);
 
     leAddRootWidget(root0, 0);
     leSetLayerColorMode(0, LE_COLOR_MODE_RGBA_8888);
@@ -66,6 +87,8 @@ void screenHide_Screen0(void)
 
     Screen0_BackgroundPanel = NULL;
     Screen0_LabelWidget_0 = NULL;
+    Screen0_ImageWidget_0 = NULL;
+    Screen0_LabelWidget_1 = NULL;
 
 
     showing = LE_FALSE;

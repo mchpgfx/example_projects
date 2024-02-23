@@ -54,6 +54,7 @@
 APP_DATA appData;
 SYS_TIME_HANDLE tmrHandle;  
 volatile uint8_t label_state;
+volatile uint32_t alpha_value = 250;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -69,6 +70,11 @@ void Timer_Callback ( uintptr_t context )
         label_state = SET_NO_SCHEME;
     else
         label_state = SET_WHITE_SCHEME;
+    
+    alpha_value -= 20;
+    if (alpha_value < 30)
+        alpha_value = 255;
+    
     appData.state = APP_STATE_SERVICE_TASKS;
 }
 // *****************************************************************************
@@ -162,6 +168,14 @@ void APP_Tasks ( void )
                 default:
                     break;
             }
+            
+            appData.state = APP_STATE_CHANGE_ALPHA;
+            break;
+        }
+        case APP_STATE_CHANGE_ALPHA:
+        {
+            Screen0_LabelWidget_1->fn->setAlphaAmount(Screen0_LabelWidget_1, alpha_value);
+            
             appData.state = APP_STATE_WAITING;
             break;
         }

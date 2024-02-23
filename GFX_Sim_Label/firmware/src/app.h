@@ -47,7 +47,7 @@ extern "C" {
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-#define LABEL_CHANGE_RATE_MS         5000
+#define LABEL_CHANGE_RATE_MS         1000
 #define SET_WHITE_SCHEME 1
 #define SET_NO_SCHEME    2
     
@@ -67,6 +67,7 @@ typedef enum
     /* Application's state machine's initial state. */
     APP_STATE_INIT=0,
     APP_STATE_SERVICE_TASKS,
+    APP_STATE_CHANGE_ALPHA,
     APP_STATE_WAITING
     /* TODO: Define states used by the application state machine. */
 

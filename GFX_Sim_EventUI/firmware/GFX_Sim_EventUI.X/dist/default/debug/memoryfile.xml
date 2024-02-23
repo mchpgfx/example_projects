@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/debug/GFX_Sim_EventUI.X.debug.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>520093696</length>
+      <used>678016</used>
+      <free>519415680</free>
+    </memory>
+  </executable>
+</project>

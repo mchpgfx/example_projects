@@ -1,0 +1,14 @@
+configName: default
+folderName: GFX_Sim_EventUI
+format_version: v1.0
+frameworkPath: ..\..\Harmony3
+processor: ATSAMA5D21
+projectName: GFX_Sim_EventUI
+settings:
+  PackageFilter: bsp;core;csp;Devices;dev_packs;gfx;harmony-services;harmony_vision;motor_control;quick_docs;smartenergy;touch;usb;x2c
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAMA5D2_DFP\1.9.106\atdf\ATSAMA5D21.atdf

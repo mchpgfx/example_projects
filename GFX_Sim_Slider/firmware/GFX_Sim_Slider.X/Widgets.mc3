@@ -2933,7 +2933,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;434&quot; canvasWidth=&quot;566&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;291&quot; canvasWidth=&quot;587&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -2943,7 +2943,7 @@
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;gfx_legato&quot; x=&quot;219&quot; y=&quot;86&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;mgs_web_sim&quot; x=&quot;0&quot; y=&quot;94&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;mgs_web_sim&quot; x=&quot;0&quot; y=&quot;77&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;pit&quot; x=&quot;332&quot; y=&quot;13&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sys_input&quot; x=&quot;371&quot; y=&quot;87&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sys_time&quot; x=&quot;218&quot; y=&quot;181&quot;/&gt;
@@ -3157,9 +3157,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="CtrlColorMode"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;CtrlColorMode&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;RGBA8888&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
 </value>
@@ -3273,10 +3271,50 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="consoleStartClosed"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
+  &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;consoleStartClosed&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/mgs_web_sim&gt;
+&lt;/mgs_web_sim&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="consoleTSEnabled"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
+  &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;consoleTSEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/mgs_web_sim&gt;
+&lt;/mgs_web_sim&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="initialMemory"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
+  &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;initialMemory&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/mgs_web_sim&gt;
+&lt;/mgs_web_sim&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="isBezelEnabled"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;isBezelEnabled&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/mgs_web_sim&gt;
+&lt;/mgs_web_sim&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="isConsoleEnabled"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
+  &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;isConsoleEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
 </value>
@@ -3296,6 +3334,26 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="isRespEnabled"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;isRespEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/mgs_web_sim&gt;
+&lt;/mgs_web_sim&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="optimizationLevel"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
+  &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;optimizationLevel&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/mgs_web_sim&gt;
+&lt;/mgs_web_sim&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="stackSize"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
+  &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;stackSize&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
@@ -3736,6 +3794,9 @@
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
+      &lt;Boolean dnOrder=&quot;1&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+      &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sys_time&quot; value=&quot;TICKLESS&quot;/&gt;
@@ -3817,11 +3878,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\default.mgsws</file>
-         <hash>9184efa25423dbfba356a153946341f55c3b2648d83b9ba68481ea6a3923a022</hash>
+         <hash>77fa454d1fc229d3635334163052fa0b9c1bdee2ef770bdc3c75692fb735ab72</hash>
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>be5daa15b160ca825a4a29f54e9889aeea3e98f349efc8a3f40f142424cb9ee3</hash>
+         <hash>fa909dba1778e868bd550012dc6d5a11c6c582cd4c09f146b1e62df327e51ffc</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -4729,7 +4790,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\simulator\gfx_simulator.c</file>
-         <hash>71c35523eec3fa61a53be398921d1ce436e29e39a0e5851ac1a741bc42719418</hash>
+         <hash>e93867ae0f45e48f3800d6bb00491fbfe7602fe655a982d0468b6b0df34bf9bf</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\simulator\gfx_simulator.h</file>

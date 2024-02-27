@@ -104,14 +104,14 @@ void APP_Initialize ( void )
 void event_Screen0_SliderWidget1_OnValueChanged(leSliderWidget* scr)
 {
     Screen0_SliderWidget2->fn->setValue(Screen0_SliderWidget2, scr->fn->getValue(scr));
-    sprintf(valueBuffer , "%lu", scr->fn->getValue(scr));
+    sprintf(valueBuffer , "%ld", scr->fn->getValue(scr));
     sliderStr.fn->setFromCStr(&sliderStr, valueBuffer);
     Screen0_ValueLabel->fn->setString(Screen0_ValueLabel, (leString*)&sliderStr);
 }
 void event_Screen0_SliderWidget2_OnValueChanged(leSliderWidget* scr)
 {
     Screen0_SliderWidget1->fn->setValue(Screen0_SliderWidget1, scr->fn->getValue(scr));
-    sprintf(valueBuffer , "%lu", scr->fn->getValue(scr));
+    sprintf(valueBuffer , "%ld", scr->fn->getValue(scr));
     sliderStr.fn->setFromCStr(&sliderStr, valueBuffer);
     Screen0_ValueLabel->fn->setString(Screen0_ValueLabel, (leString*)&sliderStr);
 }

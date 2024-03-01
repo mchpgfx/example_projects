@@ -5287,7 +5287,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="isBezelEnabled"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;isBezelEnabled&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
 </value>
@@ -5307,7 +5309,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="isRespEnabled"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;isRespEnabled&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
 </value>
@@ -5727,12 +5731,12 @@
          <hash>012f6194a63c2ffae2945f296436493b16d6e7e175a1a5cffb7266fb29216333</hash>
       </entry>
       <entry>
-         <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\canvas\gfx_canvas_api.c</file>
-         <hash>adf0da4dd5db3d777043ee54adc11746a7b9f7990a4e5b9153b3aada30b71114</hash>
-      </entry>
-      <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\system\time\src\sys_time_local.h</file>
          <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\canvas\gfx_canvas_api.c</file>
+         <hash>adf0da4dd5db3d777043ee54adc11746a7b9f7990a4e5b9153b3aada30b71114</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\legato\common\legato_color_blend.c</file>
@@ -5856,7 +5860,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>995bdd94081898312012ed2e4b7467f361c09ab63f69d7c65db90efaa8b89947</hash>
+         <hash>08b62fa19b568dfc15e0140000dac1c89298dec95c3a98e6e78efcc62d5fa4ad</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\xdmac.h</file>
@@ -6112,7 +6116,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>0da9c204e734b852cc22db3fe58cca5c3ac0eb6562d2ee8bc905d9aa42c226fd</hash>
+         <hash>61595752a3889168d83f199f5e45f61e296f410f174ee8c9aad0e7eab5837869</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60D1G_DFP\instance\flexcom0.h</file>
@@ -6556,7 +6560,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\definitions.h</file>
-         <hash>ae0ae8d8d79c1e8821b083df6e54935e8279a9ac1ebd2771ff1f589f66fd8bfb</hash>
+         <hash>9c959a443737ea60c41eed48d0db03905f177157261acd4cf7ea927536436046</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\initialization.c</file>

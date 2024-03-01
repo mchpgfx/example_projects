@@ -387,7 +387,7 @@ extern leRasterFont NotoSans_28;
  * Name:         NotoMono_14
  * Height:       37
  * Baseline:     12
- * Style:        Plain
+ * Style:        Antialias
  * Glyph Count:  96
  * Range Count:  18
  * Glyph Ranges: 0xA
@@ -400,7 +400,7 @@ extern leRasterFont NotoMono_14;
  * Name:         NotoSans_48
  * Height:       21
  * Baseline:     37
- * Style:        Plain
+ * Style:        Antialias
  * Glyph Count:  96
  * Range Count:  13
  * Glyph Ranges: 0xA

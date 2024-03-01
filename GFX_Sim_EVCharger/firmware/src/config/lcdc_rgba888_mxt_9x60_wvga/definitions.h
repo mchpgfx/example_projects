@@ -55,12 +55,12 @@
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/pio/plib_pio.h"
 #include "peripheral/aic/plib_aic.h"
-#include "system/time/sys_time.h"
+#include "gfx/canvas/gfx_canvas_api.h"
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "gfx/canvas/gfx_canvas_api.h"
+#include "system/time/sys_time.h"
 #include "app.h"
 
 

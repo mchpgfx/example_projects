@@ -181,14 +181,14 @@ build/lcdc_rgba888_mxt_9x60_wvga/debug/_ext/2052985144/interrupts.o: \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/peripheral/clk/plib_clk.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/peripheral/pio/plib_pio.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/peripheral/aic/plib_aic.h \
- ../src/config/lcdc_rgba888_mxt_9x60_wvga/system/time/sys_time.h \
+ ../src/config/lcdc_rgba888_mxt_9x60_wvga/gfx/canvas/gfx_canvas_api.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/system/int/sys_int.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/system/cache/sys_cache.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/osal/osal.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/osal/osal_definitions.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/osal/osal_impl_basic.h \
  ../src/config/lcdc_rgba888_mxt_9x60_wvga/system/debug/sys_debug.h \
- ../src/config/lcdc_rgba888_mxt_9x60_wvga/gfx/canvas/gfx_canvas_api.h \
+ ../src/config/lcdc_rgba888_mxt_9x60_wvga/system/time/sys_time.h \
  ../src/app.h
 
 ../src/config/lcdc_rgba888_mxt_9x60_wvga/configuration.h:
@@ -553,7 +553,7 @@ build/lcdc_rgba888_mxt_9x60_wvga/debug/_ext/2052985144/interrupts.o: \
 
 ../src/config/lcdc_rgba888_mxt_9x60_wvga/peripheral/aic/plib_aic.h:
 
-../src/config/lcdc_rgba888_mxt_9x60_wvga/system/time/sys_time.h:
+../src/config/lcdc_rgba888_mxt_9x60_wvga/gfx/canvas/gfx_canvas_api.h:
 
 ../src/config/lcdc_rgba888_mxt_9x60_wvga/system/int/sys_int.h:
 
@@ -567,6 +567,6 @@ build/lcdc_rgba888_mxt_9x60_wvga/debug/_ext/2052985144/interrupts.o: \
 
 ../src/config/lcdc_rgba888_mxt_9x60_wvga/system/debug/sys_debug.h:
 
-../src/config/lcdc_rgba888_mxt_9x60_wvga/gfx/canvas/gfx_canvas_api.h:
+../src/config/lcdc_rgba888_mxt_9x60_wvga/system/time/sys_time.h:
 
 ../src/app.h:

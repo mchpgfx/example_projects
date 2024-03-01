@@ -229,6 +229,7 @@ leResult screenShow_Screen0(void)
 
     Screen0_LabelWidget_1 = leLabelWidget_New();
     Screen0_LabelWidget_1->fn->setPosition(Screen0_LabelWidget_1, 68, 368);
+    Screen0_LabelWidget_1->fn->setSize(Screen0_LabelWidget_1, 100, 33);
     Screen0_LabelWidget_1->fn->setEnabled(Screen0_LabelWidget_1, LE_FALSE);
     Screen0_LabelWidget_1->fn->setScheme(Screen0_LabelWidget_1, &WhiteScheme);
     Screen0_LabelWidget_1->fn->setBackgroundType(Screen0_LabelWidget_1, LE_WIDGET_BACKGROUND_NONE);
@@ -237,6 +238,7 @@ leResult screenShow_Screen0(void)
 
     Screen0_LabelWidget_2 = leLabelWidget_New();
     Screen0_LabelWidget_2->fn->setPosition(Screen0_LabelWidget_2, 178, 368);
+    Screen0_LabelWidget_2->fn->setSize(Screen0_LabelWidget_2, 100, 33);
     Screen0_LabelWidget_2->fn->setEnabled(Screen0_LabelWidget_2, LE_FALSE);
     Screen0_LabelWidget_2->fn->setScheme(Screen0_LabelWidget_2, &WhiteScheme);
     Screen0_LabelWidget_2->fn->setBackgroundType(Screen0_LabelWidget_2, LE_WIDGET_BACKGROUND_NONE);
@@ -245,6 +247,7 @@ leResult screenShow_Screen0(void)
 
     Screen0_LabelWidget_3 = leLabelWidget_New();
     Screen0_LabelWidget_3->fn->setPosition(Screen0_LabelWidget_3, 275, 368);
+    Screen0_LabelWidget_3->fn->setSize(Screen0_LabelWidget_3, 100, 33);
     Screen0_LabelWidget_3->fn->setEnabled(Screen0_LabelWidget_3, LE_FALSE);
     Screen0_LabelWidget_3->fn->setScheme(Screen0_LabelWidget_3, &WhiteScheme);
     Screen0_LabelWidget_3->fn->setBackgroundType(Screen0_LabelWidget_3, LE_WIDGET_BACKGROUND_NONE);
@@ -253,6 +256,7 @@ leResult screenShow_Screen0(void)
 
     Screen0_LabelWidget_4 = leLabelWidget_New();
     Screen0_LabelWidget_4->fn->setPosition(Screen0_LabelWidget_4, 390, 368);
+    Screen0_LabelWidget_4->fn->setSize(Screen0_LabelWidget_4, 100, 33);
     Screen0_LabelWidget_4->fn->setEnabled(Screen0_LabelWidget_4, LE_FALSE);
     Screen0_LabelWidget_4->fn->setScheme(Screen0_LabelWidget_4, &WhiteScheme);
     Screen0_LabelWidget_4->fn->setBackgroundType(Screen0_LabelWidget_4, LE_WIDGET_BACKGROUND_NONE);

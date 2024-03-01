@@ -2933,17 +2933,17 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;434&quot; canvasWidth=&quot;956&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;504&quot; canvasWidth=&quot;912&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;240&quot; y=&quot;9&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;gfx_canvas&quot; x=&quot;233&quot; y=&quot;112&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;gfx_legato&quot; x=&quot;436&quot; y=&quot;101&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;gfx_canvas&quot; x=&quot;242&quot; y=&quot;158&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;gfx_legato&quot; x=&quot;462&quot; y=&quot;129&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;mgs_web_sim&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sys_input&quot; x=&quot;400&quot; y=&quot;11&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sys_time&quot; x=&quot;277&quot; y=&quot;213&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sys_time&quot; x=&quot;259&quot; y=&quot;277&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -5608,6 +5608,9 @@
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
+      &lt;Boolean dnOrder=&quot;1&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+      &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sys_time&quot; value=&quot;TICKLESS&quot;/&gt;
@@ -5724,12 +5727,12 @@
          <hash>012f6194a63c2ffae2945f296436493b16d6e7e175a1a5cffb7266fb29216333</hash>
       </entry>
       <entry>
-         <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\system\time\src\sys_time_local.h</file>
-         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
-      </entry>
-      <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\canvas\gfx_canvas_api.c</file>
          <hash>adf0da4dd5db3d777043ee54adc11746a7b9f7990a4e5b9153b3aada30b71114</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\system\time\src\sys_time_local.h</file>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\legato\common\legato_color_blend.c</file>
@@ -5741,7 +5744,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>c64b03027a9a622d15a84b1da60358bb198265bcb9d950bb27e92660b969b04f</hash>
+         <hash>0dd37b8a3b3749cea1c68ad2ab3ee21a97d7063df210d477e3fa5b96b81a2bc2</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw.h</file>
@@ -6553,7 +6556,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\definitions.h</file>
-         <hash>9c959a443737ea60c41eed48d0db03905f177157261acd4cf7ea927536436046</hash>
+         <hash>ae0ae8d8d79c1e8821b083df6e54935e8279a9ac1ebd2771ff1f589f66fd8bfb</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba888_mxt_9x60_wvga\initialization.c</file>

@@ -1,0 +1,13 @@
+configName: default
+folderName: GFX_Sim_CanvasSlide
+format_version: v1.0
+frameworkPath: C:\Drive\H3\H3Public
+processor: ATSAMA5D21
+projectName: GFX_Sim_CanvasSlide
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: SAMA5D2_DFP\1.10.213

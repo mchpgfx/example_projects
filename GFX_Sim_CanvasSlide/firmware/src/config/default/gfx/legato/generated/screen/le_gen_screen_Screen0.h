@@ -22,6 +22,7 @@ extern leLabelWidget* Screen0_smartLabel;
 extern leButtonWidget* Screen0_qsButton;
 extern leButtonWidget* Screen0_SlideLeftButton;
 extern leButtonWidget* Screen0_SlideRightButton;
+extern leLabelWidget* Screen0_LabelWidget_0;
 
 // event handlers
 // !!THESE MUST BE IMPLEMENTED IN THE APPLICATION CODE!!

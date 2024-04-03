@@ -3064,11 +3064,11 @@
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;gfx_canvas&quot; x=&quot;404&quot; y=&quot;209&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;gfx_legato&quot; x=&quot;634&quot; y=&quot;189&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;mgs_web_sim&quot; x=&quot;78&quot; y=&quot;282&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sys_input&quot; x=&quot;480&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sys_time&quot; x=&quot;395&quot; y=&quot;348&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;gfx_canvas&quot; x=&quot;297&quot; y=&quot;202&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;gfx_legato&quot; x=&quot;516&quot; y=&quot;253&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;mgs_web_sim&quot; x=&quot;35&quot; y=&quot;221&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sys_input&quot; x=&quot;50&quot; y=&quot;77&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sys_time&quot; x=&quot;299&quot; y=&quot;313&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -6014,15 +6014,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>46f1500d35be7d335c1ed6942aa3d570d7ac7446047fec34c2f3873349eda675</hash>
+         <hash>58dfe72d73583e60aa18db9a7649ffc441a0dcf790f9d09597443c7657182779</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\image\le_gen_images.c</file>
-         <hash>f9b216a3bcda7fd3f6c12705055b4390bdc68d14cdb183182d801b1462f6d4f4</hash>
+         <hash>7c1cc6bc2de5b7b70601cfcc4d6a8766acbef9857e3ed9a0e5c386041f9310d0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>1c0c28e99b6719665fa112a0d53845b21063562db49167171c601fbff404099b</hash>
+         <hash>e75e2b2a2ee29ee26da0b4de223c56a9f356eedb7cdaff552dbe6c6063507bad</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -6054,15 +6054,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_stringtable.c</file>
-         <hash>f90dc3d7f60581781fe6c6122a111ebaba56acdc90697e6e78808b50c7b4d282</hash>
+         <hash>899da66b35392e42a9f78f566b5e4b3878da9db1bff42e2e4c31221e69e4dd4e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>42c094357b16c5a1e3f2310f24f0b206d8854a223bb22481facb413305220b66</hash>
+         <hash>b2ca3c96f5975c35ab9e71cbb425c1f3c3092e829dcf5a2ef8b9313d9a0ce588</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>
-         <hash>227892ebdee2d0e7aac891894778b21aa568f12a475974f1bb8ce0d87285131e</hash>
+         <hash>ad24b8b4be4c7c9ca4ccda017c322434d822de92bc06078f45a63ca250f6ef33</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\jpeg\jidctint.c</file>

@@ -72,15 +72,6 @@ extern leImage mchpLogo_small;
 
 /*********************************
  * Legato Image Asset
- * Name:   MHGS_logo_smaller
- * Size:   180x169 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage MHGS_logo_smaller;
-
-/*********************************
- * Legato Image Asset
  * Name:   QuickstartDown_WQVGA
  * Size:   160x74 pixels
  * Type:   RGB Data
@@ -97,6 +88,15 @@ extern leImage QuickstartDown_WQVGA;
  ***********************************/
 extern leImage QuickstartUp_WQVGA;
 
+/*********************************
+ * Legato Image Asset
+ * Name:   MGS_120
+ * Size:   120x130 pixels
+ * Type:   RGB Data
+ * Format: RGB_565
+ ***********************************/
+extern leImage MGS_120;
+
 /*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/
@@ -104,11 +104,12 @@ extern leImage QuickstartUp_WQVGA;
  * Legato Font Asset
  * Name:         NotoSans_Regular
  * Height:       21
- * Baseline:     22
+ * Baseline:     18
  * Style:        Antialias
- * Glyph Count:  95
- * Range Count:  10
- * Glyph Ranges: 0x20-0x7E
+ * Glyph Count:  96
+ * Range Count:  16
+ * Glyph Ranges: 0xA
+                 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSans_Regular;
 
@@ -116,7 +117,7 @@ extern leRasterFont NotoSans_Regular;
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   5
+ * String Count:   6
  *****************************************************************************/
 
 // language IDs
@@ -128,6 +129,7 @@ extern leRasterFont NotoSans_Regular;
 #define stringID_SlideRight    2
 #define stringID_Smart    3
 #define stringID_SlideLeft    4
+#define stringID_MGS    5
 
 extern const leStringTable stringTable;
 
@@ -138,6 +140,7 @@ extern leTableString string_Fast;
 extern leTableString string_SlideRight;
 extern leTableString string_Smart;
 extern leTableString string_SlideLeft;
+extern leTableString string_MGS;
 
 void initializeStrings(void);
 //DOM-IGNORE-BEGIN

@@ -12,6 +12,7 @@ leLabelWidget* Screen0_smartLabel;
 leButtonWidget* Screen0_qsButton;
 leButtonWidget* Screen0_SlideLeftButton;
 leButtonWidget* Screen0_SlideRightButton;
+leLabelWidget* Screen0_LabelWidget_0;
 
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
@@ -54,15 +55,15 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_mchpLogo);
 
     Screen0_mhgsLogo = leImageWidget_New();
-    Screen0_mhgsLogo->fn->setPosition(Screen0_mhgsLogo, 145, 51);
-    Screen0_mhgsLogo->fn->setSize(Screen0_mhgsLogo, 180, 169);
+    Screen0_mhgsLogo->fn->setPosition(Screen0_mhgsLogo, 16, 49);
+    Screen0_mhgsLogo->fn->setSize(Screen0_mhgsLogo, 155, 154);
     Screen0_mhgsLogo->fn->setBackgroundType(Screen0_mhgsLogo, LE_WIDGET_BACKGROUND_NONE);
     Screen0_mhgsLogo->fn->setBorderType(Screen0_mhgsLogo, LE_WIDGET_BORDER_NONE);
-    Screen0_mhgsLogo->fn->setImage(Screen0_mhgsLogo, (leImage*)&MHGS_logo_smaller);
+    Screen0_mhgsLogo->fn->setImage(Screen0_mhgsLogo, (leImage*)&MGS_120);
     root0->fn->addChild(root0, (leWidget*)Screen0_mhgsLogo);
 
     Screen0_fastLabel = leLabelWidget_New();
-    Screen0_fastLabel->fn->setPosition(Screen0_fastLabel, 615, 64);
+    Screen0_fastLabel->fn->setPosition(Screen0_fastLabel, 620, 70);
     Screen0_fastLabel->fn->setSize(Screen0_fastLabel, 65, 40);
     Screen0_fastLabel->fn->setScheme(Screen0_fastLabel, &RedScheme);
     Screen0_fastLabel->fn->setBackgroundType(Screen0_fastLabel, LE_WIDGET_BACKGROUND_NONE);
@@ -70,7 +71,7 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_fastLabel);
 
     Screen0_easyLabel = leLabelWidget_New();
-    Screen0_easyLabel->fn->setPosition(Screen0_easyLabel, 687, 64);
+    Screen0_easyLabel->fn->setPosition(Screen0_easyLabel, 692, 69);
     Screen0_easyLabel->fn->setSize(Screen0_easyLabel, 70, 40);
     Screen0_easyLabel->fn->setScheme(Screen0_easyLabel, &GreenScheme);
     Screen0_easyLabel->fn->setBackgroundType(Screen0_easyLabel, LE_WIDGET_BACKGROUND_NONE);
@@ -78,7 +79,7 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_easyLabel);
 
     Screen0_smartLabel = leLabelWidget_New();
-    Screen0_smartLabel->fn->setPosition(Screen0_smartLabel, 769, 65);
+    Screen0_smartLabel->fn->setPosition(Screen0_smartLabel, 774, 70);
     Screen0_smartLabel->fn->setSize(Screen0_smartLabel, 100, 40);
     Screen0_smartLabel->fn->setScheme(Screen0_smartLabel, &BlueScheme);
     Screen0_smartLabel->fn->setBackgroundType(Screen0_smartLabel, LE_WIDGET_BACKGROUND_NONE);
@@ -95,7 +96,7 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_qsButton);
 
     Screen0_SlideLeftButton = leButtonWidget_New();
-    Screen0_SlideLeftButton->fn->setPosition(Screen0_SlideLeftButton, 7, 229);
+    Screen0_SlideLeftButton->fn->setPosition(Screen0_SlideLeftButton, 380, 230);
     Screen0_SlideLeftButton->fn->setSize(Screen0_SlideLeftButton, 100, 35);
     Screen0_SlideLeftButton->fn->setBorderType(Screen0_SlideLeftButton, LE_WIDGET_BORDER_LINE);
     Screen0_SlideLeftButton->fn->setString(Screen0_SlideLeftButton, (leString*)&string_SlideLeft);
@@ -103,12 +104,19 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_SlideLeftButton);
 
     Screen0_SlideRightButton = leButtonWidget_New();
-    Screen0_SlideRightButton->fn->setPosition(Screen0_SlideRightButton, 852, 230);
+    Screen0_SlideRightButton->fn->setPosition(Screen0_SlideRightButton, 480, 230);
     Screen0_SlideRightButton->fn->setSize(Screen0_SlideRightButton, 100, 35);
     Screen0_SlideRightButton->fn->setBorderType(Screen0_SlideRightButton, LE_WIDGET_BORDER_LINE);
     Screen0_SlideRightButton->fn->setString(Screen0_SlideRightButton, (leString*)&string_SlideRight);
     Screen0_SlideRightButton->fn->setPressedEventCallback(Screen0_SlideRightButton, event_Screen0_SlideRightButton_OnPressed);
     root0->fn->addChild(root0, (leWidget*)Screen0_SlideRightButton);
+
+    Screen0_LabelWidget_0 = leLabelWidget_New();
+    Screen0_LabelWidget_0->fn->setPosition(Screen0_LabelWidget_0, 159, 92);
+    Screen0_LabelWidget_0->fn->setSize(Screen0_LabelWidget_0, 328, 70);
+    Screen0_LabelWidget_0->fn->setBackgroundType(Screen0_LabelWidget_0, LE_WIDGET_BACKGROUND_NONE);
+    Screen0_LabelWidget_0->fn->setString(Screen0_LabelWidget_0, (leString*)&string_MGS);
+    root0->fn->addChild(root0, (leWidget*)Screen0_LabelWidget_0);
 
     leAddRootWidget(root0, 0);
     leSetLayerColorMode(0, LE_COLOR_MODE_RGB_565);
@@ -143,6 +151,7 @@ void screenHide_Screen0(void)
     Screen0_qsButton = NULL;
     Screen0_SlideLeftButton = NULL;
     Screen0_SlideRightButton = NULL;
+    Screen0_LabelWidget_0 = NULL;
 
 
     showing = LE_FALSE;

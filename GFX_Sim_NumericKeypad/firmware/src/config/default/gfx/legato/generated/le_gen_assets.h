@@ -63,42 +63,6 @@ extern const lePalette leGlobalPalette;
  *****************************************************************************/
 /*********************************
  * Legato Image Asset
- * Name:   QuickstartDown_WVGA
- * Size:   260x120 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage QuickstartDown_WVGA;
-
-/*********************************
- * Legato Image Asset
- * Name:   QuickstartUp_WVGA
- * Size:   260x120 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage QuickstartUp_WVGA;
-
-/*********************************
- * Legato Image Asset
- * Name:   MHGS_logo_WVGA
- * Size:   320x300 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage MHGS_logo_WVGA;
-
-/*********************************
- * Legato Image Asset
- * Name:   mchpLogo_light
- * Size:   152x40 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage mchpLogo_light;
-
-/*********************************
- * Legato Image Asset
  * Name:   keydown
  * Size:   65x65 pixels
  * Type:   RGB Data
@@ -143,7 +107,7 @@ extern leImage BigKeyUp;
  * Baseline:     37
  * Style:        Antialias
  * Glyph Count:  95
- * Range Count:  11
+ * Range Count:  2
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSans_48;
@@ -164,62 +128,50 @@ extern leRasterFont Font0;
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   22
+ * String Count:   16
  *****************************************************************************/
 
 // language IDs
 #define language_English    0
 
 // string IDs
-#define stringID_String_star    0
-#define stringID_String_4    1
-#define stringID_StrOK    2
-#define stringID_String_5    3
-#define stringID_Smart    4
-#define stringID_String_0    5
-#define stringID_StrClear    6
-#define stringID_Fast    7
-#define stringID_NumDefault    8
-#define stringID_String_1    9
-#define stringID_String_3    10
-#define stringID_Str1    11
-#define stringID_String_7    12
-#define stringID_String_9    13
-#define stringID_Easy    14
-#define stringID_StringDefault    15
-#define stringID_String_6    16
-#define stringID_StringNewCode    17
-#define stringID_String_8    18
-#define stringID_String_2    19
-#define stringID_StrDel    20
-#define stringID_String_pound    21
+#define stringID_String_4    0
+#define stringID_StrOK    1
+#define stringID_String_5    2
+#define stringID_String_0    3
+#define stringID_StrClear    4
+#define stringID_NumDefault    5
+#define stringID_String_1    6
+#define stringID_String_3    7
+#define stringID_String_7    8
+#define stringID_String_9    9
+#define stringID_StringDefault    10
+#define stringID_String_6    11
+#define stringID_StringNewCode    12
+#define stringID_String_8    13
+#define stringID_String_2    14
+#define stringID_StrDel    15
 
 extern const leStringTable stringTable;
 
 
 // string list
-extern leTableString string_String_star;
 extern leTableString string_String_4;
 extern leTableString string_StrOK;
 extern leTableString string_String_5;
-extern leTableString string_Smart;
 extern leTableString string_String_0;
 extern leTableString string_StrClear;
-extern leTableString string_Fast;
 extern leTableString string_NumDefault;
 extern leTableString string_String_1;
 extern leTableString string_String_3;
-extern leTableString string_Str1;
 extern leTableString string_String_7;
 extern leTableString string_String_9;
-extern leTableString string_Easy;
 extern leTableString string_StringDefault;
 extern leTableString string_String_6;
 extern leTableString string_StringNewCode;
 extern leTableString string_String_8;
 extern leTableString string_String_2;
 extern leTableString string_StrDel;
-extern leTableString string_String_pound;
 
 void initializeStrings(void);
 //DOM-IGNORE-BEGIN

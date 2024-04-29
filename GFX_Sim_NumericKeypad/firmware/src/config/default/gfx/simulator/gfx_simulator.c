@@ -34,9 +34,9 @@
 /* SDL2 Video Subsystem Config */
 #define SDL_HOR_RES 480
 #define SDL_VER_RES 320
-#define SDL_DEF_PIXEL_FORMAT SDL_PIXELFORMAT_RGB565
 #define SDL_DEF_FB_TYPE uint16_t
 #define SDL_DEF_FB_PTR_TYPE SDL_DEF_FB_TYPE *
+#define SDL_DEF_PIXEL_FORMAT SDL_PIXELFORMAT_RGB565
 #define SDL_DEF_BYTES_PER_PIXEL sizeof(SDL_DEF_FB_TYPE)
 #define SDL_VIRTUAL_LAYERS 1
 #define SDL_BUFFERS_PER_LAYER 1
@@ -200,6 +200,8 @@ static void GFX_SIM_ProcessInput(SDL_Event *sdl_event)
     case SDL_FINGERMOTION:
         SYS_INP_InjectTouchMove(sdl_event->tfinger.touchId, sdl_event->tfinger.x * SDL_TOUCH_HOR_RES, sdl_event->tfinger.y * SDL_TOUCH_VER_RES);
         break;
+    case SDL_QUIT:
+        exit(0);
     }
 }
 
@@ -412,7 +414,7 @@ void GFX_SIM_Initialize()
                                   SDL_WINDOWPOS_UNDEFINED,
                                   SDL_HOR_RES,
                                   SDL_VER_RES,
-                                  SDL_WINDOW_BORDERLESS);
+                                  SDL_WINDOW_SHOWN);
 
     sdl_renderer = SDL_CreateRenderer(sdl_window, -1, SDL_RENDERER_ACCELERATED);
 
@@ -673,13 +675,13 @@ gfxDriverIOCTLResponse GFX_SIM_IOCTL(gfxDriverIOCTLRequest request,
     {
         rect = (gfxIOCTLArg_LayerRect *)arg;
 
-        if (rect->base.id >= SDL_VIRTUAL_LAYERS)
+        if (rect->layer.id >= SDL_VIRTUAL_LAYERS)
             return GFX_IOCTL_ERROR_UNKNOWN;
 
-        rect->x = drvLayer[rect->base.id].startx;
-        rect->y = drvLayer[rect->base.id].starty;
-        rect->width = drvLayer[rect->base.id].sizex;
-        rect->height = drvLayer[rect->base.id].sizey;
+        rect->x = drvLayer[rect->layer.id].startx;
+        rect->y = drvLayer[rect->layer.id].starty;
+        rect->width = drvLayer[rect->layer.id].sizex;
+        rect->height = drvLayer[rect->layer.id].sizey;
 
         return GFX_IOCTL_OK;
     }

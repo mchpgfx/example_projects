@@ -4,20 +4,20 @@
 
 
 project: GFX_Sim_NumericKeypad
-creation_date: 2024-01-26T15:09:00.570-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2024-04-29T15:14:45.679-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.4.1
-mcc_core_version: v5.6.1
-mplabx_version: v6.15        # if MPLAB X plugin only
+mcc_version: v5.5.1
+mcc_core_version: v5.7.1
+mplabx_version: v6.20        # if MPLAB X plugin only
 harmony_version: v1.4.1
 compiler: XC32 4.30
 
 modules:
-    - {name: "csp", version: "v3.18.1"}
-    - {name: "core", version: "v3.13.1"}
+    - {name: "csp", version: "v3.18.4"}
+    - {name: "core", version: "v3.13.3"}
     - {name: "CMSIS_5", version: "5.9.0"}
 
 packs:
-    - {name: "SAMA5D2_DFP", version: "1.9.106"}
+    - {name: "SAMA5D2_DFP", version: "1.10.213"}
 

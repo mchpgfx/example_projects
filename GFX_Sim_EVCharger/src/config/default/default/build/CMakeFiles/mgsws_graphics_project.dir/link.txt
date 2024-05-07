@@ -1,0 +1,3 @@
+C:\Users\c40450\AppData\Roaming\com.microchip.mgsws\sdk\cmake\bin\cmake.exe -E rm -f CMakeFiles\mgsws_graphics_project.dir/objects.a
+C:\Users\c40450\AppData\Roaming\com.microchip.mgsws\sdk\emsdk\mingw\7.1.0_64bit\bin\ar.exe qc CMakeFiles\mgsws_graphics_project.dir/objects.a @CMakeFiles\mgsws_graphics_project.dir\objects1.rsp
+C:\Users\c40450\AppData\Roaming\com.microchip.mgsws\sdk\emsdk\mingw\7.1.0_64bit\bin\gcc.exe  -Og -g3 -mconsole -Wl,--undefined=WinMain -Wl,--whole-archive CMakeFiles\mgsws_graphics_project.dir/objects.a -Wl,--no-whole-archive -o mgsws_graphics_project.exe -Wl,--out-implib,libmgsws_graphics_project.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\mgsws_graphics_project.dir\linkLibs.rsp

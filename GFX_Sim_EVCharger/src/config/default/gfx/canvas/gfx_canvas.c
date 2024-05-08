@@ -80,7 +80,7 @@ static unsigned int displayHeight = 0;
 
 const gfxGraphicsProcessor * gfxcGPU = NULL;
 
-const gfxDisplayDriver * gfxDispCtrlr = &lcdcDisplayDriver;
+const gfxDisplayDriver * gfxDispCtrlr = &gfxSimulatorDriver;
 
 const gfxDisplayDriver gfxDriverInterface =
 {

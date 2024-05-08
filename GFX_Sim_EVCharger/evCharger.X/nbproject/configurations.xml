@@ -213,6 +213,9 @@
               <itemPath>../src/config/default/gfx/legato/legato.h</itemPath>
               <itemPath>../src/config/default/gfx/legato/legato_config.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="simulator" displayName="simulator" projectFiles="true">
+              <itemPath>../src/config/default/gfx/simulator/gfx_simulator.h</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
             <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
@@ -707,6 +710,9 @@
                 <itemPath>../src/config/default/gfx/legato/widget/legato_editwidget.c</itemPath>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="simulator" displayName="simulator" projectFiles="true">
+              <itemPath>../src/config/default/gfx/simulator/gfx_simulator.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="aic" displayName="aic" projectFiles="true">
@@ -764,6 +770,7 @@
           <itemPath>../src/config/default/initialization.c</itemPath>
           <itemPath>../src/config/default/tasks.c</itemPath>
           <itemPath>../src/config/default/interrupts.c</itemPath>
+          <itemPath>../src/config/default/default.mgsws</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>

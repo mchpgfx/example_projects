@@ -48,6 +48,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "gfx/simulator/gfx_simulator.h"
 #include "gfx/legato/generated/le_gen_harmony.h"
 #include "peripheral/mmu/plib_mmu.h"
 #include "peripheral/clk/plib_clk.h"
@@ -58,9 +59,9 @@
 #include "peripheral/tc/plib_tc0.h"
 #include "peripheral/rtc/plib_rtc.h"
 #include "peripheral/lcdc/plib_lcdc.h"
-#include "system/time/sys_time.h"
 #include "driver/i2c/drv_i2c.h"
 #include "gfx/canvas/gfx_canvas_api.h"
+#include "system/time/sys_time.h"
 #include "system/input/sys_input.h"
 #include "gfx/driver/processor/gfx2d/drv_gfx2d.h"
 #include "bsp/bsp.h"

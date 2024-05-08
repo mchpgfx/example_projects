@@ -102,7 +102,6 @@ void TC0_CH0_TimerStop (void);
 
 void TC0_CH0_TimerPeriodSet (uint32_t period);
 
-void TC0_CH0_TimerCompareSet (uint32_t compare);
 
 uint32_t TC0_CH0_TimerFrequencyGet (void);
 

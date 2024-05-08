@@ -6356,10 +6356,10 @@
       &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;gfx_display_driver&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_lcdc&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;mgs_web_sim&lt;/Value&gt;
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_driver_lcdc&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;mgs_web_sim_drv_cap&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
@@ -8215,7 +8215,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;DisplayDriverName&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_canvas&quot; value=&quot;lcdcDisplayDriver&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_canvas&quot; value=&quot;gfxSimulatorDriver&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
@@ -9296,16 +9296,6 @@
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
-      &lt;DirectCapability dnOrder=&quot;2&quot; id=&quot;le_gfx_driver_lcdc&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_canvas&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_display_driver&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
     &lt;/Attachments&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -9771,7 +9761,30 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="mgs_web_sim" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
-  &lt;mgs_web_sim dnOrder=&quot;0&quot;/&gt;
+  &lt;mgs_web_sim dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;mgs_web_sim_drv_cap&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_canvas&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_display_driver&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;mgs_web_sim_tmr_cap&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;sys_time&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;sys_time_TMR_dependency&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+    &lt;/Attachments&gt;
+  &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
 </value>
       </entry>
@@ -9803,7 +9816,7 @@
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;CORE_SYS_DEF_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/mgs_web_sim&gt;
@@ -9824,7 +9837,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;CtrlCanvasMode&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;mgs_web_sim&quot; value=&quot;DISABLED&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;mgs_web_sim&quot; value=&quot;ENABLED&quot;/&gt;
     &lt;/Values&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
@@ -9874,7 +9887,7 @@
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;GFX_DRIVER_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/mgs_web_sim&gt;
@@ -9887,7 +9900,7 @@
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;GFX_DRIVER_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/mgs_web_sim&gt;
@@ -9900,7 +9913,7 @@
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;GFX_SIM_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/mgs_web_sim&gt;
@@ -9913,7 +9926,7 @@
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;GFX_SIM_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/mgs_web_sim&gt;
@@ -9926,7 +9939,7 @@
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;GFX_SIM_PROPS&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/mgs_web_sim&gt;
@@ -9983,7 +9996,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;TmrTickMode&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;mgs_web_sim&quot; value=&quot;TMR DISABLED&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;mgs_web_sim&quot; value=&quot;TICKLESS&quot;/&gt;
     &lt;/Values&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
@@ -9995,7 +10008,7 @@
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;TmrTickRes&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;/&gt;
@@ -10035,7 +10048,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;mgs_web_sim&gt;
   &lt;mgs_web_sim dnOrder=&quot;0&quot; id=&quot;fileGenToggle&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;mgs_web_sim&quot; value=&quot;false&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;mgs_web_sim&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/mgs_web_sim&gt;
 &lt;/mgs_web_sim&gt;
@@ -10454,10 +10467,10 @@
       &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;sys_time_TMR_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;tc0&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;mgs_web_sim&lt;/Value&gt;
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;TC0_TMR&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;mgs_web_sim_tmr_cap&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
@@ -10494,7 +10507,7 @@
   &lt;sys_time dnOrder=&quot;0&quot; id=&quot;SYS_TIME_OPERATING_MODE&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
       &lt;Boolean dnOrder=&quot;1&quot; id=&quot;visible&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -10512,7 +10525,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_time&gt;
   &lt;sys_time dnOrder=&quot;0&quot; id=&quot;SYS_TIME_PLIB&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sys_time&quot; value=&quot;TC0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sys_time&quot; value=&quot;MGS_WEB_SIM&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sys_time&gt;
 &lt;/sys_time&gt;
@@ -10523,7 +10536,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_time&gt;
   &lt;sys_time dnOrder=&quot;0&quot; id=&quot;SYS_TIME_REMOTE_COMPONENT_ID&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sys_time&quot; value=&quot;tc0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sys_time&quot; value=&quot;mgs_web_sim&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sys_time&gt;
 &lt;/sys_time&gt;
@@ -10559,20 +10572,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tc0" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tc0&gt;
-  &lt;tc0 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;TC0_TMR&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;sys_time&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;sys_time_TMR_dependency&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/tc0&gt;
+  &lt;tc0 dnOrder=&quot;0&quot;/&gt;
 &lt;/tc0&gt;
 </value>
       </entry>
@@ -10651,7 +10651,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tc0&gt;
   &lt;tc0 dnOrder=&quot;0&quot; id=&quot;SYS_TIME_COMPONENT_ID&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;sys_time&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc0&gt;
 &lt;/tc0&gt;
@@ -11058,7 +11058,7 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc0&gt;
 &lt;/tc0&gt;
@@ -11069,7 +11069,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tc0&gt;
   &lt;tc0 dnOrder=&quot;0&quot; id=&quot;TC0_IER_CPCS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;false&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc0&gt;
 &lt;/tc0&gt;
@@ -11098,7 +11098,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tc0&gt;
   &lt;tc0 dnOrder=&quot;0&quot; id=&quot;TC0_SYS_TIME_CONNECTED&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc0&gt;
 &lt;/tc0&gt;
@@ -12074,8 +12074,12 @@
          <hash>4b322435593d75937b86857aa6f648b0889fb0878c5f43c21fe9f08a9651eb57</hash>
       </entry>
       <entry>
+         <file>..\src\config\default\default.mgsws</file>
+         <hash>19fff3bdc6e29a21f4f2de7d07fe7009d683f79bdbe31cc1856d8e673265fab6</hash>
+      </entry>
+      <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>1e0a08f3b20e71349e2df23b82e7b389100e6d3930cf5f455f5102cf75cc3251</hash>
+         <hash>231408a43f8b9c3b13c7bcb990ad1822fe2f6b855b10dc8b211be33cb1b09f14</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -12123,7 +12127,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\canvas\gfx_canvas.c</file>
-         <hash>b04596fdd794a25b8071d9d53f7faf3a75fd7fa59da272b33c3bb77d96b6c4af</hash>
+         <hash>81df8bd5dff42110ecf42531b203fd17f652232da083a531317528f178f96150</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\canvas\gfx_canvas.h</file>
@@ -13030,8 +13034,16 @@
          <hash>dd6b3e7c710431206685fc51459a31358dae4e99be8dd14849be4fe858ba4cc8</hash>
       </entry>
       <entry>
+         <file>..\src\config\default\gfx\simulator\gfx_simulator.c</file>
+         <hash>127c8aa4edb78e769105f5efeaa17b6feb8eb322154ed9485a8f2a4f1c1a5d93</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\gfx\simulator\gfx_simulator.h</file>
+         <hash>1ed74c9f70a0e4e941a9888becfaed79d1764ed4190172c708c3a2a843cedd69</hash>
+      </entry>
+      <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>c05101066cd3d290a4e83a7fc382102b6c57b6ef8ebf984e598c836b1cef1346</hash>
+         <hash>e95073cde5e37d2ef7f2d90bb8427faa7b492f5178fe8a127fd8a418baac24a3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
@@ -13131,11 +13143,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tc\plib_tc0.c</file>
-         <hash>c9bf7dc22d3246852f35ef21424a686d58bc801ade85fd2cc3c9d54092f68b15</hash>
+         <hash>ca9d3d8dcfcecc7189e698f34f0454ab342be30599f9ba65dc26d84a1d97d631</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tc\plib_tc0.h</file>
-         <hash>79afe8007b0060db79e911ca3574ac588005761cabfd42c574d779bb71615a7d</hash>
+         <hash>d0d0efb5e4de81e1b75f8f04d4cbc38e2491d47046bdc0b22ab7e2d0826a20e5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tc\plib_tc_common.h</file>

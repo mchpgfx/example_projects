@@ -174,19 +174,19 @@ SYSTEM_OBJECTS sysObj;
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
 static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
-    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC0_CH0_TimerCallbackRegister,
-    .timerStart = (SYS_TIME_PLIB_START)TC0_CH0_TimerStart,
-    .timerStop = (SYS_TIME_PLIB_STOP)TC0_CH0_TimerStop ,
-    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)TC0_CH0_TimerFrequencyGet,
-    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)TC0_CH0_TimerPeriodSet,
-    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)TC0_CH0_TimerCompareSet,
-    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)TC0_CH0_TimerCounterGet,
+    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)GFX_SIM_TimerRegisterCallback,
+    .timerStart = (SYS_TIME_PLIB_START)GFX_SIM_TimerStart,
+    .timerStop = (SYS_TIME_PLIB_STOP)GFX_SIM_TimerStop,
+    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)GFX_SIM_TimerGetFreqHz,
+    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)NULL,
+    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)GFX_SIM_TimerStubCompareSet,
+    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)GFX_SIM_TimerCounterGet,
 };
 
 static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
-    .hwTimerIntNum = TC0_IRQn,
+    .hwTimerIntNum = 0,
 };
 
 // </editor-fold>

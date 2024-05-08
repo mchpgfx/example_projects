@@ -1,0 +1,21 @@
+# Generated File - Do Not Modify!
+[properties]
+sdk_min_ver = [1, 0, 0]
+config_name = "default"
+x_resolution = 800
+y_resolution = 480
+color_mode = "RGBA8888"
+layer_count = 3
+canvas = true
+sys_time = true
+bezel = true
+circular = false
+responsive = true
+rtos_enabled = false
+c_flags = "-O1"
+link_flags = "-sINITIAL_MEMORY=32MB -sSTACK_SIZE=64KB -sALLOW_MEMORY_GROWTH"
+applications = ["app",]
+[properties.console]
+enable = false
+timestamp = true
+closed = true

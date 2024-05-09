@@ -65,6 +65,10 @@ void event_Screen0_ButtonWidget_0_OnReleased(leButtonWidget* btn)
     Screen0_ImageSequenceWidget_1_0->fn->showNextImage(Screen0_ImageSequenceWidget_1_0);  
     Screen0_ImageSequenceWidget_1_0_0->fn->showNextImage(Screen0_ImageSequenceWidget_1_0_0);  
     
+    Screen0_ImageSequenceWidget_1_0_2->fn->showNextImage(Screen0_ImageSequenceWidget_1_0_2);  
+    Screen0_ImageSequenceWidget_1_0_0_1->fn->showNextImage(Screen0_ImageSequenceWidget_1_0_0_1);  
+    Screen0_ImageSequenceWidget_1_2->fn->showNextImage(Screen0_ImageSequenceWidget_1_2);  
+    
 }
 
 void event_Screen0_ButtonWidget_0_0_OnReleased(leButtonWidget* btn)
@@ -72,6 +76,10 @@ void event_Screen0_ButtonWidget_0_0_OnReleased(leButtonWidget* btn)
     Screen0_ImageSequenceWidget_1->fn->showPreviousImage(Screen0_ImageSequenceWidget_1);
     Screen0_ImageSequenceWidget_1_0->fn->showPreviousImage(Screen0_ImageSequenceWidget_1_0);
     Screen0_ImageSequenceWidget_1_0_0->fn->showPreviousImage(Screen0_ImageSequenceWidget_1_0_0);
+    
+    Screen0_ImageSequenceWidget_1_0_2->fn->showPreviousImage(Screen0_ImageSequenceWidget_1_0_2);  
+    Screen0_ImageSequenceWidget_1_0_0_1->fn->showPreviousImage(Screen0_ImageSequenceWidget_1_0_0_1);  
+    Screen0_ImageSequenceWidget_1_2->fn->showPreviousImage(Screen0_ImageSequenceWidget_1_2);  
 }
 
 // *****************************************************************************

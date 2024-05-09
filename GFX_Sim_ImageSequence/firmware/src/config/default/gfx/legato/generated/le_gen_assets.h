@@ -374,10 +374,10 @@ extern leImage Minus;
  * Legato Font Asset
  * Name:         NotoSans_Regular
  * Height:       21
- * Baseline:     22
+ * Baseline:     13
  * Style:        Antialias
  * Glyph Count:  95
- * Range Count:  8
+ * Range Count:  12
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSans_Regular;
@@ -386,7 +386,7 @@ extern leRasterFont NotoSans_Regular;
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   3
+ * String Count:   5
  *****************************************************************************/
 
 // language IDs
@@ -394,15 +394,19 @@ extern leRasterFont NotoSans_Regular;
 
 // string IDs
 #define stringID_Easy    0
-#define stringID_Fast    1
-#define stringID_Smart    2
+#define stringID_No_Repeat    1
+#define stringID_Fast    2
+#define stringID_Repeat    3
+#define stringID_Smart    4
 
 extern const leStringTable stringTable;
 
 
 // string list
 extern leTableString string_Easy;
+extern leTableString string_No_Repeat;
 extern leTableString string_Fast;
+extern leTableString string_Repeat;
 extern leTableString string_Smart;
 
 void initializeStrings(void);

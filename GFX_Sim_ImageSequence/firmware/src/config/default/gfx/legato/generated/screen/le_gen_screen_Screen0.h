@@ -20,6 +20,15 @@ extern leButtonWidget* Screen0_ButtonWidget_0_0;
 extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1;
 extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_0;
 extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_0_0;
+extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_0_0_0;
+extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_0_1;
+extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_1;
+extern leWidget* Screen0_PanelWidget_0_0;
+extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_0_2;
+extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_0_0_1;
+extern leImageSequenceWidget* Screen0_ImageSequenceWidget_1_2;
+extern leLabelWidget* Screen0_LabelWidget_0;
+extern leLabelWidget* Screen0_LabelWidget_0_0;
 
 // event handlers
 // !!THESE MUST BE IMPLEMENTED IN THE APPLICATION CODE!!

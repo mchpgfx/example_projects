@@ -4239,7 +4239,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>46f1500d35be7d335c1ed6942aa3d570d7ac7446047fec34c2f3873349eda675</hash>
+         <hash>0f202da436b508194eaba07b3136c59b87fdcd9fe2b956832962e8b712c2d0f3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\image\le_gen_images.c</file>
@@ -4247,7 +4247,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>a56dbada260d2705ff7cc4aa0162a8e1a698824b659c979e5bd010d6c0c71349</hash>
+         <hash>2e16fce8d79627d4c387ce8b7adab03b8ca5a855708876f7b2cc0dbc9e58e335</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -4279,15 +4279,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_stringtable.c</file>
-         <hash>854fd7762f5846c307f690a34a46a0093a7ee2fe9f6e46acc5aad54337e1c4b7</hash>
+         <hash>78a637e9c1fee115309b0963bc4bcc61b1f99d83f9d1780e1191b652cb63bd35</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>deb3c53c3e4dc20219bc3bf4be0905ecd52b5efa4dc177d1439116c7760d50b5</hash>
+         <hash>4138de60748b37137681d37d95ba50eb17cfdd3c9b4df6fa5ec89e6f720b47d4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>
-         <hash>c42fc5a0bc14f2b70bab81e8ce68324eee24f462c5bd6ec35f4d8c1c07408a52</hash>
+         <hash>74ed949d388ccf71d4b5ce55a1551dad4ba5f44d80c32ca5b518a2c9cf5eb0f1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\image\jpeg\jidctint.c</file>
@@ -4435,7 +4435,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\legato_config.h</file>
-         <hash>b2bb48840216d39fa7d30ec845e4bee5076fcc389f1d89f0e9b861b170ed7a84</hash>
+         <hash>0bc54d8d3a8fed4331fa80664535a4d6d094f60695e56e4a7d48c4ff559bc8ba</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_fixedheap.c</file>

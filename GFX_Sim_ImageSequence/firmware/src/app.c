@@ -34,7 +34,8 @@
 #include "system/time/sys_time.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdint.h> // For uint32_t
+#include <time.h>   // For clock_gettime, timespec
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -86,6 +87,61 @@ void event_Screen0_ButtonWidget_0_1_0_OnReleased(leButtonWidget* btn)
     Screen0_ImageSequenceWidget_1_2->fn->stop(Screen0_ImageSequenceWidget_1_2); 
 }
 
+// Global variable to store the time of the last update
+static struct timespec lastUpdateTime;
+
+// Call this function once before starting the update loop to initialize the last update time
+void app_Legato_InitializeUpdateTime(void) {
+    clock_gettime(CLOCK_MONOTONIC, &lastUpdateTime);
+}
+
+// Implementation of the QueryDeltaTime function
+uint32_t app_Legato_QueryDeltaTime(void) {
+    struct timespec currentTime;
+    clock_gettime(CLOCK_MONOTONIC, &currentTime);
+
+    // Calculate the delta time in milliseconds
+    uint32_t deltaTime = (currentTime.tv_sec - lastUpdateTime.tv_sec) * 1000 +
+                         (currentTime.tv_nsec - lastUpdateTime.tv_nsec) / 1000000;
+
+    // Update the last update time to the current time
+    lastUpdateTime = currentTime;
+
+    return deltaTime;
+}
+
+
+void event_Screen0_ImageSequenceWidget_0_0_OnImageChanged(leImageSequenceWidget* wgt)
+{
+    int32_t currentImage;
+    
+    currentImage = Screen0_ImageSequenceWidget_0_0->activeIdx;
+          
+    switch(currentImage)
+    {
+        case 0:
+            Screen0_LabelWidget_1->fn->setString(Screen0_LabelWidget_1, (leString*)&string_Battery0);
+            break;
+        
+        case 1: 
+            Screen0_LabelWidget_1->fn->setString(Screen0_LabelWidget_1, (leString*)&string_Battery1);
+            break;
+            
+        case 2: 
+            Screen0_LabelWidget_1->fn->setString(Screen0_LabelWidget_1, (leString*)&string_Battery2);
+            break;
+            
+        case 3: 
+            Screen0_LabelWidget_1->fn->setString(Screen0_LabelWidget_1, (leString*)&string_Battery3);
+            break;
+            
+        case 4: 
+            Screen0_LabelWidget_1->fn->setString(Screen0_LabelWidget_1, (leString*)&string_Battery4);
+            break;
+    }
+    
+    
+}
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions

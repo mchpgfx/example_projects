@@ -19,6 +19,7 @@ leLabelWidget* Screen0_LabelWidget_0_1;
 leButtonWidget* Screen0_ButtonWidget_0_1;
 leButtonWidget* Screen0_ButtonWidget_0_1_0;
 leImageSequenceWidget* Screen0_ImageSequenceWidget_0;
+leLabelWidget* Screen0_LabelWidget_1;
 
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
@@ -89,6 +90,7 @@ leResult screenShow_Screen0(void)
     Screen0_ImageSequenceWidget_0_0->fn->setImageDelay(Screen0_ImageSequenceWidget_0_0, 3, 1000);
     Screen0_ImageSequenceWidget_0_0->fn->setImage(Screen0_ImageSequenceWidget_0_0, 4, &ImageBatt4);
     Screen0_ImageSequenceWidget_0_0->fn->setImageDelay(Screen0_ImageSequenceWidget_0_0, 4, 1000);
+    Screen0_ImageSequenceWidget_0_0->fn->setImageChangedEventCallback(Screen0_ImageSequenceWidget_0_0, event_Screen0_ImageSequenceWidget_0_0_OnImageChanged);
     root0->fn->addChild(root0, (leWidget*)Screen0_ImageSequenceWidget_0_0);
 
     Screen0_ImageSequenceWidget_0_1 = leImageSequenceWidget_New();
@@ -240,6 +242,14 @@ leResult screenShow_Screen0(void)
     Screen0_ImageSequenceWidget_0->fn->setImageDelay(Screen0_ImageSequenceWidget_0, 3, 500);
     root0->fn->addChild(root0, (leWidget*)Screen0_ImageSequenceWidget_0);
 
+    Screen0_LabelWidget_1 = leLabelWidget_New();
+    Screen0_LabelWidget_1->fn->setPosition(Screen0_LabelWidget_1, 438, 34);
+    Screen0_LabelWidget_1->fn->setSize(Screen0_LabelWidget_1, 42, 29);
+    Screen0_LabelWidget_1->fn->setBackgroundType(Screen0_LabelWidget_1, LE_WIDGET_BACKGROUND_NONE);
+    Screen0_LabelWidget_1->fn->setHAlignment(Screen0_LabelWidget_1, LE_HALIGN_CENTER);
+    Screen0_LabelWidget_1->fn->setString(Screen0_LabelWidget_1, (leString*)&string_Battery0);
+    root0->fn->addChild(root0, (leWidget*)Screen0_LabelWidget_1);
+
     leAddRootWidget(root0, 0);
     leSetLayerColorMode(0, LE_COLOR_MODE_RGB_565);
 
@@ -276,6 +286,7 @@ void screenHide_Screen0(void)
     Screen0_ButtonWidget_0_1 = NULL;
     Screen0_ButtonWidget_0_1_0 = NULL;
     Screen0_ImageSequenceWidget_0 = NULL;
+    Screen0_LabelWidget_1 = NULL;
 
 
     showing = LE_FALSE;

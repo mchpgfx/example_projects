@@ -29,11 +29,13 @@ extern leLabelWidget* Screen0_LabelWidget_0_1;
 extern leButtonWidget* Screen0_ButtonWidget_0_1;
 extern leButtonWidget* Screen0_ButtonWidget_0_1_0;
 extern leImageSequenceWidget* Screen0_ImageSequenceWidget_0;
+extern leLabelWidget* Screen0_LabelWidget_1;
 
 // event handlers
 // !!THESE MUST BE IMPLEMENTED IN THE APPLICATION CODE!!
 void event_Screen0_ButtonWidget_0_OnReleased(leButtonWidget* btn);
 void event_Screen0_ButtonWidget_0_0_OnReleased(leButtonWidget* btn);
+void event_Screen0_ImageSequenceWidget_0_0_OnImageChanged(leImageSequenceWidget* wgt);
 void event_Screen0_ButtonWidget_0_1_OnReleased(leButtonWidget* btn);
 void event_Screen0_ButtonWidget_0_1_0_OnReleased(leButtonWidget* btn);
 

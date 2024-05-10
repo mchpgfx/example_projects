@@ -449,7 +449,7 @@ extern leImage raining4;
  * Baseline:     13
  * Style:        Antialias
  * Glyph Count:  95
- * Range Count:  14
+ * Range Count:  17
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSans_Regular;
@@ -458,29 +458,39 @@ extern leRasterFont NotoSans_Regular;
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   6
+ * String Count:   11
  *****************************************************************************/
 
 // language IDs
 #define language_Default    0
 
 // string IDs
-#define stringID_Easy    0
-#define stringID_No_Repeat    1
-#define stringID_Fast    2
-#define stringID_Play    3
-#define stringID_Repeat    4
-#define stringID_Smart    5
+#define stringID_Battery2    0
+#define stringID_Battery4    1
+#define stringID_Easy    2
+#define stringID_No_Repeat    3
+#define stringID_Fast    4
+#define stringID_Play    5
+#define stringID_Repeat    6
+#define stringID_Battery0    7
+#define stringID_Battery3    8
+#define stringID_Battery1    9
+#define stringID_Smart    10
 
 extern const leStringTable stringTable;
 
 
 // string list
+extern leTableString string_Battery2;
+extern leTableString string_Battery4;
 extern leTableString string_Easy;
 extern leTableString string_No_Repeat;
 extern leTableString string_Fast;
 extern leTableString string_Play;
 extern leTableString string_Repeat;
+extern leTableString string_Battery0;
+extern leTableString string_Battery3;
+extern leTableString string_Battery1;
 extern leTableString string_Smart;
 
 void initializeStrings(void);

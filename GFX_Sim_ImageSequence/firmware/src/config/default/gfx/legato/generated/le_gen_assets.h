@@ -367,6 +367,78 @@ extern leImage Plus;
  ***********************************/
 extern leImage Minus;
 
+/*********************************
+ * Legato Image Asset
+ * Name:   play1
+ * Size:   65x65 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage play1;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   play
+ * Size:   65x65 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage play;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   stop1
+ * Size:   65x65 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage stop1;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   stop
+ * Size:   65x65 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage stop;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   raining1
+ * Size:   80x80 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage raining1;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   raining2
+ * Size:   80x80 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage raining2;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   raining3
+ * Size:   80x80 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage raining3;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   raining4
+ * Size:   80x80 pixels
+ * Type:   RGB Data
+ * Format: RGB_888
+ ***********************************/
+extern leImage raining4;
+
 /*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/
@@ -377,7 +449,7 @@ extern leImage Minus;
  * Baseline:     13
  * Style:        Antialias
  * Glyph Count:  95
- * Range Count:  12
+ * Range Count:  14
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSans_Regular;
@@ -386,7 +458,7 @@ extern leRasterFont NotoSans_Regular;
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   5
+ * String Count:   6
  *****************************************************************************/
 
 // language IDs
@@ -396,8 +468,9 @@ extern leRasterFont NotoSans_Regular;
 #define stringID_Easy    0
 #define stringID_No_Repeat    1
 #define stringID_Fast    2
-#define stringID_Repeat    3
-#define stringID_Smart    4
+#define stringID_Play    3
+#define stringID_Repeat    4
+#define stringID_Smart    5
 
 extern const leStringTable stringTable;
 
@@ -406,6 +479,7 @@ extern const leStringTable stringTable;
 extern leTableString string_Easy;
 extern leTableString string_No_Repeat;
 extern leTableString string_Fast;
+extern leTableString string_Play;
 extern leTableString string_Repeat;
 extern leTableString string_Smart;
 

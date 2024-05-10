@@ -80,7 +80,7 @@ void Legato_Tasks(void)
 
             legato_updateScreenState();
 
-            leUpdate(0);
+            leUpdate(10);
 
             break;
         }

@@ -28,6 +28,11 @@
 
 #include "system/input/sys_input.h"
 
+// Application delta time query interface
+// The application must implement this function and return an unsigned integer value
+// representing the delta time (typically in milliseconds) since the last update
+uint32_t app_Legato_QueryDeltaTime(void);
+
 // Input System Service interface code
 SYS_INP_InputListener inputListener;
 
@@ -80,7 +85,7 @@ void Legato_Tasks(void)
 
             legato_updateScreenState();
 
-            leUpdate(10);
+            leUpdate(app_Legato_QueryDeltaTime());
 
             break;
         }

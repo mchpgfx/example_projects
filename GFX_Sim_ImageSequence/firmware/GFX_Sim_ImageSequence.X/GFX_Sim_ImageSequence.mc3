@@ -4255,7 +4255,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_harmony.c</file>
-         <hash>36c31abc6bcd91d7c298d51d6b6e71eb8240659f35f5b6ddb74d5cc2c3a7b4c3</hash>
+         <hash>1ccf34e00b65865090f776b6b9ab300575f1d8f9b1176c945b2c52edfc0f930a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_harmony.h</file>
@@ -4283,7 +4283,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>5418249d8ae8add42d9d0abf7c5d396a889d116be3f566c13bc505eba5d60c23</hash>
+         <hash>3bcadb0937fc339ea61183184f5d4d151c981921a48d7f2ae3f17e48cb168bc7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>

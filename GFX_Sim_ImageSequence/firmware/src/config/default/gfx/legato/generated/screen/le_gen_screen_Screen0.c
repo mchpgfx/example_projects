@@ -209,7 +209,7 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_LabelWidget_0_1);
 
     Screen0_ButtonWidget_0_1 = leButtonWidget_New();
-    Screen0_ButtonWidget_0_1->fn->setPosition(Screen0_ButtonWidget_0_1, 205, 389);
+    Screen0_ButtonWidget_0_1->fn->setPosition(Screen0_ButtonWidget_0_1, 330, 395);
     Screen0_ButtonWidget_0_1->fn->setSize(Screen0_ButtonWidget_0_1, 65, 65);
     Screen0_ButtonWidget_0_1->fn->setPressedImage(Screen0_ButtonWidget_0_1, (leImage*)&play1);
     Screen0_ButtonWidget_0_1->fn->setReleasedImage(Screen0_ButtonWidget_0_1, (leImage*)&play);
@@ -217,7 +217,7 @@ leResult screenShow_Screen0(void)
     root0->fn->addChild(root0, (leWidget*)Screen0_ButtonWidget_0_1);
 
     Screen0_ButtonWidget_0_1_0 = leButtonWidget_New();
-    Screen0_ButtonWidget_0_1_0->fn->setPosition(Screen0_ButtonWidget_0_1_0, 333, 390);
+    Screen0_ButtonWidget_0_1_0->fn->setPosition(Screen0_ButtonWidget_0_1_0, 206, 395);
     Screen0_ButtonWidget_0_1_0->fn->setSize(Screen0_ButtonWidget_0_1_0, 65, 65);
     Screen0_ButtonWidget_0_1_0->fn->setPressedImage(Screen0_ButtonWidget_0_1_0, (leImage*)&stop1);
     Screen0_ButtonWidget_0_1_0->fn->setReleasedImage(Screen0_ButtonWidget_0_1_0, (leImage*)&stop);

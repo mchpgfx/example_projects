@@ -46,7 +46,7 @@ extern "C" {
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-#define TARGET 1
+//#define TARGET 1
 #define LAYER_0_CANVAS_ID 0
 #define LAYER_1_CANVAS_ID 1
 #define CABLE_ANIMATE_CANVAS_ID 2

@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: evCharger
-creation_date: 2024-05-08T09:09:23.022-07:00[America/Los_Angeles]
+creation_date: 2024-05-30T11:08:00.149-07:00[America/Los_Angeles]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
@@ -20,5 +20,5 @@ packs: {name: SAM9X6_DFP, version: 1.8.216}
 modules:
 - {name: core, type: HARMONY, version: v3.13.4}
 - {name: csp, type: HARMONY, version: v3.18.5}
-- {name: gfx, type: HARMONY, version: v3.14.1}
+- {name: gfx, type: HARMONY, version: composerRemastered_windows}
 - {name: bsp, type: HARMONY, version: v3.18.0}

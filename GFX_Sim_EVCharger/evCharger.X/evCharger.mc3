@@ -3430,7 +3430,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;562&quot; canvasWidth=&quot;889&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;540&quot; canvasWidth=&quot;966&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -3442,16 +3442,16 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drv_i2c&quot; x=&quot;156&quot; y=&quot;120&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;flexcom6&quot; x=&quot;8&quot; y=&quot;132&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_canvas&quot; x=&quot;715&quot; y=&quot;269&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_canvas&quot; x=&quot;676&quot; y=&quot;286&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_disp_pdatm5000_800x480&quot; x=&quot;59&quot; y=&quot;289&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_hal_le&quot; x=&quot;732&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_legato&quot; x=&quot;766&quot; y=&quot;147&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_maxtouch_controller&quot; x=&quot;303&quot; y=&quot;187&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_legato&quot; x=&quot;851&quot; y=&quot;196&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_maxtouch_controller&quot; x=&quot;286&quot; y=&quot;186&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;lcdc&quot; x=&quot;173&quot; y=&quot;430&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;le_gfx_gfx2d&quot; x=&quot;493&quot; y=&quot;128&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;313&quot; y=&quot;330&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;288&quot; y=&quot;315&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;legato_gfx_pda_tm5000&quot; x=&quot;251&quot; y=&quot;46&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;mgs_web_sim&quot; x=&quot;507&quot; y=&quot;264&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;mgs_web_sim&quot; x=&quot;475&quot; y=&quot;287&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;plib_gfx2d&quot; x=&quot;320&quot; y=&quot;102&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;rtc&quot; x=&quot;730&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;sys_input&quot; x=&quot;9&quot; y=&quot;50&quot;/&gt;
@@ -8902,16 +8902,6 @@
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;gpu_driver&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_gfx2d&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;LE&amp;amp;#160;GPU&amp;amp;#160;Driver&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
     &lt;/Attachments&gt;
   &lt;/gfx_legato&gt;
 &lt;/gfx_legato&gt;
@@ -8926,7 +8916,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
   &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;LeGPUConnected&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_legato&gt;
 &lt;/gfx_legato&gt;
@@ -9162,16 +9152,6 @@
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
-      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;LE GPU Driver&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_legato&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gpu_driver&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
     &lt;/Attachments&gt;
   &lt;/le_gfx_gfx2d&gt;
 &lt;/le_gfx_gfx2d&gt;
@@ -12079,7 +12059,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>231408a43f8b9c3b13c7bcb990ad1822fe2f6b855b10dc8b211be33cb1b09f14</hash>
+         <hash>802df3e70ccb86f3d0b9a60b872e0cf570fcdb1e5afa137a39340d475b4807c6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -12155,7 +12135,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\driver\gfx_driver.h</file>
-         <hash>99c4a55ae198e618fd3590a98f219c38882bde956dc022215ef66df01b108936</hash>
+         <hash>c49e46dfed4d9a1436d5913fe010c723fd41303c85f712b600ef7a146c513edc</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\driver\processor\gfx2d\drv_gfx2d.c</file>
@@ -12323,11 +12303,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\image\le_gen_images.c</file>
-         <hash>7e78939430acdd499c2d2588b09a70802c0d74c6b7f3f33b8d3355d13b8f4a20</hash>
+         <hash>f7b3e000b8939ddf6ce2e774e30bcfceef6ed83ee59a8e17335775da1e1c77aa</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>8a602063c5895b5bb159675a05ced4da486256e08ed3bb2cd737477848f11715</hash>
+         <hash>269a5453a9097de13d3f3980e5c5d2b47bcb515fca1f7b7e539cb00ba1c49cda</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -12359,11 +12339,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_stringtable.c</file>
-         <hash>bbff1c13b5ab7d41b4ded4181227c6846907c67d7c5968cc3baa5ec4a75b48c4</hash>
+         <hash>f204a8e3075b4b76e969860f7b4c0dbc838cdf98683ae97640892ec0ef770ff8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>04e391b3d6882b085681d701b21c0263ab9e509c82088c3c354ebf82d9044abc</hash>
+         <hash>934c26c7fa690680a89e6a2d9f5a660c4a788bb607d257f9a05d26b99c0ab415</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>
@@ -12791,11 +12771,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\imagesequence\legato_widget_imagesequence.c</file>
-         <hash>a65278b8833e71ccf0d999b4c65a4ef65fdd165076c1d36d3d99717945657c6e</hash>
+         <hash>f0cc27ac502df5cae723308a1cd69e34260a943cc6c1e8b0cb95f9f45c7e37eb</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\imagesequence\legato_widget_imagesequence.h</file>
-         <hash>086f9e4bb1dab80958c03075a8ffba4d6cda022a62592107fcfc2fa46879aaea</hash>
+         <hash>5e20f24dbb5786c2c6fb6cc5363c62363a079bc15f886f5d5af4f4d701cb0d6e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\imagesequence\legato_widget_imagesequence_skin_classic.c</file>
@@ -13043,7 +13023,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>e95073cde5e37d2ef7f2d90bb8427faa7b492f5178fe8a127fd8a418baac24a3</hash>
+         <hash>eb61ef8580dd0271ed62522efe53dc237af7ab52b6492f2bc371add81bc58172</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>

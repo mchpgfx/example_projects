@@ -60,7 +60,6 @@ void UpdateTime_Label (void);
 void calculate_meter_change(void);
 uint8_t screensaver_cnt = 0;
 bool animate_cable = true;
-uint32_t battery_image =0;
 
 static unsigned int ssIntervalMS = 10000;
 static unsigned int tickIntervalMS = 100;
@@ -104,8 +103,8 @@ void ShowScene1(void)
         calculate_meter_change();
         update_meterLabels(); 
         Screen0_ButtonWidget_0->fn->setEnabled(Screen0_ButtonWidget_0, LE_FALSE);
-		/* Setting battery_image to 1 if coming from scene0 */
-        battery_image = 1;
+		/*Task 5: Set Screen0_ImageSequenceWidget_0 widget with the image index 1 if coming from scene0 */
+        Screen0_ImageSequenceWidget_0->fn->showImage(Screen0_ImageSequenceWidget_0, 1);
     }
     else if(getScreen()== DEMO_SCREEN2)
     {
@@ -123,11 +122,6 @@ void ShowScene1(void)
 
     setScreen(DEMO_SCREEN1);
     animate_cable = true;        
- 
-	/*Task 5: Set Screen0_ImageSequenceWidget_0 widget with the battery_image index; battery_image is 1 if coming from scene0 
-	else it is last known vaue stored before going from scene 1 to 2 */
-    Screen0_ImageSequenceWidget_0->fn->showImage(Screen0_ImageSequenceWidget_0, battery_image);
-
     Screen0_ButtonWidget_scene1->fn->setEnabled(Screen0_ButtonWidget_scene1, LE_TRUE);
     Screen0_ButtonWidget_plus->fn->setEnabled(Screen0_ButtonWidget_plus, LE_TRUE);
     Screen0_ButtonWidget_minus->fn->setEnabled(Screen0_ButtonWidget_minus, LE_TRUE);
@@ -168,7 +162,7 @@ void init_Scene1(void)
 
 	/*Setting labels for the RTC Time */
     leFixedString_Constructor(&timeStaticStr,  timeStrStatBuff, TIME_FIXED_STR_SIZE*2);
-    p_percentage.fn->setFont(&timeStaticStr, (leFont*)&NotoSans_28);
+    timeStaticStr.fn->setFont(&timeStaticStr, (leFont*)&NotoMono_14);
 
     // Using a 24hr clock, with 0 based day of week and month (0=Sunday, 0=January)
     // 3-31-2019 23:59:50 Sunday
@@ -358,8 +352,7 @@ void exitScene1(void)
     scene1_FC = false;
     gfxcHideCanvas(CABLE_ANIMATE_CANVAS_ID);  
     gfxcCanvasUpdate(CABLE_ANIMATE_CANVAS_ID);
-	/* Task 5: get the image count to battery_image variable */
-    battery_image = Screen0_ImageSequenceWidget_0->fn->getImageCount(Screen0_ImageSequenceWidget_0);
+
 }
 
 void event_Screen0_ButtonWidget_scene1_OnReleased(leButtonWidget* btn)

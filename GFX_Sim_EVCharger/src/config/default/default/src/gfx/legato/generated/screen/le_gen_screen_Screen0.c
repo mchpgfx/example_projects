@@ -466,7 +466,7 @@ leResult screenShow_Screen0(void)
 
     // layer 2
     root2 = leWidget_New();
-    root2->fn->setSize(root2, 161, 261);
+    root2->fn->setSize(root2, 219, 309);
     root2->fn->setBackgroundType(root2, LE_WIDGET_BACKGROUND_NONE);
     root2->fn->setMargins(root2, 0, 0, 0, 0);
     root2->flags |= LE_WIDGET_IGNOREEVENTS;

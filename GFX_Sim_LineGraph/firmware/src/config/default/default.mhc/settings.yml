@@ -1,0 +1,13 @@
+configName: default
+folderName: Sim_LineGraph
+format_version: v1.0
+frameworkPath: C:\Users\M69522\.mcc\HarmonyContent_instance_2
+processor: SAM9X60
+projectName: Sim_LineGraph
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: SAM9X6_DFP\1.7.85

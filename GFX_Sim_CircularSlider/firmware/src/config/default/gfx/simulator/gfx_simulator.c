@@ -74,9 +74,25 @@ gfxDriverIOCTLResponse GFX_SIM_IOCTL(gfxDriverIOCTLRequest request, void *arg)
 }
 // </editor-fold>
 #else
-// <editor-fold defaultstate="collapsed" desc="Web Simulator Driver">
+// <editor-fold defaultstate="collapsed" desc="Simulator Driver">
 /* Event Subsystem */
 static SDL_Event sdl_event;
+
+static int32_t sanitize_mouse(int32_t value, int32_t min, int32_t max)
+{
+    if (value < min)
+    {
+        return min;
+    }
+    else if (value > max)
+    {
+        return max;
+    }
+    else
+    {
+        return value;
+    }
+}
 
 static void GFX_SIM_ProcessInput(SDL_Event *sdl_event)
 {
@@ -87,20 +103,26 @@ static void GFX_SIM_ProcessInput(SDL_Event *sdl_event)
     case SDL_MOUSEBUTTONUP:
         if (sdl_event->button.button == SDL_BUTTON_LEFT)
         {
-            SYS_INP_InjectTouchUp(0, sdl_event->motion.x, sdl_event->motion.y);
+            SYS_INP_InjectTouchUp(0,
+                                  sanitize_mouse(sdl_event->motion.x, 0, SDL_TOUCH_HOR_RES),
+                                  sanitize_mouse(sdl_event->motion.y, 0, SDL_TOUCH_VER_RES));
             clicked = false;
         }
         break;
     case SDL_MOUSEBUTTONDOWN:
         if (sdl_event->button.button == SDL_BUTTON_LEFT)
         {
-            SYS_INP_InjectTouchDown(0, sdl_event->motion.x, sdl_event->motion.y);
+            SYS_INP_InjectTouchDown(0,
+                                  sanitize_mouse(sdl_event->motion.x, 0, SDL_TOUCH_HOR_RES),
+                                  sanitize_mouse(sdl_event->motion.y, 0, SDL_TOUCH_VER_RES));
             clicked = true;
         }
         break;
     case SDL_MOUSEMOTION:
         if (clicked)
-            SYS_INP_InjectTouchMove(0, sdl_event->motion.x, sdl_event->motion.y);
+            SYS_INP_InjectTouchMove(0,
+                                  sanitize_mouse(sdl_event->motion.x, 0, SDL_TOUCH_HOR_RES),
+                                  sanitize_mouse(sdl_event->motion.y, 0, SDL_TOUCH_VER_RES));
         break;
     case SDL_FINGERUP:
         SYS_INP_InjectTouchUp(sdl_event->tfinger.touchId, sdl_event->tfinger.x * SDL_TOUCH_HOR_RES, sdl_event->tfinger.y * SDL_TOUCH_VER_RES);
@@ -111,6 +133,8 @@ static void GFX_SIM_ProcessInput(SDL_Event *sdl_event)
     case SDL_FINGERMOTION:
         SYS_INP_InjectTouchMove(sdl_event->tfinger.touchId, sdl_event->tfinger.x * SDL_TOUCH_HOR_RES, sdl_event->tfinger.y * SDL_TOUCH_VER_RES);
         break;
+    case SDL_QUIT:
+        exit(0);
     }
 }
 
@@ -321,7 +345,7 @@ void GFX_SIM_Initialize()
                                   SDL_WINDOWPOS_UNDEFINED,
                                   SDL_HOR_RES,
                                   SDL_VER_RES,
-                                  SDL_WINDOW_BORDERLESS);
+                                  SDL_WINDOW_SHOWN | SDL_WINDOW_ALWAYS_ON_TOP);
 
     sdl_renderer = SDL_CreateRenderer(sdl_window, -1, SDL_RENDERER_ACCELERATED);
 
@@ -582,13 +606,13 @@ gfxDriverIOCTLResponse GFX_SIM_IOCTL(gfxDriverIOCTLRequest request,
     {
         rect = (gfxIOCTLArg_LayerRect *)arg;
 
-        if (rect->base.id >= SDL_VIRTUAL_LAYERS)
+        if (rect->layer.id >= SDL_VIRTUAL_LAYERS)
             return GFX_IOCTL_ERROR_UNKNOWN;
 
-        rect->x = drvLayer[rect->base.id].startx;
-        rect->y = drvLayer[rect->base.id].starty;
-        rect->width = drvLayer[rect->base.id].sizex;
-        rect->height = drvLayer[rect->base.id].sizey;
+        rect->x = drvLayer[rect->layer.id].startx;
+        rect->y = drvLayer[rect->layer.id].starty;
+        rect->width = drvLayer[rect->layer.id].sizex;
+        rect->height = drvLayer[rect->layer.id].sizey;
 
         return GFX_IOCTL_OK;
     }

@@ -21,8 +21,6 @@ extern leLabelWidget* Screen0_LabelSliderVal;
 // event handlers
 // !!THESE MUST BE IMPLEMENTED IN THE APPLICATION CODE!!
 void event_Screen0_CircularSliderWidget_0_OnValueChanged(leCircularSliderWidget* sld, int32_t val);
-void event_Screen0_CircularSliderWidget_0_OnPressed(leCircularSliderWidget* sld, int32_t val);
-void event_Screen0_CircularSliderWidget_0_OnReleased(leCircularSliderWidget* sld, int32_t val);
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY

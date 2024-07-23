@@ -13,5 +13,9 @@ circular = true
 responsive = true
 rtos_enabled = false
 c_flags = "-O1"
-link_flags = "-sINITIAL_MEMORY=32MB -sSTACK_SIZE=64KB -sALLOW_MEMORY_GROWTH -g"
+link_flags = "-sINITIAL_MEMORY=32MB -sSTACK_SIZE=64KB -sALLOW_MEMORY_GROWTH"
 applications = ["app",]
+[properties.console]
+enable = false
+timestamp = true
+closed = true

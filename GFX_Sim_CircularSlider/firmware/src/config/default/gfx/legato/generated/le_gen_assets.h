@@ -77,7 +77,7 @@ extern leImage coolBackgroundborder;
  * Legato Font Asset
  * Name:         NotoSanB
  * Height:       21
- * Baseline:     58
+ * Baseline:     19
  * Style:        Antialias
  * Glyph Count:  95
  * Range Count:  2

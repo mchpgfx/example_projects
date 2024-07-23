@@ -69,23 +69,17 @@ APP_DATA appData;
 // Section: Application Callback Functions
 // *****************************************************************************
 // *****************************************************************************
-
+/* When the button on the circle slider is moved, the Screen0_LabelSliderVal 
+ * label displays the current value of the circle slider widget passed by the
+ * val parameter */
 void event_Screen0_CircularSliderWidget_0_OnValueChanged(leCircularSliderWidget* sld, int32_t val)
 {
     memset(cSliderCharBuffer, 0, sizeof(cSliderCharBuffer));
     sprintf(cSliderCharBuffer, "%ld", val);
     p_SliderValstring.fn->setFromCStr(&p_SliderValstring, cSliderCharBuffer);
     Screen0_LabelSliderVal->fn->setString(Screen0_LabelSliderVal, (leString*)&p_SliderValstring);
-    printf("%ld\r\n", val);
 }
-void event_Screen0_CircularSliderWidget_0_OnPressed(leCircularSliderWidget* sld, int32_t val)
-{
-    //printf("!\r\n");
-}
-void event_Screen0_CircularSliderWidget_0_OnReleased(leCircularSliderWidget* sld, int32_t val)
-{
-    // printf("^\r\n");
-}
+
 
 
 // *****************************************************************************

@@ -5,6 +5,8 @@ static leWidget* root0;
 
 leWidget* Screen0_BackgroundPanel;
 leButtonWidget* Screen0_ButtonWidget_0;
+leWidget* Screen0_PanelExample;
+leWidget* Screen0_PanelExample1;
 
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
@@ -36,17 +38,30 @@ leResult screenShow_Screen0(void)
     Screen0_BackgroundPanel->fn->setPosition(Screen0_BackgroundPanel, 0, 0);
     Screen0_BackgroundPanel->fn->setSize(Screen0_BackgroundPanel, 480, 272);
     Screen0_BackgroundPanel->fn->setScheme(Screen0_BackgroundPanel, &WhiteScheme);
-    Screen0_BackgroundPanel->fn->setBorderType(Screen0_BackgroundPanel, LE_WIDGET_BORDER_BEVEL);
     root0->fn->addChild(root0, (leWidget*)Screen0_BackgroundPanel);
 
     Screen0_ButtonWidget_0 = leButtonWidget_New();
-    Screen0_ButtonWidget_0->fn->setPosition(Screen0_ButtonWidget_0, 163, 113);
+    Screen0_ButtonWidget_0->fn->setPosition(Screen0_ButtonWidget_0, 39, 110);
     Screen0_ButtonWidget_0->fn->setSize(Screen0_ButtonWidget_0, 126, 35);
     Screen0_ButtonWidget_0->fn->setScheme(Screen0_ButtonWidget_0, &BlueScheme);
     Screen0_ButtonWidget_0->fn->setString(Screen0_ButtonWidget_0, (leString*)&string_panel);
     Screen0_ButtonWidget_0->fn->setPressedEventCallback(Screen0_ButtonWidget_0, event_Screen0_ButtonWidget_0_OnPressed);
     Screen0_ButtonWidget_0->fn->setReleasedEventCallback(Screen0_ButtonWidget_0, event_Screen0_ButtonWidget_0_OnReleased);
     root0->fn->addChild(root0, (leWidget*)Screen0_ButtonWidget_0);
+
+    Screen0_PanelExample = leWidget_New();
+    Screen0_PanelExample->fn->setPosition(Screen0_PanelExample, 256, 23);
+    Screen0_PanelExample->fn->setSize(Screen0_PanelExample, 140, 103);
+    Screen0_PanelExample->fn->setScheme(Screen0_PanelExample, &YellowScheme);
+    Screen0_PanelExample->fn->setBorderType(Screen0_PanelExample, LE_WIDGET_BORDER_BEVEL);
+    root0->fn->addChild(root0, (leWidget*)Screen0_PanelExample);
+
+    Screen0_PanelExample1 = leWidget_New();
+    Screen0_PanelExample1->fn->setPosition(Screen0_PanelExample1, 257, 145);
+    Screen0_PanelExample1->fn->setSize(Screen0_PanelExample1, 140, 103);
+    Screen0_PanelExample1->fn->setScheme(Screen0_PanelExample1, &OrangeScheme);
+    Screen0_PanelExample1->fn->setBorderType(Screen0_PanelExample1, LE_WIDGET_BORDER_BEVEL);
+    root0->fn->addChild(root0, (leWidget*)Screen0_PanelExample1);
 
     leAddRootWidget(root0, 0);
     leSetLayerColorMode(0, LE_COLOR_MODE_RGB_565);
@@ -70,6 +85,8 @@ void screenHide_Screen0(void)
 
     Screen0_BackgroundPanel = NULL;
     Screen0_ButtonWidget_0 = NULL;
+    Screen0_PanelExample = NULL;
+    Screen0_PanelExample1 = NULL;
 
 
     showing = LE_FALSE;

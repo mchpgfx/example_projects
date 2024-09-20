@@ -61,14 +61,15 @@ APP_DATA appData;
 
 void event_Screen0_ButtonWidget_0_OnPressed(leButtonWidget* btn){
  
-    Screen0_BackgroundPanel->fn->setScheme(Screen0_BackgroundPanel, &YellowScheme);
+    Screen0_PanelExample->fn->setScheme(Screen0_PanelExample, &GreenScheme);
+    Screen0_PanelExample1->fn->setScheme(Screen0_PanelExample1, &BlueScheme);
 
 }
 
 void event_Screen0_ButtonWidget_0_OnReleased(leButtonWidget* btn){
  
-    Screen0_BackgroundPanel->fn->setScheme(Screen0_BackgroundPanel, &WhiteScheme);
-
+    Screen0_PanelExample->fn->setScheme(Screen0_PanelExample, &YellowScheme);
+    Screen0_PanelExample1->fn->setScheme(Screen0_PanelExample1, &OrangeScheme);
 }
 
 

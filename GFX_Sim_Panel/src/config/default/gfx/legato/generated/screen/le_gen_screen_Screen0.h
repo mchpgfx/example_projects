@@ -15,6 +15,8 @@ extern "C" {
 // screen member widget declarations
 extern leWidget* Screen0_BackgroundPanel;
 extern leButtonWidget* Screen0_ButtonWidget_0;
+extern leWidget* Screen0_PanelExample;
+extern leWidget* Screen0_PanelExample1;
 
 // event handlers
 // !!THESE MUST BE IMPLEMENTED IN THE APPLICATION CODE!!

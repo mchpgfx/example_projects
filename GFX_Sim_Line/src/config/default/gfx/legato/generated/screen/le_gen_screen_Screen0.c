@@ -34,16 +34,15 @@ leResult screenShow_Screen0(void)
     root0->flags |= LE_WIDGET_IGNOREPICK;
 
     Screen0_PanelWidget_0 = leWidget_New();
-    Screen0_PanelWidget_0->fn->setPosition(Screen0_PanelWidget_0, 0, -1);
+    Screen0_PanelWidget_0->fn->setPosition(Screen0_PanelWidget_0, 0, 0);
     Screen0_PanelWidget_0->fn->setSize(Screen0_PanelWidget_0, 480, 275);
     Screen0_PanelWidget_0->fn->setScheme(Screen0_PanelWidget_0, &WhiteScheme);
     root0->fn->addChild(root0, (leWidget*)Screen0_PanelWidget_0);
 
     Screen0_LineWidget_0 = leLineWidget_New();
-    Screen0_LineWidget_0->fn->setPosition(Screen0_LineWidget_0, 182, 58);
-    Screen0_LineWidget_0->fn->setSize(Screen0_LineWidget_0, 105, 105);
-    Screen0_LineWidget_0->fn->setScheme(Screen0_LineWidget_0, &BlueScheme);
-    Screen0_LineWidget_0->fn->setBackgroundType(Screen0_LineWidget_0, LE_WIDGET_BACKGROUND_NONE);
+    Screen0_LineWidget_0->fn->setPosition(Screen0_LineWidget_0, 186, 67);
+    Screen0_LineWidget_0->fn->setSize(Screen0_LineWidget_0, 100, 98);
+    Screen0_LineWidget_0->fn->setScheme(Screen0_LineWidget_0, &LineScheme);
     Screen0_LineWidget_0->fn->setStartPoint(Screen0_LineWidget_0, 0, 50);
     Screen0_LineWidget_0->fn->setEndPoint(Screen0_LineWidget_0, 100, 50);
     root0->fn->addChild(root0, (leWidget*)Screen0_LineWidget_0);

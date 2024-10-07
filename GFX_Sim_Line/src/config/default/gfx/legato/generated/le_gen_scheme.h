@@ -6,7 +6,7 @@
 extern const leScheme WhiteScheme;
 extern const leScheme RedScheme;
 extern const leScheme GreenScheme;
-extern const leScheme BlueScheme;
+extern const leScheme LineScheme;
 extern const leScheme ButtonScheme;
 
 // DOM-IGNORE-BEGIN

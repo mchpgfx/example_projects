@@ -94,13 +94,13 @@ void event_Screen0_ButtonWidget_0_OnReleased(leButtonWidget* btn)
     Screen0_LineWidget_0->fn->setStartPoint(Screen0_LineWidget_0, newStartX, newStartY);
     Screen0_LineWidget_0->fn->setEndPoint(Screen0_LineWidget_0, newEndX, newEndY);
     
-    if ((Screen0_LineWidget_0->fn->getScheme(Screen0_LineWidget_0) == &BlueScheme))
+    if ((Screen0_LineWidget_0->fn->getScheme(Screen0_LineWidget_0) == &LineScheme))
     {
         Screen0_LineWidget_0->fn->setScheme(Screen0_LineWidget_0, &RedScheme);
     }
     else 
     {
-        Screen0_LineWidget_0->fn->setScheme(Screen0_LineWidget_0, &BlueScheme);
+        Screen0_LineWidget_0->fn->setScheme(Screen0_LineWidget_0, &LineScheme);
     }
    
 }

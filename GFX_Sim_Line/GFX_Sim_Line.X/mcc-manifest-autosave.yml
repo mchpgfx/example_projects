@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: GFX_Sim_Line
-creation_date: 2024-10-07T16:58:30.533+05:30[Asia/Calcutta]
+creation_date: 2024-11-06T14:31:33.676+05:30[Asia/Calcutta]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
@@ -20,3 +20,4 @@ packs: {name: PIC32MZ-DA_DFP, version: 1.5.231}
 modules:
 - {name: csp, type: HARMONY, version: v3.19.6}
 - {name: core, type: HARMONY, version: v3.13.5}
+- {name: gfx, type: HARMONY, version: v3.15.3}

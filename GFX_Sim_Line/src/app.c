@@ -63,32 +63,32 @@ APP_DATA appData;
 void event_Screen0_ButtonWidget_0_OnReleased(leButtonWidget* btn)
 {
     // Get the current start and end points of the line
-    int16_t startX = Screen0_LineWidget_0->x1;
-    int16_t startY = Screen0_LineWidget_0->y1;
-    int16_t endX = Screen0_LineWidget_0->x2;
-    int16_t endY = Screen0_LineWidget_0->y2;
+    int32_t startX = Screen0_LineWidget_0->x1;
+    int32_t startY = Screen0_LineWidget_0->y1;
+    int32_t endX = Screen0_LineWidget_0->x2;
+    int32_t endY = Screen0_LineWidget_0->y2;
 
     // Calculate the center of the line
-    int16_t centerX = (startX + endX) / 2;
-    int16_t centerY = (startY + endY) / 2;
+    int32_t centerX = (startX + endX) / 2;
+    int32_t centerY = (startY + endY) / 2;
 
     // Translate points to origin (center of the line)
-    int16_t translatedStartX = startX - centerX;
-    int16_t translatedStartY = startY - centerY;
-    int16_t translatedEndX = endX - centerX;
-    int16_t translatedEndY = endY - centerY;
+    int32_t translatedStartX = startX - centerX;
+    int32_t translatedStartY = startY - centerY;
+    int32_t translatedEndX = endX - centerX;
+    int32_t translatedEndY = endY - centerY;
 
     // Rotate points by 90 degrees
-    int16_t rotatedStartX = -translatedStartY;
-    int16_t rotatedStartY = translatedStartX;
-    int16_t rotatedEndX = -translatedEndY;
-    int16_t rotatedEndY = translatedEndX;
+    int32_t rotatedStartX = -translatedStartY;
+    int32_t rotatedStartY = translatedStartX;
+    int32_t rotatedEndX = -translatedEndY;
+    int32_t rotatedEndY = translatedEndX;
 
     // Translate points back to original position
-    int16_t newStartX = rotatedStartX + centerX;
-    int16_t newStartY = rotatedStartY + centerY;
-    int16_t newEndX = rotatedEndX + centerX;
-    int16_t newEndY = rotatedEndY + centerY;
+    int32_t newStartX = rotatedStartX + centerX;
+    int32_t newStartY = rotatedStartY + centerY;
+    int32_t newEndX = rotatedEndX + centerX;
+    int32_t newEndY = rotatedEndY + centerY;
 
     // Set the new start and end points
     Screen0_LineWidget_0->fn->setStartPoint(Screen0_LineWidget_0, newStartX, newStartY);

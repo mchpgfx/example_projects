@@ -142,9 +142,9 @@ leResult screenShow_Screen0(void)
     Screen0_SliderWidget_0->fn->setBackgroundType(Screen0_SliderWidget_0, LE_WIDGET_BACKGROUND_NONE);
     Screen0_SliderWidget_0->fn->setBorderType(Screen0_SliderWidget_0, LE_WIDGET_BORDER_LINE);
     Screen0_SliderWidget_0->fn->setOrientation(Screen0_SliderWidget_0, LE_ORIENTATION_HORIZONTAL, LE_FALSE);
-    Screen0_SliderWidget_0->fn->setMinimumValue(Screen0_SliderWidget_0, 4);
-    Screen0_SliderWidget_0->fn->setMaximumValue(Screen0_SliderWidget_0, 20);
-    Screen0_SliderWidget_0->fn->setValue(Screen0_SliderWidget_0, 4);
+    Screen0_SliderWidget_0->fn->setMinimumValue(Screen0_SliderWidget_0, 1);
+    Screen0_SliderWidget_0->fn->setMaximumValue(Screen0_SliderWidget_0, 5);
+    Screen0_SliderWidget_0->fn->setValue(Screen0_SliderWidget_0, 1);
     Screen0_SliderWidget_0->fn->setGripSize(Screen0_SliderWidget_0, 14);
     Screen0_SliderWidget_0->fn->setValueChangedEventCallback(Screen0_SliderWidget_0, event_Screen0_SliderWidget_0_OnValueChanged);
     root0->fn->addChild(root0, (leWidget*)Screen0_SliderWidget_0);

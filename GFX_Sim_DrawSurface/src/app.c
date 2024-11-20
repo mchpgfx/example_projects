@@ -217,6 +217,10 @@ leBool event_Screen0_DrawSurfaceWidget_0_OnDraw(leDrawSurfaceWidget* sfc, leRect
         }
         case SCRN_DRAW_RAND:
         {
+            /*WARNING - modifying pixel by pixel all the widget area may produce screen tearing on hardware devices
+             *        - issue is not seen on simulator due to drawing speed
+             *        - this method was only used here for demo purpose on how to modify each pixel
+             */
             for (int i = 0; i < DRAWSURFACE_ARRAY_X_SIZE; i++)
                 for (int j = 0; j < DRAWSURFACE_ARRAY_Y_SIZE; j++)
                     leRenderer_PutPixel_Safe(i + DRAWSURFACE_X_OFFSET,
@@ -278,7 +282,7 @@ void event_Screen0_ButtonWidget_Violet_OnReleased(leButtonWidget* btn)
 
 void event_Screen0_SliderWidget_0_OnValueChanged(leSliderWidget* scr)
 {
-    pointSize = scr->fn->getValue(scr);
+    pointSize = scr->fn->getValue(scr) * DEFAULT_POINT_SIZE;
 }
 
 // *****************************************************************************

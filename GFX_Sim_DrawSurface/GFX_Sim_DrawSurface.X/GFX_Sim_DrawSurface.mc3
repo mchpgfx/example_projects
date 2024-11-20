@@ -3710,7 +3710,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>f50562d76f55e10bf7847cead5ae998c38368ae813916f4f2f9a4b0f5131f8e6</hash>
+         <hash>784609503c961e1029e0bd9d012947f480ca4ffbbbd1fb402bcf498979758ba3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -3938,7 +3938,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>859644cfd3c06b474247de32bd344064057d94730dcf022b830fd46ed92e2116</hash>
+         <hash>be3b55b70641b47dd8477fdce0b08a8d01f28be565e2f8f7a03ae81af25f60e7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>

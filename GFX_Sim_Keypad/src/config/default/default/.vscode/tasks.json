@@ -1,0 +1,47 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cmake",
+      "type": "shell",
+      "hide": true,
+      "icon": { "id": "gear", "color": "terminal.ansiGreen" },
+      "command": "cmake",
+      "args": [
+        "-S src",
+        "-B build",
+        "-G \"MinGW Makefiles\"",
+        {
+          "value": "-DCMAKE_PREFIX_PATH=\"${userHome}\\AppData\\Roaming\\com.microchip.mgsws\\sdk\\sdl2\\cmake\"",
+          "quoting": "strong"
+        }
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": { "executable": "powershell.exe" },
+        "env": {
+          "PATH": "${env:windir}\\System32\\WindowsPowerShell\\v1.0;${userHome}\\AppData\\Roaming\\com.microchip.mgsws\\sdk\\emsdk\\mingw\\7.1.0_64bit\\bin;${userHome}\\AppData\\Roaming\\com.microchip.mgsws\\sdk\\cmake\\bin"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "make",
+      "type": "shell",
+      "icon": { "id": "gear", "color": "terminal.ansiGreen" },
+      "command": "mingw32-make",
+      "args": ["-j${env:NUMBER_OF_PROCESSORS}"],
+      "options": {
+        "cwd": "${workspaceFolder}/build",
+        "shell": { "executable": "powershell.exe" },
+        "env": {
+          "PATH": "${env:windir}\\System32\\WindowsPowerShell\\v1.0;${userHome}\\AppData\\Roaming\\com.microchip.mgsws\\sdk\\emsdk\\mingw\\7.1.0_64bit\\bin;${userHome}\\AppData\\Roaming\\com.microchip.mgsws\\sdk\\cmake\\bin"
+        }
+      },
+      "problemMatcher": [],
+      "dependsOn": ["cmake"]
+    }
+  ]
+}

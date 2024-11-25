@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "MinGW-w64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "~/AppData/Roaming/com.microchip.mgsws/sdk/emsdk/mingw/7.1.0_64bit/x86_64-w64-mingw32/include",
+        "~/AppData/Roaming/com.microchip.mgsws/sdk/sdl2/x86_64-w64-mingw32/include/SDL2"
+      ],
+      "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
+      "compilerPath": "~/AppData/Roaming/com.microchip.mgsws/sdk/emsdk/mingw/7.1.0_64bit/bin/gcc.exe",
+      "cStandard": "c99",
+      "intelliSenseMode": "gcc-x64"
+    }
+  ],
+  "version": 4
+}

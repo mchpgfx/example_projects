@@ -50,7 +50,7 @@ extern "C" {
 // DOM-IGNORE-END
 
 
-#include <toolchain_specifics.h>
+#include "device.h"
 
 #define LE_COHERENT_ATTR                     CACHE_ALIGN
 #define LE_COHERENT_MEMORY                   LE_COHERENT_ATTR

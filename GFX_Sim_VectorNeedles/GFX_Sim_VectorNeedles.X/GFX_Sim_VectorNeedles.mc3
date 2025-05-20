@@ -3704,7 +3704,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>784609503c961e1029e0bd9d012947f480ca4ffbbbd1fb402bcf498979758ba3</hash>
+         <hash>f50562d76f55e10bf7847cead5ae998c38368ae813916f4f2f9a4b0f5131f8e6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -3928,7 +3928,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_init.c</file>
-         <hash>75ffb17636f0083587b55af305ebc83961548c12c397f0c8e8895a21111f9e16</hash>
+         <hash>1a6ee17186d2dda9d37198c719ba7e115cd3298124022fb9005093983ad7d46f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\generated\le_gen_init.h</file>
@@ -4100,7 +4100,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\legato_config.h</file>
-         <hash>d3395a2a75265dbf8a10da45766280e1e69bf8f099c3caf65742eea7add9f91e</hash>
+         <hash>35dca8a21d4018457f9345f57588ac6a7e55033841d86696cfee7a990e69a1f4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\memory\legato_fixedheap.c</file>
@@ -4204,7 +4204,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_stringutils.c</file>
-         <hash>1394864787af92ac726f1112bb743bf620b0bcee496ccf56299f5952b7cf698e</hash>
+         <hash>67aa0cac053fba350b92daf40d636615fa56b4bd3eabb1b93aabd64d991c9f80</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\string\legato_stringutils.h</file>
@@ -4292,7 +4292,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\vector\legato_vector_convexpoly_fill.c</file>
-         <hash>cf03bfad4ac13f73acbee31ee77a50fe0da6062d310aea083106b6cc526ec5a3</hash>
+         <hash>3f4e012c659bc7fadca3e39c467f0f8209991aa61d71171a1c49b8a6d41c3af2</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\vector\legato_vector_hline.c</file>
@@ -4400,7 +4400,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circularslider\legato_widget_circular_slider.c</file>
-         <hash>998f2dea10e1144d446c6c85ffa700d382f6d5b564e90b887e2f019f0dfe866f</hash>
+         <hash>768a8ca6ccf53721d40502a6bdb12748e7bdf4832f1c22ac9343b2c866d80fbb</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\circularslider\legato_widget_circular_slider.h</file>
@@ -4496,7 +4496,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\keypad\legato_widget_keypad.c</file>
-         <hash>ae9cfd22c5fd788079a46d6603f649cd7636450aa54d5deb2a7367ba607218a3</hash>
+         <hash>a545ad32ff5d9503d8757f4cc5f759b73856e21ec03a35b12c895029f0c64750</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\keypad\legato_widget_keypad.h</file>
@@ -4568,7 +4568,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\linegraph\legato_widget_line_graph_skin_classic.c</file>
-         <hash>f096ec470a4e83e29db6e90423a462656ed53c30184ffaecff2d353d99a16c77</hash>
+         <hash>794fcb2340cb663b9205942e9b0cc8b3bf0448396f4afc5d766868eee449b38d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\list\legato_widget_list.c</file>
@@ -4664,7 +4664,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\rectangle\legato_widget_rectangle_skin_classic.c</file>
-         <hash>97e7a1eff02f0e85dda8ca00c021fc0edb6dfbd45357bcf27765bf5a3a8e58da</hash>
+         <hash>7b751dea252e480c17973231b91c6e3d15bed97d6a4baf7214f3c550df14f3b7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\gfx\legato\widget\scrollbar\legato_widget_scrollbar.c</file>

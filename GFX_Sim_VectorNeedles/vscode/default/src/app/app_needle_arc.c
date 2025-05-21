@@ -159,10 +159,10 @@ int APP_UpdateNeedleArc(NEEDLE_ARC_t * needleArc, int32_t startAngle, int32_t sp
             leUtils_RectToScreenSpace((const leWidget*) needleArc->drawWidget, &needleArc->newRect);
 
             //increase the rect size to account for round off errors
-            needleArc->newRect.x -= 4;
-            needleArc->newRect.y -= 4;
-            needleArc->newRect.height += 8;
-            needleArc->newRect.width += 8; 
+            needleArc->newRect.x -= 540;
+            needleArc->newRect.y -= 540;
+            needleArc->newRect.height += 580;
+            needleArc->newRect.width += 580; 
             
             needleArc->drawWidget->fn->_damageArea(needleArc->drawWidget, &needleArc->newRect);  
             needleArc->oldRect = needleArc->newRect;
@@ -205,7 +205,13 @@ int APP_DrawNeedleArc(NEEDLE_ARC_t * needleArc, leColor color)
         attr.mask = LE_STROKEMASK_ALL;
         attr.capStyle = NEEDLEARC_CAPSTYLE;
 
-        leDraw_VectorArcStroke(&origin, rad, needleArc->startAngle * 16, needleArc->span * 16, &attr);  
+        leDraw_VectorArcStroke(&origin, 
+                               rad, 
+                               needleArc->startAngle * 16, 
+                               needleArc->span * 16, 
+                               true, 
+                               LE_REAL_I16_FROM_FLOAT(0.15f), 
+                               &attr);  
     }
     
     return NEEDLE_ARC_SUCCESS;

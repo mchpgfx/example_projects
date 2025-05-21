@@ -29,6 +29,10 @@ static struct Context
     uint32_t hitCount;
     leReal_u8 hitDistance[3];
     leReal_i16 hitRange[3];
+    leVector2 startVector;
+    leReal_i16 oneOverRadius;
+    leReal_i16 fadeAmount;
+    leBool useFade;
 } _context;
 
 static struct leVector_Kernel _kernel;
@@ -785,12 +789,17 @@ static uint8_t _shade_Gradient(struct leVector_Kernel* krn)
     leReal_i16 delta;
     leReal_i16 hardness;
     leReal_i16 dist;
-
+    leReal_i16 maxDist = LE_REAL_I16_MIN;
     delta = 0;
 
     for(uint32_t idx = 0; idx < _context.hitCount; ++idx)
     {
         dist = LE_REAL_U8_TO_I16(leReal_u8_SquareRoot(_context.hitDistance[idx]));
+
+        if (dist > maxDist)
+        {
+            maxDist = dist;
+        }
 
         if(_context.hitRange[idx] == _context.radius)
         {
@@ -819,7 +828,8 @@ static uint8_t _shade_Gradient(struct leVector_Kernel* krn)
         }
         else
         {
-            return 255;
+            //return 255;
+            delta = LE_REAL_I16_ONE;
         }
     }
 
@@ -829,7 +839,31 @@ static uint8_t _shade_Gradient(struct leVector_Kernel* krn)
     }
     else if(delta > LE_REAL_I16_ONE)
     {
-        return 255;
+        //return 255;
+        delta = LE_REAL_I16_ONE;
+    }
+
+    if (_context.useFade)
+    {
+        leVector2 point = _kernel.testPoint;
+        point.y = -point.y;
+        leReal_i16 fade = leVector2_Dot(&_context.startVector, &point);
+
+#define slowButAccurate
+#ifdef slowButAccurate
+        fade = LE_REAL_I16_DIVIDE(fade, maxDist);
+#else
+        fade = LE_REAL_I16_MULTIPLY(fade, _context.oneOverRadius);
+#endif
+
+        fade = fade - LE_REAL_I16_MULTIPLY((LE_REAL_I16_ONE - fade), _context.fadeAmount);
+
+        if (fade < 0)
+        {
+            return 0;
+        }
+
+        delta = LE_REAL_I16_MULTIPLY(delta, fade);
     }
 
     delta = LE_REAL_I16_MULTIPLY(delta, LE_REAL_I16_255);
@@ -906,6 +940,8 @@ void leDraw_VectorArcStroke(const struct leVector2* org,
                             leReal_i16 rad,
                             int32_t start,
                             int32_t span,
+                            leBool useFade,
+                            leReal_i16 fadeLength,
                             const struct leVectorArc_StrokeAttr* attr)
 {
     struct leRect rect;
@@ -920,6 +956,7 @@ void leDraw_VectorArcStroke(const struct leVector2* org,
     _context.start = start;
     _context.span = span;
     _context.convex = LE_TRUE;
+    _context.useFade = useFade;
 
     if(span == 0)
         return;
@@ -932,6 +969,24 @@ void leDraw_VectorArcStroke(const struct leVector2* org,
     }
 
     _context.halfWidth = LE_REAL_I16_DIVIDE(width, LE_REAL_I16_TWO);
+
+    // <faded-arc>
+    if (useFade == LE_TRUE)
+    {
+        leReal_i16 radians = _degreeToRadian(_context.start + _context.span);
+        _context.startVector.x = leReal_i16_Cos(radians);
+        _context.startVector.y = leReal_i16_Sin(radians);
+        _context.oneOverRadius = LE_REAL_I16_DIVIDE(LE_REAL_I16_ONE, _context.radius + _context.halfWidth);
+
+        if (fadeLength < LE_REAL_I16_FROM_FLOAT(0.1f))
+        {
+            fadeLength = LE_REAL_I16_FROM_FLOAT(0.1f);
+        }
+
+        fadeLength = LE_REAL_I16_MULTIPLY(fadeLength, LE_REAL_I16_TWO);
+        _context.fadeAmount = LE_REAL_I16_DIVIDE(LE_REAL_I16_ONE, fadeLength);
+    }
+    // </faded-arc>
 
     if(attr->mask != LE_STROKEMASK_OUTSIDEONLY)
     {

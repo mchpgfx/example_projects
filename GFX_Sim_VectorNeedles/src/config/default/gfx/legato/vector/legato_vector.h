@@ -137,6 +137,8 @@ void leDraw_VectorArcStroke(const struct leVector2* orgin,
                             leReal_i16 radius,
                             int32_t start,
                             int32_t span,
+                            leBool useFade,
+                            leReal_i16 fadeLength,
                             const struct leVectorArc_StrokeAttr* attr);
 
 void leDraw_VectorArcFill(const struct leVector2* orgin,

@@ -1,0 +1,64 @@
+configVersion: 1.0.0
+componentName: gfx_legato
+coreVersion: 5.8.2
+device: SAM9X75
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: gfx_legato
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: gfx
+  type: package
+  version: v3.16.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: gfx_driver
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: mgs_web_sim
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: mgs_web_sim_drv_cap
+            type: String
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: gfx_legato
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: gfx_legato
+          x: '406'
+          y: '220'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    driverInitName:
+      attributes:
+        id: driverInitName
+      children:
+      - children:
+        - attributes:
+            id: gfx_legato
+            value: gfxSimulatorDriver
+          type: Dynamic
+        type: Values
+      type: String
+  userData: {}

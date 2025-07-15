@@ -1,0 +1,237 @@
+configVersion: 1.0.0
+componentName: mgs_web_sim
+coreVersion: 5.8.2
+device: SAM9X75
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: mgs_web_sim
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: gfx
+  type: package
+  version: v3.16.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: mgs_web_sim_drv_cap
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: gfx_legato
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: gfx_driver
+            type: String
+          type: Attributes
+        type: DirectCapability
+      - attributes:
+          id: mgs_web_sim_tmr_cap
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: sys_time
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: sys_time_TMR_dependency
+            type: String
+          type: Attributes
+        type: DirectCapability
+      type: Attachments
+    type: mgs_web_sim
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: mgs_web_sim
+          x: '132'
+          y: '250'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    CORE_SYS_DEF_H:
+      attributes:
+        id: CORE_SYS_DEF_H
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    DisplayType:
+      attributes:
+        id: DisplayType
+      children:
+      - children:
+        - attributes:
+            value: WVGA
+          type: User
+        type: Values
+      type: Combo
+    GFX_DRIVER_C:
+      attributes:
+        id: GFX_DRIVER_C
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    GFX_DRIVER_H:
+      attributes:
+        id: GFX_DRIVER_H
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    GFX_SIM_C:
+      attributes:
+        id: GFX_SIM_C
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    GFX_SIM_H:
+      attributes:
+        id: GFX_SIM_H
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    GFX_SIM_PROPS:
+      attributes:
+        id: GFX_SIM_PROPS
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    TmrTickMode:
+      attributes:
+        id: TmrTickMode
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: TICKLESS
+          type: Dynamic
+        type: Values
+      type: Combo
+    TmrTickRes:
+      attributes:
+        id: TmrTickRes
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'false'
+          type: Boolean
+        type: Attributes
+      type: Integer
+    TotalNumLayers:
+      attributes:
+        id: TotalNumLayers
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: Integer
+    fileGenToggle:
+      attributes:
+        id: fileGenToggle
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    isDispCircular:
+      attributes:
+        id: isDispCircular
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    valDispHorRes:
+      attributes:
+        id: valDispHorRes
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: '800'
+          type: Dynamic
+        type: Values
+      type: Integer
+    valDispVerRes:
+      attributes:
+        id: valDispVerRes
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: '480'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}

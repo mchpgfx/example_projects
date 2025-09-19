@@ -552,8 +552,8 @@ typedef struct leWidget leWidget;
     \
     void               (*_handleEvent)(THIS_TYPE* _this, leEvent* evt); \
     void               (*_validateChildren)(THIS_TYPE* _this); \
-    void               (*_increaseDirtyState)(THIS_TYPE* _this, uint32_t sliderChanged); \
-    void               (*_setDirtyState)(THIS_TYPE* _this, uint32_t sliderChanged); \
+    void               (*_increaseDirtyState)(THIS_TYPE* _this, uint32_t state); \
+    void               (*_setDirtyState)(THIS_TYPE* _this, uint32_t state); \
     void               (*_clearDirtyState)(THIS_TYPE* _this); \
     void               (*_invalidateBorderAreas)(const THIS_TYPE* _this); \
     void               (*_damageArea)(const THIS_TYPE* _this, leRect* rect); \

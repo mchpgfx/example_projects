@@ -71,7 +71,7 @@ leResult _leRawImageDecoder_FrameBufferWriteStage(leRawDecodeState* state)
 {
     memset(&frameBufferWriteStage, 0, sizeof(frameBufferWriteStage));
 
-    frameBufferWriteStage.base.sliderChanged = state;
+    frameBufferWriteStage.base.state = state;
     frameBufferWriteStage.base.exec = stage_FrameBufferWrite;
 
     _leRawImageDecoder_InjectStage(state, (void*) &frameBufferWriteStage);
@@ -99,7 +99,7 @@ leResult _leRawImageDecoder_ImageWriteStage(leRawDecodeState* state)
 {
     memset(&imageWriteStage, 0, sizeof(imageWriteStage));
 
-    imageWriteStage.base.sliderChanged = state;
+    imageWriteStage.base.state = state;
     imageWriteStage.base.exec = stage_ImageWrite;
 
     _leRawImageDecoder_InjectStage(state, (void*)&imageWriteStage);

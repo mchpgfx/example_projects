@@ -42,10 +42,10 @@ static leResult stage_decode(struct InternalReadStage* stage)
 {
     (void)stage; // unused
 
-    leMonoSourceReadOperation* op = &internalReadStage.base.sliderChanged->readOperation[internalReadStage.base.sliderChanged->readIndex];
+    leMonoSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
     // get a pixel from the sourced image
-    stage->base.sliderChanged->writeColor = lePixelBufferGet_Unsafe(&internalReadStage.base.sliderChanged->source->buffer,
+    stage->base.state->writeColor = lePixelBufferGet_Unsafe(&internalReadStage.base.state->source->buffer,
                                                             op->x,
                                                             op->y);
 
@@ -59,7 +59,7 @@ leResult _leMonoImageDecoder_ReadStage_Internal(leMonoDecodeState* state)
     //internalReadStage.dataSize = leColorInfoTable[state->source->buffer.mode].size;
     //internalReadStage.imgBPP = leColorInfoTable[state->source->buffer.mode].bppOrdinal;
 
-    internalReadStage.base.sliderChanged = state;
+    internalReadStage.base.state = state;
     internalReadStage.base.exec = (leResult(*)(struct leMonoDecodeStage*)) stage_decode;
 
     _leMonoImageDecoder_InjectStage(state, (void*)&internalReadStage);

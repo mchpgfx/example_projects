@@ -94,6 +94,7 @@ void _leLabelWidget_GetTextRects(const leLabelWidget* lbl,
     boundingRect->y = kerningRect->y;
 
     leRectClip(kerningRect, &bounds, kerningRect);
+	leRectClip(boundingRect, &bounds, boundingRect);
 
 	// move the draw rect to screen space
     leUtils_RectToScreenSpace((leWidget*)lbl, kerningRect);
@@ -181,7 +182,8 @@ static void onStringStreamFinished(leStreamManager* strm)
 
 static void drawString(leLabelWidget* lbl)
 {
-    leRect boundingRect, kerningRect;
+    leRect boundingRect = leRect_Zero;
+    leRect kerningRect = leRect_Zero;
     leStringRenderRequest req;
 
     _leLabelWidget_GetTextRects(lbl, &boundingRect, &kerningRect);

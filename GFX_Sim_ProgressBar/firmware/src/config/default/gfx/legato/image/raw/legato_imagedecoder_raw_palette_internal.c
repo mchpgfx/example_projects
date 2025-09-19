@@ -48,11 +48,11 @@ static LE_COHERENT_ATTR struct InternalPaletteStage paletteStage;
 
 static leResult stage_lookup(struct InternalPaletteStage* stage)
 {
-    paletteStage.lookupIndex = stage->base.sliderChanged->writeColor;
+    paletteStage.lookupIndex = stage->base.state->writeColor;
 
     // look up the actual color from the palette
-    memcpy(&stage->base.sliderChanged->writeColor,
-           (void*)((uint8_t*)stage->base.sliderChanged->source->palette->header.address + (paletteStage.lookupIndex * paletteStage.paletteSize)),
+    memcpy(&stage->base.state->writeColor,
+           (void*)((uint8_t*)stage->base.state->source->palette->header.address + (paletteStage.lookupIndex * paletteStage.paletteSize)),
            paletteStage.paletteSize);
 
     return LE_SUCCESS;
@@ -62,7 +62,7 @@ leResult _leRawImageDecoder_LookupStage_Internal(leRawDecodeState* state)
 {
     memset(&paletteStage, 0, sizeof(paletteStage));
 
-    paletteStage.base.sliderChanged = state;
+    paletteStage.base.state = state;
 
 	paletteStage.base.exec = (leResult(*)(struct leRawDecodeStage *))stage_lookup;
     paletteStage.paletteSize = leColorInfoTable[state->source->palette->buffer.mode].size;
@@ -96,7 +96,7 @@ leResult _leRawImageDecoder_ImageRenderPostLookupStage(leRawDecodeState* state)
 
     state->needToLookupMaskColor = LE_TRUE;
 
-    imageRenderPostLookupStage.base.sliderChanged = state;
+    imageRenderPostLookupStage.base.state = state;
     imageRenderPostLookupStage.base.exec = stage_imageRenderPostLookup;
 
     _leRawImageDecoder_InjectStage(state, (void*)&imageRenderPostLookupStage);

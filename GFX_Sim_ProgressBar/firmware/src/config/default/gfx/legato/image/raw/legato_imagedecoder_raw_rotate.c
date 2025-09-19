@@ -45,47 +45,47 @@ static leResult stage_rotateNearestNeighborPreRead(struct RotateNearestNeighborP
 {
     lePoint pnt;
 
-    stage->base.sliderChanged->readCount = 1;
+    stage->base.state->readCount = 1;
 
-    pnt.x = stage->base.sliderChanged->colIterator;
-    pnt.y = stage->base.sliderChanged->rowIterator;
+    pnt.x = stage->base.state->colIterator;
+    pnt.y = stage->base.state->rowIterator;
 
     // transform into cartesian space
-    pnt.x -= stage->base.sliderChanged->destRect.width / 2;
-    pnt.y -= stage->base.sliderChanged->destRect.height / 2;
+    pnt.x -= stage->base.state->destRect.width / 2;
+    pnt.y -= stage->base.state->destRect.height / 2;
     pnt.y *= -1;
 
     leRotatePoint(pnt,
                   lePoint_Zero,
-                  stage->base.sliderChanged->angle,
+                  stage->base.state->angle,
                   &pnt);
 
     // transform into source image space
     pnt.y *= -1;
-    pnt.x += (stage->base.sliderChanged->source->buffer.size.width / 2) - 1;
-    pnt.y += (stage->base.sliderChanged->source->buffer.size.height / 2) - 1;
+    pnt.x += (stage->base.state->source->buffer.size.width / 2) - 1;
+    pnt.y += (stage->base.state->source->buffer.size.height / 2) - 1;
 
     /*if(stage->base.state->referenceX == 0 && stage->base.state->referenceY == 0)
     {
         printf("[%i, %i] : %i : [%i, %i]\n", stage->base.state->referenceX, stage->base.state->referenceY, stage->base.state->angle, pnt.x, pnt.y);
     }*/
 
-    if(pnt.x < 0 || pnt.x >= stage->base.sliderChanged->source->buffer.size.width ||
-       pnt.y < 0 || pnt.y >= stage->base.sliderChanged->source->buffer.size.height)
+    if(pnt.x < 0 || pnt.x >= stage->base.state->source->buffer.size.width ||
+       pnt.y < 0 || pnt.y >= stage->base.state->source->buffer.size.height)
     {
         // this pixel position is invalid, reset the pipeline
-        stage->base.sliderChanged->currentStage = -1;
+        stage->base.state->currentStage = -1;
 
         return LE_SUCCESS;
     }
 
-    stage->base.sliderChanged->readOperation[0].x = pnt.x;
-    stage->base.sliderChanged->readOperation[0].y = pnt.y;
+    stage->base.state->readOperation[0].x = pnt.x;
+    stage->base.state->readOperation[0].y = pnt.y;
 
     // calculate source index
-    stage->base.sliderChanged->readOperation[0].bufferIndex = (stage->base.sliderChanged->readOperation[0].x) +
-                                                      ((stage->base.sliderChanged->readOperation[0].y) *
-                                                       stage->base.sliderChanged->source->buffer.size.width);
+    stage->base.state->readOperation[0].bufferIndex = (stage->base.state->readOperation[0].x) +
+                                                      ((stage->base.state->readOperation[0].y) *
+                                                       stage->base.state->source->buffer.size.width);
 
     return LE_SUCCESS;
 }
@@ -94,7 +94,7 @@ leResult _leRawImageDecoder_RotateNearestNeighborPreReadStage(leRawDecodeState* 
 {
     memset(&rotateNearestNeighborPreReadStage, 0, sizeof(rotateNearestNeighborPreReadStage));
 
-    rotateNearestNeighborPreReadStage.base.sliderChanged = state;
+    rotateNearestNeighborPreReadStage.base.state = state;
 	rotateNearestNeighborPreReadStage.base.exec = (leResult(*)(struct leRawDecodeStage *))stage_rotateNearestNeighborPreRead;
 
     _leRawImageDecoder_InjectStage(state, (void*)&rotateNearestNeighborPreReadStage);
@@ -111,44 +111,44 @@ static struct RotateBilinearPreReadStage
 
 static leResult stage_bilinearPreRead(struct RotateBilinearPreReadStage* stage)
 {
-    leRawDecodeState* state = stage->base.sliderChanged;
+    leRawDecodeState* state = stage->base.state;
     lePoint readPoint, filterPoint;
 
-    readPoint.x = stage->base.sliderChanged->colIterator;
-    readPoint.y = stage->base.sliderChanged->rowIterator;
+    readPoint.x = stage->base.state->colIterator;
+    readPoint.y = stage->base.state->rowIterator;
 
     // transform into cartesian space
-    readPoint.x -= stage->base.sliderChanged->destRect.width / 2;
-    readPoint.y -= stage->base.sliderChanged->destRect.height / 2;
+    readPoint.x -= stage->base.state->destRect.width / 2;
+    readPoint.y -= stage->base.state->destRect.height / 2;
     readPoint.y *= -1;
 
     leRotatePoint(readPoint,
                   lePoint_Zero,
-                  stage->base.sliderChanged->angle,
+                  stage->base.state->angle,
                   &readPoint);
 
     // transform into source image space
     readPoint.y *= -1;
-    readPoint.x += (stage->base.sliderChanged->source->buffer.size.width / 2) - 1;
-    readPoint.y += (stage->base.sliderChanged->source->buffer.size.height / 2) - 1;
+    readPoint.x += (stage->base.state->source->buffer.size.width / 2) - 1;
+    readPoint.y += (stage->base.state->source->buffer.size.height / 2) - 1;
 
-    if(readPoint.x < 0 || readPoint.x >= stage->base.sliderChanged->source->buffer.size.width ||
-       readPoint.y < 0 || readPoint.y >= stage->base.sliderChanged->source->buffer.size.height)
+    if(readPoint.x < 0 || readPoint.x >= stage->base.state->source->buffer.size.width ||
+       readPoint.y < 0 || readPoint.y >= stage->base.state->source->buffer.size.height)
     {
         // this pixel position is invalid, reset the pipeline
-        stage->base.sliderChanged->currentStage = -1;
+        stage->base.state->currentStage = -1;
 
         return LE_SUCCESS;
     }
 
     // if we're right on the edge, do a nearest neighbor instead of a bilinear blend
-    if(readPoint.x == stage->base.sliderChanged->source->buffer.size.width - 1 ||
-       readPoint.y == stage->base.sliderChanged->source->buffer.size.height - 1)
+    if(readPoint.x == stage->base.state->source->buffer.size.width - 1 ||
+       readPoint.y == stage->base.state->source->buffer.size.height - 1)
     {
         state->readCount = 1;
 
-        stage->base.sliderChanged->readOperation[0].x = readPoint.x;
-        stage->base.sliderChanged->readOperation[0].y = readPoint.y;
+        stage->base.state->readOperation[0].x = readPoint.x;
+        stage->base.state->readOperation[0].y = readPoint.y;
 
         state->readOperation[0].bufferIndex = readPoint.x + (readPoint.y * state->source->buffer.size.width);
     }
@@ -159,52 +159,52 @@ static leResult stage_bilinearPreRead(struct RotateBilinearPreReadStage* stage)
         // first point
         filterPoint = readPoint;
 
-        stage->base.sliderChanged->readOperation[0].x = filterPoint.x;
-        stage->base.sliderChanged->readOperation[0].y = filterPoint.y;
+        stage->base.state->readOperation[0].x = filterPoint.x;
+        stage->base.state->readOperation[0].y = filterPoint.y;
 
         state->readOperation[0].bufferIndex = readPoint.x + (readPoint.y * state->source->buffer.size.width);
 
         // second
         filterPoint = readPoint;
 
-        if(filterPoint.x < stage->base.sliderChanged->source->buffer.size.width - 1)
+        if(filterPoint.x < stage->base.state->source->buffer.size.width - 1)
         {
             filterPoint.x += 1;
         }
 
-        stage->base.sliderChanged->readOperation[1].x = filterPoint.x;
-        stage->base.sliderChanged->readOperation[1].y = filterPoint.y;
+        stage->base.state->readOperation[1].x = filterPoint.x;
+        stage->base.state->readOperation[1].y = filterPoint.y;
 
         state->readOperation[1].bufferIndex = filterPoint.x + (filterPoint.y * state->source->buffer.size.width);
 
         // third
         filterPoint = readPoint;
 
-        if(filterPoint.y < stage->base.sliderChanged->source->buffer.size.height - 1)
+        if(filterPoint.y < stage->base.state->source->buffer.size.height - 1)
         {
             filterPoint.y += 1;
         }
 
-        stage->base.sliderChanged->readOperation[2].x = filterPoint.x;
-        stage->base.sliderChanged->readOperation[2].y = filterPoint.y;
+        stage->base.state->readOperation[2].x = filterPoint.x;
+        stage->base.state->readOperation[2].y = filterPoint.y;
 
         state->readOperation[2].bufferIndex = filterPoint.x + (filterPoint.y * state->source->buffer.size.width);
 
         // fourth
         filterPoint = readPoint;
 
-        if(filterPoint.x < stage->base.sliderChanged->source->buffer.size.width - 1)
+        if(filterPoint.x < stage->base.state->source->buffer.size.width - 1)
         {
             filterPoint.x += 1;
         }
 
-        if(filterPoint.y < stage->base.sliderChanged->source->buffer.size.height - 1)
+        if(filterPoint.y < stage->base.state->source->buffer.size.height - 1)
         {
             filterPoint.y += 1;
         }
 
-        stage->base.sliderChanged->readOperation[3].x = filterPoint.x;
-        stage->base.sliderChanged->readOperation[3].y = filterPoint.y;
+        stage->base.state->readOperation[3].x = filterPoint.x;
+        stage->base.state->readOperation[3].y = filterPoint.y;
 
         state->readOperation[3].bufferIndex = filterPoint.x + (filterPoint.y * state->source->buffer.size.width);
     }
@@ -216,7 +216,7 @@ leResult _leRawImageDecoder_RotateBilinearPreReadStage(leRawDecodeState* state)
 {
     memset(&rotateBilinearPreReadStage, 0, sizeof(rotateBilinearPreReadStage));
 
-    rotateBilinearPreReadStage.base.sliderChanged = state;
+    rotateBilinearPreReadStage.base.state = state;
     rotateBilinearPreReadStage.base.exec = (leResult(*)(struct leRawDecodeStage *))stage_bilinearPreRead;
 
     _leRawImageDecoder_InjectStage(state, (void*)&rotateBilinearPreReadStage);
@@ -253,7 +253,7 @@ leResult _leRawImageDecoder_RotateBilinearPostReadStage(leRawDecodeState* state)
 {
     memset(&rotateBilinearPostReadStage, 0, sizeof(rotateBilinearPostReadStage));
 
-    rotateBilinearPostReadStage.base.sliderChanged = state;
+    rotateBilinearPostReadStage.base.state = state;
     rotateBilinearPostReadStage.base.exec = stage_rotateBilinearPostRead;
 
     _leRawImageDecoder_InjectStage(state, (void*)&rotateBilinearPostReadStage);

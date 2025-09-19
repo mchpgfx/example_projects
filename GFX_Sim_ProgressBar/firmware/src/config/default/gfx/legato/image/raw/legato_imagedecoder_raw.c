@@ -76,17 +76,17 @@ leResult _leRawImageDecoder_RotateBilinearPostReadStage(leRawDecodeState* state)
 
 leResult _leRawImageDecoder_ReadStage_Internal(leRawDecodeState* state);
 #if LE_STREAMING_ENABLED == 1
-leResult _leRawImageDecoder_ReadStage_StreamColor(leRawDecodeState* sliderChanged);
-leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* sliderChanged);
-leResult _leRawImageDecoder_ReadStage_StreamRLE(leRawDecodeState* sliderChanged);
-leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* sliderChanged);
+leResult _leRawImageDecoder_ReadStage_StreamColor(leRawDecodeState* state);
+leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* state);
+leResult _leRawImageDecoder_ReadStage_StreamRLE(leRawDecodeState* state);
+leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* state);
 #endif
 
 leResult _leRawImageDecoder_MaskStage_Internal(leRawDecodeState* state);
 
 leResult _leRawImageDecoder_LookupStage_Internal(leRawDecodeState* state);
 #if LE_STREAMING_ENABLED == 1
-leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* sliderChanged);
+leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* state);
 #endif
 
 leResult _leRawImageDecoder_ImageRenderPostLookupStage(leRawDecodeState* state);

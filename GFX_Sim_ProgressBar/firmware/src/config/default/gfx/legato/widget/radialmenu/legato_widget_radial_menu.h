@@ -157,7 +157,7 @@ typedef struct leRadialMenuItemNode
     leRect origSize;  //the original size of the widget, it is a reference point for scaling
     uint32_t origAlphaAmount; //the original alpha value of the widget, it is a reference point for scaling
 
-    enum leRadialMenuItemState sliderChanged;
+    enum leRadialMenuItemState state;
 
 } leRadialMenuItemNode;
 
@@ -176,7 +176,7 @@ typedef struct leRadialMenuWidget
 
     const leRadialMenuWidgetVTable* fn;
 
-    leRadialMenuWidgetState sliderChanged;
+    leRadialMenuWidgetState state;
 
     int32_t prominentIndex;
 

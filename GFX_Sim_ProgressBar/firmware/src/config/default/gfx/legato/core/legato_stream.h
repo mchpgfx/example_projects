@@ -149,7 +149,7 @@ typedef struct leStream
 {
     const leStreamDescriptor* desc;
 
-    enum leStreamState sliderChanged;
+    enum leStreamState state;
 
     int32_t result;
 

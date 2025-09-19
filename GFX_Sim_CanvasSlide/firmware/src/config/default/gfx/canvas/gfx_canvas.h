@@ -59,11 +59,6 @@ extern "C" {
 #define LAYER_ID_INVALID (-1)
 
 #define CONFIG_BUFFER_PER_LAYER 1
-#define CONFIG_NUM_CANVAS_OBJ 1
-#define CONFIG_NUM_LAYERS 3
-#define CONFIG_FX_INTERVAL_MS 40
-#define CANVAS_DEFAULT_FORMAT GFX_COLOR_MODE_RGB_565
-    
 #define GFXC_BOOL gfxBool
     
 /**

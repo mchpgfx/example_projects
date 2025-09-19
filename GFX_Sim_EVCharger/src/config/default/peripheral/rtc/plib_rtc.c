@@ -42,7 +42,7 @@
 #include "plib_rtc.h"
 #include "interrupts.h"
 
-volatile static RTC_OBJECT rtc;
+static volatile RTC_OBJECT rtc;
 
 __STATIC_INLINE uint32_t decimaltobcd( uint32_t aDecValue )
 {
@@ -58,7 +58,7 @@ __STATIC_INLINE uint32_t bcdtodecimal( uint32_t aBcdValue )
 
 void RTC_Initialize( void )
 {
-    RTC_REGS->RTC_MR = RTC_MR_PERSIAN( 0U ) | RTC_MR_OUT1_NO_WAVE | RTC_MR_OUT0_NO_WAVE | RTC_MR_TPERIOD_P_1S | RTC_MR_THIGH_H_31MS | RTC_MR_UTC(0) | RTC_MR_HRMOD(0U);
+    RTC_REGS->RTC_MR = RTC_MR_OUT1_NO_WAVE | RTC_MR_OUT0_NO_WAVE | RTC_MR_TPERIOD_P_1S | RTC_MR_THIGH_H_31MS | RTC_MR_UTC(0) | RTC_MR_HRMOD(0U);
 
     RTC_REGS->RTC_CR = RTC_CR_TIMEVSEL_MINUTE | RTC_CR_CALEVSEL_WEEK;
 

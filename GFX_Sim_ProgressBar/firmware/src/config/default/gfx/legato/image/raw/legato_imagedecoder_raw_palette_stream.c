@@ -41,7 +41,7 @@
 
 #if LE_STREAMING_ENABLED == 1
 
-void _leRawImageDecoder_InjectStage(leRawDecodeState* sliderChanged,
+void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
 enum StageState
@@ -61,7 +61,7 @@ struct StreamPaletteStage
 
     leColor lookupIndex;
 
-    enum StageState sliderChanged;
+    enum StageState state;
 
     leStream stream;
 
@@ -99,16 +99,16 @@ static leResult exec_nonblocking(struct StreamPaletteStage* stage)
         return LE_SUCCESS;
     }
 
-    streamPaletteStage.lookupIndex = streamPaletteStage.base.sliderChanged->writeColor;
+    streamPaletteStage.lookupIndex = streamPaletteStage.base.state->writeColor;
 
-    addr = (size_t)streamPaletteStage.base.sliderChanged->source->palette->header.address +
+    addr = (size_t)streamPaletteStage.base.state->source->palette->header.address +
             streamPaletteStage.lookupIndex *
             stage->paletteSize;
 
     if(leStream_Read(&streamPaletteStage.stream,
                      addr,
                      stage->paletteSize,
-                     (uint8_t*)&streamPaletteStage.base.sliderChanged->writeColor,
+                     (uint8_t*)&streamPaletteStage.base.state->writeColor,
                      indexDataReady) == LE_FAILURE)
     {
         return LE_FAILURE;
@@ -138,14 +138,14 @@ static leResult exec_blocking(struct StreamPaletteStage* stage)
 {
     uint32_t addr;
 
-    addr = (size_t)streamPaletteStage.base.sliderChanged->source->palette->header.address +
-            streamPaletteStage.base.sliderChanged->writeColor *
+    addr = (size_t)streamPaletteStage.base.state->source->palette->header.address +
+            streamPaletteStage.base.state->writeColor *
             stage->paletteSize;
 
     while(leStream_Read(&streamPaletteStage.stream,
                         addr,
                         stage->paletteSize,
-                        (uint8_t*)&streamPaletteStage.base.sliderChanged->writeColor,
+                        (uint8_t*)&streamPaletteStage.base.state->writeColor,
                         NULL) != LE_SUCCESS)
     { }
 
@@ -159,18 +159,18 @@ static void cleanup(struct StreamPaletteStage* stage)
     leStream_Close(&streamPaletteStage.stream);
 }
 
-leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* sliderChanged)
+leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* state)
 {
     memset(&streamPaletteStage, 0, sizeof(streamPaletteStage));
 
-    lePixelBufferCreate(LE_ASSET_DECODER_PALETTE_CACHE_SIZE / leColorInfoTable[sliderChanged->source->palette->buffer.mode].size,
+    lePixelBufferCreate(LE_ASSET_DECODER_PALETTE_CACHE_SIZE / leColorInfoTable[state->source->palette->buffer.mode].size,
                         1,
-                        sliderChanged->source->palette->buffer.mode,
+                        state->source->palette->buffer.mode,
                         cache,
                         &streamPaletteStage.cacheBuffer);
 
     leStream_Init(&streamPaletteStage.stream,
-                  (leStreamDescriptor*)sliderChanged->source->palette,
+                  (leStreamDescriptor*)state->source->palette,
                   LE_ASSET_DECODER_PALETTE_CACHE_SIZE,
                   leRawImageDecoderPaletteScratchBuffer,
                   NULL);
@@ -180,9 +180,9 @@ leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* sliderChanged)
         return LE_FAILURE;
     }
 
-    streamPaletteStage.paletteSize = leColorInfoTable[sliderChanged->source->palette->buffer.mode].size;
+    streamPaletteStage.paletteSize = leColorInfoTable[state->source->palette->buffer.mode].size;
 
-    streamPaletteStage.base.sliderChanged = sliderChanged;
+    streamPaletteStage.base.state = state;
     streamPaletteStage.base.cleanup = (void*)cleanup;
 
     if(leStream_IsBlocking(&streamPaletteStage.stream) == LE_TRUE)
@@ -194,7 +194,7 @@ leResult _leRawImageDecoder_LookupStage_Stream(leRawDecodeState* sliderChanged)
         streamPaletteStage.base.exec = (void*)exec_nonblocking;
     }
 
-    _leRawImageDecoder_InjectStage(sliderChanged, (void*)&streamPaletteStage);
+    _leRawImageDecoder_InjectStage(state, (void*)&streamPaletteStage);
 
     return LE_SUCCESS;
 }
@@ -217,16 +217,16 @@ static leResult stage_imageRenderPostLookup(leRawDecodeStage* stage)
     return LE_SUCCESS;
 }
 
-leResult _leRawImageDecoder_ImageRenderPostLookupStage_Stream(leRawDecodeState* sliderChanged)
+leResult _leRawImageDecoder_ImageRenderPostLookupStage_Stream(leRawDecodeState* state)
 {
     memset(&imageRenderPostLookupStage, 0, sizeof(imageRenderPostLookupStage));
 
-    sliderChanged->needToLookupMaskColor = LE_TRUE;
+    state->needToLookupMaskColor = LE_TRUE;
 
-    imageRenderPostLookupStage.base.sliderChanged = sliderChanged;
+    imageRenderPostLookupStage.base.state = state;
     imageRenderPostLookupStage.base.exec = stage_imageRenderPostLookup;
 
-    _leRawImageDecoder_InjectStage(sliderChanged, (void*)&imageRenderPostLookupStage);
+    _leRawImageDecoder_InjectStage(state, (void*)&imageRenderPostLookupStage);
 
     return LE_SUCCESS;
 }

@@ -409,8 +409,29 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="default" displayName="default" projectFiles="true">
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="GFX_Sim_GlobalWidgets_default"
+                     displayName="GFX_Sim_GlobalWidgets_default"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>GFX_Sim_GlobalWidgets_default/components/core.yml</itemPath>
+          <itemPath>GFX_Sim_GlobalWidgets_default/components/HarmonyCore.yml</itemPath>
+          <itemPath>GFX_Sim_GlobalWidgets_default/components/mgs_web_sim.yml</itemPath>
+          <itemPath>GFX_Sim_GlobalWidgets_default/components/sys_input.yml</itemPath>
+          <itemPath>GFX_Sim_GlobalWidgets_default/components/gfx_legato.yml</itemPath>
+          <itemPath>GFX_Sim_GlobalWidgets_default/components/sys_time.yml</itemPath>
+          <itemPath>GFX_Sim_GlobalWidgets_default/components/dfp.yml</itemPath>
+        </logicalFolder>
+        <itemPath>GFX_Sim_GlobalWidgets_default/mcc-config.mc4</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>GFX_Sim_GlobalWidgets.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -764,7 +785,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

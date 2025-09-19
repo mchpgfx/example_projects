@@ -1,0 +1,172 @@
+configVersion: 1.0.0
+componentName: gfx_canvas
+coreVersion: 5.8.2
+device: SAM9X60D1G
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: gfx_canvas
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: gfx
+  type: package
+  version: v3.16.2
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: gfx_canvas
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: gfx_legato
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: gfx_driver
+            type: String
+          type: Attributes
+        type: DirectCapability
+      - attributes:
+          id: gfx_display_driver
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: mgs_web_sim
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: mgs_web_sim_drv_cap
+            type: String
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: gfx_canvas
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: gfx_canvas
+          x: '765'
+          y: '273'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    Canvas0FrameBufferAlloc:
+      attributes:
+        id: Canvas0FrameBufferAlloc
+      children:
+      - children:
+        - attributes:
+            value: Auto
+          type: User
+        type: Values
+      type: Combo
+    Canvas0Height:
+      attributes:
+        id: Canvas0Height
+      children:
+      - children:
+        - attributes:
+            value: '480'
+          type: User
+        type: Values
+      type: Integer
+    Canvas0Width:
+      attributes:
+        id: Canvas0Width
+      children:
+      - children:
+        - attributes:
+            value: '800'
+          type: User
+        type: Values
+      type: Integer
+    Canvas1FrameBufferAlloc:
+      attributes:
+        id: Canvas1FrameBufferAlloc
+      children:
+      - children:
+        - attributes:
+            value: Auto
+          type: User
+        type: Values
+      type: Combo
+    Canvas1Height:
+      attributes:
+        id: Canvas1Height
+      children:
+      - children:
+        - attributes:
+            value: '480'
+          type: User
+        type: Values
+      type: Integer
+    Canvas1Width:
+      attributes:
+        id: Canvas1Width
+      children:
+      - children:
+        - attributes:
+            value: '800'
+          type: User
+        type: Values
+      type: Integer
+    Canvas2FrameBufferAlloc:
+      attributes:
+        id: Canvas2FrameBufferAlloc
+      children:
+      - children:
+        - attributes:
+            value: Auto
+          type: User
+        type: Values
+      type: Combo
+    Canvas2Height:
+      attributes:
+        id: Canvas2Height
+      children:
+      - children:
+        - attributes:
+            value: '261'
+          type: User
+        type: Values
+      type: Integer
+    Canvas2Width:
+      attributes:
+        id: Canvas2Width
+      children:
+      - children:
+        - attributes:
+            value: '161'
+          type: User
+        type: Values
+      type: Integer
+    DisplayDriverName:
+      attributes:
+        id: DisplayDriverName
+      children:
+      - children:
+        - attributes:
+            id: gfx_canvas
+            value: gfxSimulatorDriver
+          type: Dynamic
+        type: Values
+      type: String
+  userData: {}

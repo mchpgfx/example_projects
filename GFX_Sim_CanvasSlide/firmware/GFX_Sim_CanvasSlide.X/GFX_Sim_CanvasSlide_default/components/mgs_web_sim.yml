@@ -1,0 +1,133 @@
+configVersion: 1.0.0
+componentName: mgs_web_sim
+coreVersion: 5.8.2
+device: ATSAMA5D21
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: mgs_web_sim
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: gfx
+  type: package
+  version: v3.16.2
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: mgs_web_sim_drv_cap
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: gfx_canvas
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: gfx_display_driver
+            type: String
+          type: Attributes
+        type: DirectCapability
+      - attributes:
+          id: mgs_web_sim_tmr_cap
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: sys_time
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: sys_time_TMR_dependency
+            type: String
+          type: Attributes
+        type: DirectCapability
+      type: Attachments
+    type: mgs_web_sim
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: mgs_web_sim
+          x: '35'
+          y: '221'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    CtrlCanvasMode:
+      attributes:
+        id: CtrlCanvasMode
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: ENABLED
+          type: Dynamic
+        type: Values
+      type: Combo
+    CtrlColorMode:
+      attributes:
+        id: CtrlColorMode
+      children:
+      - children:
+        - attributes:
+            value: RGB_565
+          type: User
+        type: Values
+      type: Combo
+    DisplayType:
+      attributes:
+        id: DisplayType
+      children:
+      - children:
+        - attributes:
+            value: Custom
+          type: User
+        type: Values
+      type: Combo
+    TmrTickMode:
+      attributes:
+        id: TmrTickMode
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: TICKLESS
+          type: Dynamic
+        type: Values
+      type: Combo
+    TotalNumLayers:
+      attributes:
+        id: TotalNumLayers
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: Integer
+    isBezelEnabled:
+      attributes:
+        id: isBezelEnabled
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

@@ -179,7 +179,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\gfx\legato\image\mono\legato_imagedecoder_mono_read_stream.c
   hash: f9d136caf93a756039b4266cf1d31cfde80b6d3c80235525d5741dd749441905
 - file: ..\src\config\default\gfx\legato\image\png\legato_imagedecoder_png.c
-  hash: 11093aacc4d3ddaa36ae5d00e49581cccde5dc1eb616de8badea5781fc93e439
+  hash: aae055f19a2c3718501ca176973eb4ed16314037e31ba4668fa89e15927d2e4d
 - file: ..\src\config\default\gfx\legato\image\png\legato_imagedecoder_png.h
   hash: 0f74efbf18c6f0c4b2860212d3b0e0c7c1d9b93cf88cc1a33819b1f3441d0cc0
 - file: ..\src\config\default\gfx\legato\image\png\lodepng.c

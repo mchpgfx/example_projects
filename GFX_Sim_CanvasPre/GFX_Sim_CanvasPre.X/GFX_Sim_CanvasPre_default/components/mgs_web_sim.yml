@@ -1,0 +1,104 @@
+configVersion: 1.0.0
+componentName: mgs_web_sim
+coreVersion: 5.8.2
+device: ATSAMA5D27
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: mgs_web_sim
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: gfx
+  type: package
+  version: v3.16.2
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: mgs_web_sim_drv_cap
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: gfx_canvas
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: gfx_display_driver
+            type: String
+          type: Attributes
+        type: DirectCapability
+      - attributes:
+          id: mgs_web_sim_tmr_cap
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: sys_time
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: sys_time_TMR_dependency
+            type: String
+          type: Attributes
+        type: DirectCapability
+      type: Attachments
+    type: mgs_web_sim
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: mgs_web_sim
+          x: '138'
+          y: '111'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    CtrlCanvasMode:
+      attributes:
+        id: CtrlCanvasMode
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: ENABLED
+          type: Dynamic
+        type: Values
+      type: Combo
+    TmrTickMode:
+      attributes:
+        id: TmrTickMode
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: TICKLESS
+          type: Dynamic
+        type: Values
+      type: Combo
+    fileGenToggle:
+      attributes:
+        id: fileGenToggle
+      children:
+      - children:
+        - attributes:
+            id: mgs_web_sim
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+  userData: {}

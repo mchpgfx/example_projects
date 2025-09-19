@@ -10,9 +10,6 @@ leSliderWidget* Screen0_SliderWidget2;
 leLabelWidget* Screen0_StringLabel;
 leLabelWidget* Screen0_ValueLabel;
 
-leFixedString sliderStr;                           //Legato string object
-leChar tempBuffer[32] = {0};
-
 static leBool initialized = LE_FALSE;
 static leBool showing = LE_FALSE;
 
@@ -33,14 +30,14 @@ leResult screenShow_Screen0(void)
 
     // layer 0
     root0 = leWidget_New();
-    root0->fn->setSize(root0, 800, 480);
+    root0->fn->setSize(root0, LE_DEFAULT_SCREEN_WIDTH, LE_DEFAULT_SCREEN_HEIGHT);
     root0->fn->setBackgroundType(root0, LE_WIDGET_BACKGROUND_NONE);
     root0->fn->setMargins(root0, 0, 0, 0, 0);
     root0->flags |= LE_WIDGET_IGNOREEVENTS;
     root0->flags |= LE_WIDGET_IGNOREPICK;
 
     Screen0_BackgroundPanel = leWidget_New();
-    Screen0_BackgroundPanel->fn->setPosition(Screen0_BackgroundPanel, 0, 0);
+    Screen0_BackgroundPanel->fn->setPosition(Screen0_BackgroundPanel, 1, 0);
     Screen0_BackgroundPanel->fn->setSize(Screen0_BackgroundPanel, 800, 480);
     Screen0_BackgroundPanel->fn->setScheme(Screen0_BackgroundPanel, &WhiteScheme);
     Screen0_BackgroundPanel->fn->setBorderType(Screen0_BackgroundPanel, LE_WIDGET_BORDER_LINE);
@@ -91,11 +88,9 @@ leResult screenShow_Screen0(void)
 
     leAddRootWidget(root0, 0);
     leSetLayerColorMode(0, LE_COLOR_MODE_RGBA_8888);
-    
-    leFixedString_Constructor(&sliderStr, tempBuffer, 12);
-    sliderStr.fn->setFont(&sliderStr, leStringTable_GetStringFont(leGetState()->stringTable,
-                                                              stringID_Slider,
-                                                              0)); 
+
+    Screen0_OnShow(); // raise event
+
     showing = LE_TRUE;
 
     return LE_SUCCESS;

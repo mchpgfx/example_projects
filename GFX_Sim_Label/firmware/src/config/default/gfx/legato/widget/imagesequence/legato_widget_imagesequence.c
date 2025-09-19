@@ -316,7 +316,7 @@ static leVAlignment getImageVAlignment(const leImageSequenceWidget* _this,
     if(idx >= _this->count)
         return 0;
         
-    return _this->images[idx].halign;
+    return _this->images[idx].valign;
 }
 
 static leResult setImageVAlignment(leImageSequenceWidget* _this,
@@ -378,6 +378,13 @@ static leBool isPlaying(const leImageSequenceWidget* _this)
     LE_ASSERT_THIS();
         
     return _this->playing;
+}
+
+static int32_t getActiveIndex(const leImageSequenceWidget* _this)
+{
+    LE_ASSERT_THIS();
+
+    return _this->activeIdx;
 }
 
 static leBool getRepeat(const leImageSequenceWidget* _this)
@@ -518,6 +525,7 @@ void _leImageSequenceWidget_GenerateVTable()
     imageSequenceWidgetVTable.play = play;
     imageSequenceWidgetVTable.rewind = rewind;
     imageSequenceWidgetVTable.isPlaying = isPlaying;
+    imageSequenceWidgetVTable.getActiveIndex = getActiveIndex;
     imageSequenceWidgetVTable.getRepeat = getRepeat;
     imageSequenceWidgetVTable.setRepeat = setRepeat;
     imageSequenceWidgetVTable.showImage = showImage;
@@ -629,6 +637,7 @@ static const leImageSequenceWidgetVTable imageSequenceWidgetVTable =
     .play = play,
     .rewind = rewind,
     .isPlaying = isPlaying,
+    .getActiveIndex = getActiveIndex,
     .getRepeat = getRepeat,
     .setRepeat = setRepeat,
     .showImage = showImage,

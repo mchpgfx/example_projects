@@ -182,7 +182,7 @@ typedef struct leButtonWidget
 
     const leButtonWidgetVTable* fn;
 
-    leButtonState sliderChanged; // button state
+    leButtonState state; // button state
     uint8_t toggleable; // indicates if the button is toggleable
 
     const leString* string; // the string that holds the button text

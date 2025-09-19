@@ -32,7 +32,7 @@
 
 #define cache leMonoImageDecoderScratchBuffer
 
-void _leMonoImageDecoder_InjectStage(leMonoDecodeState* sliderChanged,
+void _leMonoImageDecoder_InjectStage(leMonoDecodeState* state,
                                      leMonoDecodeStage* stage);
 
 enum StageState
@@ -46,7 +46,7 @@ struct StreamReadStage
 {
     leMonoDecodeStage base;
 
-    enum StageState sliderChanged;
+    enum StageState state;
 
     leStream stream;
 };
@@ -58,14 +58,14 @@ static leResult advanceStage(void)
     uint32_t offs;
     leColor color;
 
-    leMonoSourceReadOperation* op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+    leMonoSourceReadOperation* op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     offs = 1 << (7 - (op->bufferIndex % 8));
     color = op->data & offs;
 
     color >>= (7 - (op->bufferIndex % 8));
 
-    streamReadStage.base.sliderChanged->writeColor = color;
+    streamReadStage.base.state->writeColor = color;
 
     streamReadStage.state = SS_DONE;
 
@@ -98,10 +98,10 @@ static leResult exec_nonblocking(struct StreamReadStage* stage)
         return LE_SUCCESS;
     }
 
-    op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+    op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     // get the address of the desired pixel
-    addr = (size_t)streamReadStage.base.sliderChanged->source->header.address + (op->bufferIndex / 8);
+    addr = (size_t)streamReadStage.base.state->source->header.address + (op->bufferIndex / 8);
 
     // read the pixel
     if(leStream_Read(&streamReadStage.stream,
@@ -141,15 +141,15 @@ static leResult exec_blocking(struct StreamReadStage* stage)
     leColor color;
     (void)stage; // unused
 
-    op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+    op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     // get the address of the desired pixel
-    addr = (size_t)streamReadStage.base.sliderChanged->source->header.address + (op->bufferIndex / 8);
+    addr = (size_t)streamReadStage.base.state->source->header.address + (op->bufferIndex / 8);
 
     // read the pixel
     while(leStream_Read(&streamReadStage.stream,
                         addr,
-                        leColorInfoTable[streamReadStage.base.sliderChanged->source->buffer.mode].size,
+                        leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
                         (uint8_t*)&op->data,
                         NULL) != LE_SUCCESS)
     { }
@@ -159,7 +159,7 @@ static leResult exec_blocking(struct StreamReadStage* stage)
 
     color >>= (7 - (op->bufferIndex % 8));
 
-    stage->base.sliderChanged->writeColor = color;
+    stage->base.state->writeColor = color;
 
     return LE_SUCCESS;
 }
@@ -171,12 +171,12 @@ static void cleanup(struct StreamReadStage* stage)
     leStream_Close(&streamReadStage.stream);
 }
 
-leResult _leMonoImageDecoder_ReadStage_Stream(leMonoDecodeState* sliderChanged)
+leResult _leMonoImageDecoder_ReadStage_Stream(leMonoDecodeState* state)
 {
     memset(&streamReadStage, 0, sizeof(streamReadStage));
 
     leStream_Init(&streamReadStage.stream,
-                  (struct leStreamDescriptor*)sliderChanged->source,
+                  (struct leStreamDescriptor*)state->source,
                   LE_ASSET_DECODER_PIXEL_CACHE_SIZE,
                   leMonoImageDecoderScratchBuffer,
                   NULL);
@@ -186,7 +186,7 @@ leResult _leMonoImageDecoder_ReadStage_Stream(leMonoDecodeState* sliderChanged)
         return LE_FAILURE;
     }
 
-    streamReadStage.base.sliderChanged = sliderChanged;
+    streamReadStage.base.state = state;
     streamReadStage.base.cleanup = (void*)cleanup;
 
     if(leStream_IsBlocking(&streamReadStage.stream) == LE_TRUE)
@@ -198,7 +198,7 @@ leResult _leMonoImageDecoder_ReadStage_Stream(leMonoDecodeState* sliderChanged)
         streamReadStage.base.exec = (void*)exec_nonblocking;
     }
 
-    _leMonoImageDecoder_InjectStage(sliderChanged, (void*)&streamReadStage);
+    _leMonoImageDecoder_InjectStage(state, (void*)&streamReadStage);
 
     return LE_SUCCESS;
 }

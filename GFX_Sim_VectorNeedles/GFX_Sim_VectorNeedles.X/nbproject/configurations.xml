@@ -392,6 +392,8 @@
             <itemPath>../src/packs/SAM9X75D2G_DFP/instance/csi.h</itemPath>
             <itemPath>../src/packs/SAM9X75D2G_DFP/instance/gfx2d.h</itemPath>
             <itemPath>../src/packs/SAM9X75D2G_DFP/instance/sdmmc0.h</itemPath>
+            <itemPath>../src/packs/SAM9X75D2G_DFP/instance/lvdsphy.h</itemPath>
+            <itemPath>../src/packs/SAM9X75D2G_DFP/instance/mipiphy.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/SAM9X75D2G_DFP/pio/sam9x75d2g.h</itemPath>
@@ -404,8 +406,29 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="default" displayName="default" projectFiles="true">
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="GFX_Sim_VectorNeedles_default"
+                     displayName="GFX_Sim_VectorNeedles_default"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>GFX_Sim_VectorNeedles_default/components/HarmonyCore.yml</itemPath>
+          <itemPath>GFX_Sim_VectorNeedles_default/components/sys_input.yml</itemPath>
+          <itemPath>GFX_Sim_VectorNeedles_default/components/core.yml</itemPath>
+          <itemPath>GFX_Sim_VectorNeedles_default/components/dfp.yml</itemPath>
+          <itemPath>GFX_Sim_VectorNeedles_default/components/sys_time.yml</itemPath>
+          <itemPath>GFX_Sim_VectorNeedles_default/components/mgs_web_sim.yml</itemPath>
+          <itemPath>GFX_Sim_VectorNeedles_default/components/gfx_legato.yml</itemPath>
+        </logicalFolder>
+        <itemPath>GFX_Sim_VectorNeedles_default/mcc-config.mc4</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>GFX_Sim_VectorNeedles.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

@@ -70,7 +70,7 @@ leResult _leRawImageDecoder_ConvertStage(leRawDecodeState* state)
             convertStage.sourceMode = state->source->buffer.mode;
         }
 
-        convertStage.base.sliderChanged = state;
+        convertStage.base.state = state;
         convertStage.base.exec = stage_convertColor;
 
         _leRawImageDecoder_InjectStage(state, (void*)&convertStage);

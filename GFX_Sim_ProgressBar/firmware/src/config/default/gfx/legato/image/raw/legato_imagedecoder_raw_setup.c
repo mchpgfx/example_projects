@@ -85,7 +85,7 @@ leResult _leRawImageDecoder_SourceIterateSetupStage(leRawDecodeState* state)
     state->rowIterator = 0;
     state->colIterator = 0;
 
-    setupStage.base.sliderChanged = state;
+    setupStage.base.state = state;
     setupStage.base.exec = stage_sourceIterateSetup;
 
     _leRawImageDecoder_InjectStage(state, (void*)&setupStage);
@@ -133,7 +133,7 @@ leResult _leRawImageDecoder_TargetIterateSetupStage(leRawDecodeState* state)
     state->rowIterator = 0;
     state->colIterator = 0;
 
-    setupStage.base.sliderChanged = state;
+    setupStage.base.state = state;
     setupStage.base.exec = stage_targetIterateSetup;
 
     _leRawImageDecoder_InjectStage(state, (void*)&setupStage);

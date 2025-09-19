@@ -54,7 +54,7 @@ leResult _leRawImageDecoder_MaskStage_Internal(leRawDecodeState* state)
 {
     memset(&maskStage, 0, sizeof(maskStage));
 
-    maskStage.base.sliderChanged = state;
+    maskStage.base.state = state;
     maskStage.base.exec = stage_rejectMaskedColor;
 
     _leRawImageDecoder_InjectStage(state, (void*)&maskStage);

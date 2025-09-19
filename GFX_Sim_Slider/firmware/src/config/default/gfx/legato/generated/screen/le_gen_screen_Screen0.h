@@ -35,6 +35,9 @@ void screenUpdate_Screen0(void); // called when Legato is updating
 
 leWidget* screenGetRoot_Screen0(uint32_t lyrIdx); // gets a root widget for this screen
 
+// Screen Events:
+void Screen0_OnShow(void); // called when this screen is shown
+
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

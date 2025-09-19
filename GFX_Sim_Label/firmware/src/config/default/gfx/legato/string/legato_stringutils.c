@@ -61,16 +61,36 @@ uint32_t leStringUtils_ToCStr(const leChar* str,
                               uint32_t bufSize)
 {
     uint32_t itr;
+    uint32_t copyLength;
 
-    if(str == NULL || strSize == 0 || buf == NULL || bufSize == 0)
+    if(str == NULL || buf == NULL || bufSize == 0)
         return LE_FAILURE;
 
-    for(itr = 0; itr < strSize; itr++)
+    if (bufSize == 1)
     {
-        if(itr >= bufSize)
-            break;
+        buf[0] = '\0';
+        return 1;
+    }
 
-        if(str[itr] >= ASCII_MIN && str[itr] <= ASCII_MAX)
+    if (strSize == 0)
+    {
+        buf[0] = '\0';
+        return 1;
+    }
+
+    // Consider null terminator when evaluating size
+    if ((bufSize - 1) < strSize)
+    {
+        copyLength = bufSize - 1;
+    }
+    else
+    {
+        copyLength = strSize;
+    }
+
+    for (itr = 0; itr < copyLength; itr++)
+    {
+        if (str[itr] >= ASCII_MIN && str[itr] <= ASCII_MAX)
         {
             buf[itr] = (char)str[itr];
         }
@@ -79,6 +99,8 @@ uint32_t leStringUtils_ToCStr(const leChar* str,
             buf[itr] = ASCII_SPACE;
         }
     }
+
+    buf[itr] = '\0';
 
     return itr;
 }
@@ -309,7 +331,7 @@ leResult leStringUtils_GetLineRect(const leChar* str,
                                    leRect* rect)
 {
     uint32_t idx;
-    leFontGlyph glyph;
+    leFontGlyph glyph = {0};
     uint32_t startIdx = 0;
     uint32_t endIdx = 0;
     leRasterFont* rasFnt = (leRasterFont*)font;
@@ -350,7 +372,7 @@ leResult leStringUtils_GetLineRectCStr(const char* str,
                                        leRect* rect)
 {
     uint32_t idx;
-    leFontGlyph glyph;
+    leFontGlyph glyph = {0};
     uint32_t startIdx = 0;
     uint32_t endIdx = 0;
     uint32_t size;
@@ -397,7 +419,7 @@ leResult leStringUtils_GetCharRect(const leChar* str,
                                    leRect* rect)
 {
     uint32_t idx;
-    leFontGlyph glyph;
+    leFontGlyph glyph = {0};
     leRasterFont* rasFnt = (leRasterFont*)font;
 
     if(str == NULL ||
@@ -442,7 +464,7 @@ leResult leStringUtils_GetCharRectCStr(const char* str,
                                        leRect* rect)
 {
     uint32_t idx;
-    leFontGlyph glyph;
+    leFontGlyph glyph = {0};
     uint32_t size;
     leRasterFont* rasFnt = (leRasterFont*)font;
 
@@ -492,7 +514,7 @@ leResult leStringUtils_GetCharIndexAtPoint(const leChar* str,
                                            uint32_t* charIdx)
 {
     uint32_t idx;
-    leFontGlyph glyph;
+    leFontGlyph glyph = {0};
     leRect rect;
     leRasterFont* rasFnt = (leRasterFont*)font;
 
@@ -542,7 +564,7 @@ leResult leStringUtils_GetCharIndexAtPointCStr(const char* str,
                                                uint32_t* charIdx)
 {
     uint32_t idx;
-    leFontGlyph glyph;
+    leFontGlyph glyph = {0};
     leRect rect;
     uint32_t size;
     leRasterFont* rasFnt = (leRasterFont*)font;

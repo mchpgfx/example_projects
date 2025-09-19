@@ -4,21 +4,21 @@
 
 
 project: GFX_Sim_CanvasSlide
-creation_date: 2024-04-03T10:43:45.185-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
-operating_system: Windows 10
+creation_date: 2025-09-15T16:42:53.522-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+operating_system: Windows 11
 mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.4.1
-mcc_core_version: v5.6.1
-mplabx_version: v6.15        # if MPLAB X plugin only
-harmony_version: v1.4.1
-compiler: XC32 4.30
+mcc_version: v5.6.2
+mcc_core_version: v5.8.2
+mplabx_version: v6.25        # if MPLAB X plugin only
+harmony_version: v5.6.2
+compiler: XC32 4.60
 
 modules:
-    - {name: "csp", version: "v3.18.4"}
-    - {name: "core", version: "v3.13.3"}
+    - {name: "csp", version: "v3.23.0"}
+    - {name: "core", version: "v3.15.5"}
     - {name: "CMSIS_5", version: "5.9.0"}
-    - {name: "gfx", version: "v3.14.0"}
+    - {name: "gfx", version: "v3.16.2"}
 
 packs:
-    - {name: "SAMA5D2_DFP", version: "1.10.213"}
+    - {name: "SAMA5D2_DFP", version: "1.14.264"}
 

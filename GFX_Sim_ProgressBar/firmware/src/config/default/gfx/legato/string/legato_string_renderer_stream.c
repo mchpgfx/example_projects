@@ -50,7 +50,7 @@ static struct
     leStreamManager manager;
     leFontStream* stream;
 
-    leStringStreamState sliderChanged;
+    leStringStreamState state;
 
     const leString* string;
 

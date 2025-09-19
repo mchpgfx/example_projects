@@ -4,20 +4,20 @@
 
 
 project: GFX_Sim_Slider
-creation_date: 2024-02-27T15:28:49.393+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
-operating_system: Windows 10
+creation_date: 2025-09-19T15:26:29.252-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+operating_system: Windows 11
 mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.4.1
-mcc_core_version: v5.6.1
-mplabx_version: v6.10        # if MPLAB X plugin only
-harmony_version: v1.4.1
-compiler: XC32 4.10
+mcc_version: v5.6.2
+mcc_core_version: v5.8.2
+mplabx_version: v6.25        # if MPLAB X plugin only
+harmony_version: v5.6.2
+compiler: XC32 4.50
 
 modules:
-    - {name: "csp", version: "v3.18.0"}
-    - {name: "core", version: "v3.13.2"}
-    - {name: "gfx", version: "release/v3.14.0_dev"}
+    - {name: "csp", version: "v3.23.0"}
+    - {name: "core", version: "v3.15.5"}
+    - {name: "gfx", version: "v3.16.2"}
 
 packs:
-    - {name: "SAM9X7_DFP", version: "1.1.120"}
+    - {name: "SAM9X7_DFP", version: "1.9.170"}
 

@@ -296,7 +296,8 @@ static leResult _draw(const leImage* img,
     _state.targetMode = leRenderer_CurrentColorMode();
 
     if(img->header.location == LE_STREAM_LOCATION_ID_INTERNAL &&
-       img->format == LE_IMAGE_FORMAT_RAW)
+       img->format == LE_IMAGE_FORMAT_RAW &&
+       (img->flags & LE_IMAGE_USE_MASK_COLOR) == 0)
     {
         if((img->flags & LE_IMAGE_DIRECT_BLIT) > 0 &&
            img->buffer.mode == _state.targetMode)
@@ -1176,6 +1177,10 @@ static leResult _decoderExec(void)
             // restart the pipeline
             _state.currentStage = 0;
         }
+
+#if LE_PREEMPTION_LEVEL > 0
+        return LE_SUCCESS;
+#endif
     }
 
 #if LE_STREAMING_ENABLED == 1

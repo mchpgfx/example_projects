@@ -166,7 +166,7 @@ typedef struct leTouchTestWidget
 
     const leTouchTestWidgetVTable* fn;
 
-    leTouchTestState sliderChanged; // touch test state
+    leTouchTestState state; // touch test state
 
     lePoint pnts[LE_TOUCHTEST_MEMORY_SIZE]; // touch point array
     uint32_t size; // current number of valid touch points

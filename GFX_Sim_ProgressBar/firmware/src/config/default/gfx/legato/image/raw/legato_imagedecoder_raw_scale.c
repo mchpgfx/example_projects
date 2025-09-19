@@ -43,27 +43,27 @@ static struct ScaleNearestNeighborPreReadStage
 
 static leResult stage_scaledNearestNeighborPreRead(struct ScaleNearestNeighborPreReadStage* stage)
 {
-    stage->base.sliderChanged->readCount = 1;
+    stage->base.state->readCount = 1;
 
     // calculate nearest neighbor index
-    stage->base.sliderChanged->readOperation[0].x = (lePercentOf(stage->base.sliderChanged->referenceX, stage->stretchRatioX) + 50) / 100;
+    stage->base.state->readOperation[0].x = (lePercentOf(stage->base.state->referenceX, stage->stretchRatioX) + 50) / 100;
 
-    if(stage->base.sliderChanged->readOperation[0].x >= (uint32_t)stage->base.sliderChanged->source->buffer.size.width)
+    if(stage->base.state->readOperation[0].x >= (uint32_t)stage->base.state->source->buffer.size.width)
     {
-        stage->base.sliderChanged->readOperation[0].x = stage->base.sliderChanged->source->buffer.size.width - 1;
+        stage->base.state->readOperation[0].x = stage->base.state->source->buffer.size.width - 1;
     }
 
-    stage->base.sliderChanged->readOperation[0].y = (lePercentOf(stage->base.sliderChanged->referenceY, stage->stretchRatioY) + 50) / 100;
+    stage->base.state->readOperation[0].y = (lePercentOf(stage->base.state->referenceY, stage->stretchRatioY) + 50) / 100;
 
-    if(stage->base.sliderChanged->readOperation[0].y >= (uint32_t)stage->base.sliderChanged->source->buffer.size.height)
+    if(stage->base.state->readOperation[0].y >= (uint32_t)stage->base.state->source->buffer.size.height)
     {
-        stage->base.sliderChanged->readOperation[0].y = stage->base.sliderChanged->source->buffer.size.height - 1;
+        stage->base.state->readOperation[0].y = stage->base.state->source->buffer.size.height - 1;
     }
 
     // calculate source index
-    stage->base.sliderChanged->readOperation[0].bufferIndex = (stage->base.sliderChanged->readOperation[0].x) +
-                                                      ((stage->base.sliderChanged->readOperation[0].y) *
-                                                       stage->base.sliderChanged->source->buffer.size.width);
+    stage->base.state->readOperation[0].bufferIndex = (stage->base.state->readOperation[0].x) +
+                                                      ((stage->base.state->readOperation[0].y) *
+                                                       stage->base.state->source->buffer.size.width);
 
     return LE_SUCCESS;
 }
@@ -72,7 +72,7 @@ leResult _leRawImageDecoder_ScaleNearestNeighborPreReadStage(leRawDecodeState* s
 {
     memset(&scaledNearestNeighborPreReadStage, 0, sizeof(scaledNearestNeighborPreReadStage));
 
-    scaledNearestNeighborPreReadStage.base.sliderChanged = state;
+    scaledNearestNeighborPreReadStage.base.state = state;
     scaledNearestNeighborPreReadStage.base.exec = (leResult(*)(struct leRawDecodeStage *))stage_scaledNearestNeighborPreRead;
 
     // calculate stretching ratios
@@ -97,7 +97,7 @@ static struct ScaleBilinearPreReadStage
 static leResult stage_bilinearPreRead(struct ScaleBilinearPreReadStage* stage)
 {
     int32_t pxi, pyi;
-    leRawDecodeState* state = stage->base.sliderChanged;
+    leRawDecodeState* state = stage->base.state;
 
     state->readCount = 4;
 
@@ -106,17 +106,17 @@ static leResult stage_bilinearPreRead(struct ScaleBilinearPreReadStage* stage)
     stage->px = lePercentOf(state->referenceX, stage->stretchRatioX);
     pxi = stage->px / 100;
 
-    if(pxi >= stage->base.sliderChanged->source->buffer.size.width)
+    if(pxi >= stage->base.state->source->buffer.size.width)
     {
-        pxi = stage->base.sliderChanged->source->buffer.size.width - 1;
+        pxi = stage->base.state->source->buffer.size.width - 1;
     }
 
     stage->py = lePercentOf(state->referenceY, stage->stretchRatioY);
     pyi = stage->py / 100;
 
-    if(pyi >= stage->base.sliderChanged->source->buffer.size.height)
+    if(pyi >= stage->base.state->source->buffer.size.height)
     {
-        pyi = stage->base.sliderChanged->source->buffer.size.height - 1;
+        pyi = stage->base.state->source->buffer.size.height - 1;
     }
 
     //pxi += stage->base.state->sourceRect.x;
@@ -134,7 +134,7 @@ static leResult stage_bilinearPreRead(struct ScaleBilinearPreReadStage* stage)
     state->readOperation[1].x = pxi;
     state->readOperation[1].y = pyi;
 
-    if(state->readOperation[1].x < (uint32_t)stage->base.sliderChanged->source->buffer.size.width - 1)
+    if(state->readOperation[1].x < (uint32_t)stage->base.state->source->buffer.size.width - 1)
     {
         state->readOperation[1].x += 1;
     }
@@ -147,7 +147,7 @@ static leResult stage_bilinearPreRead(struct ScaleBilinearPreReadStage* stage)
     state->readOperation[2].x = pxi;
     state->readOperation[2].y = pyi;
 
-    if(state->readOperation[2].y < (uint32_t)stage->base.sliderChanged->source->buffer.size.height - 1)
+    if(state->readOperation[2].y < (uint32_t)stage->base.state->source->buffer.size.height - 1)
     {
         state->readOperation[2].y += 1;
     }
@@ -160,12 +160,12 @@ static leResult stage_bilinearPreRead(struct ScaleBilinearPreReadStage* stage)
     state->readOperation[3].x = pxi;
     state->readOperation[3].y = pyi;
 
-    if(state->readOperation[3].x < (uint32_t)stage->base.sliderChanged->source->buffer.size.width - 1)
+    if(state->readOperation[3].x < (uint32_t)stage->base.state->source->buffer.size.width - 1)
     {
         state->readOperation[3].x += 1;
     }
 
-    if(state->readOperation[3].y < (uint32_t)stage->base.sliderChanged->source->buffer.size.height - 1)
+    if(state->readOperation[3].y < (uint32_t)stage->base.state->source->buffer.size.height - 1)
     {
         state->readOperation[3].y += 1;
     }
@@ -181,7 +181,7 @@ leResult _leRawImageDecoder_ScaleBilinearPreReadStage(leRawDecodeState* state)
 {
     memset(&scaledBilinearPreReadStage, 0, sizeof(scaledBilinearPreReadStage));
 
-    scaledBilinearPreReadStage.base.sliderChanged = state;
+    scaledBilinearPreReadStage.base.state = state;
     scaledBilinearPreReadStage.base.exec = (leResult(*)(struct leRawDecodeStage *))stage_bilinearPreRead;
 
     // calculate stretching ratios
@@ -209,7 +209,7 @@ leResult _leRawImageDecoder_PostReadStage(leRawDecodeState* state)
 {
     memset(&postReadStage, 0, sizeof(postReadStage));
 
-    postReadStage.base.sliderChanged = state;
+    postReadStage.base.state = state;
     postReadStage.base.exec = stage_postRead;
 
     _leRawImageDecoder_InjectStage(state, (void*)&postReadStage);
@@ -239,7 +239,7 @@ leResult _leRawImageDecoder_ScaleBilinearPostReadStage(leRawDecodeState* state)
 {
     memset(&scaledBilinearPostReadStage, 0, sizeof(scaledBilinearPostReadStage));
 
-    scaledBilinearPostReadStage.base.sliderChanged = state;
+    scaledBilinearPostReadStage.base.state = state;
     scaledBilinearPostReadStage.base.exec = stage_scaledBilinearPostRead;
 
     _leRawImageDecoder_InjectStage(state, (void*)&scaledBilinearPostReadStage);

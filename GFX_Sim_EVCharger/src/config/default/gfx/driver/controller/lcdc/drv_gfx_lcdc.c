@@ -304,7 +304,7 @@ gfxResult DRV_LCDC_Initialize()
     hsyncLength     = 48;
     vsyncLength     = 3;
     upperMargin     = 29;
-    lowerMargin     = 3;
+    lowerMargin     = 13;
 
 
     /* LCDC initialization */

@@ -59,7 +59,7 @@ static void _cleanup(leStreamManager* mgr);
 leResult _leMonoImageDecoder_SourceIterateSetupStage(leMonoDecodeState* state);
 leResult _leMonoImageDecoder_ReadStage_Internal(leMonoDecodeState* state);
 #if LE_STREAMING_ENABLED == 1
-leResult _leMonoImageDecoder_ReadStage_Stream(leMonoDecodeState* sliderChanged);
+leResult _leMonoImageDecoder_ReadStage_Stream(leMonoDecodeState* state);
 #endif
 
 leResult _leMonoImageDecoder_FrameBufferWriteStage(leMonoDecodeState* state);
@@ -457,7 +457,7 @@ leResult _leMonoImageDecoder_SourceIterateSetupStage(leMonoDecodeState* state)
     state->rowIterator = 0;
     state->colIterator = 0;
 
-    setupStage.base.sliderChanged = state;
+    setupStage.base.state = state;
     setupStage.base.exec = stage_sourceIterateSetup;
 
     _leMonoImageDecoder_InjectStage(state, (void*)&setupStage);
@@ -502,7 +502,7 @@ leResult _leMonoImageDecoder_FrameBufferWriteStage(leMonoDecodeState* state)
 {
     memset(&frameBufferWriteStage, 0, sizeof(frameBufferWriteStage));
 
-    frameBufferWriteStage.base.sliderChanged = state;
+    frameBufferWriteStage.base.state = state;
     frameBufferWriteStage.base.exec = stage_FrameBufferWrite;
 
     _leMonoImageDecoder_InjectStage(state, (void*) &frameBufferWriteStage);
@@ -530,7 +530,7 @@ leResult _leMonoImageDecoder_ImageWriteStage(leMonoDecodeState* state)
 {
     memset(&imageWriteStage, 0, sizeof(imageWriteStage));
 
-    imageWriteStage.base.sliderChanged = state;
+    imageWriteStage.base.state = state;
     imageWriteStage.base.exec = stage_ImageWrite;
 
     _leMonoImageDecoder_InjectStage(state, (void*)&imageWriteStage);

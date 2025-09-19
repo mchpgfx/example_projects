@@ -213,15 +213,6 @@ static void GFX_SIM_ProcessInput(SDL_Event *sdl_event)
                                   sanitize_mouse(sdl_event->motion.x, 0, SDL_TOUCH_HOR_RES),
                                   sanitize_mouse(sdl_event->motion.y, 0, SDL_TOUCH_VER_RES));
         break;
-    case SDL_FINGERUP:
-        SYS_INP_InjectTouchUp(sdl_event->tfinger.touchId, sdl_event->tfinger.x * SDL_TOUCH_HOR_RES, sdl_event->tfinger.y * SDL_TOUCH_VER_RES);
-        break;
-    case SDL_FINGERDOWN:
-        SYS_INP_InjectTouchDown(sdl_event->tfinger.touchId, sdl_event->tfinger.x * SDL_TOUCH_HOR_RES, sdl_event->tfinger.y * SDL_TOUCH_VER_RES);
-        break;
-    case SDL_FINGERMOTION:
-        SYS_INP_InjectTouchMove(sdl_event->tfinger.touchId, sdl_event->tfinger.x * SDL_TOUCH_HOR_RES, sdl_event->tfinger.y * SDL_TOUCH_VER_RES);
-        break;
     case SDL_QUIT:
         exit(0);
     }

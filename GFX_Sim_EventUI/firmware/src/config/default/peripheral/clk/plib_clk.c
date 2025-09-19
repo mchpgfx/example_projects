@@ -28,14 +28,33 @@
 
 
 
+/*********************************************************************************
+UTMI PLL Enable/Disable
+*********************************************************************************/
+void CLK_UTMIPLLEnable(void)
+{
+    /* Enable the UTMI PLL */
+    PMC_REGS->CKGR_UCKR |= CKGR_UCKR_UPLLEN_Msk;
+
+    /* Wait until PLL Lock occurs */
+    while ((PMC_REGS->PMC_SR & PMC_SR_LOCKU_Msk) != PMC_SR_LOCKU_Msk)
+    {
+        /* Wait for PLL lock to rise */
+    }
+}
+
+void CLK_UTMIPLLDisable(void)
+{
+    /* Disable the UTMI PLL */
+    PMC_REGS->CKGR_UCKR &= ~CKGR_UCKR_UPLLEN_Msk;
+}
+
+
 
 /*********************************************************************************
 Initialize Generic clock
 *********************************************************************************/
 
-static void CLK_GenericClockInitialize(void)
-{
-}
 
 
 
@@ -47,11 +66,12 @@ static void CLK_PeripheralClockInitialize(void)
 {
     /* Enable clock for the selected peripherals, since the rom boot will turn on
      * certain clocks turn off all clocks not expressly enabled */
-   	PMC_REGS->PMC_PCER0=0x42000;
+    PMC_REGS->PMC_PCER0=0x42000U;
     PMC_REGS->PMC_PCDR0=~0x42000U;
-    PMC_REGS->PMC_PCER1=0x0;
+    PMC_REGS->PMC_PCER1=0x0U;
     PMC_REGS->PMC_PCDR1=~0x0U;
 }
+
 
 
 
@@ -61,11 +81,8 @@ Clock Initialize
 
 void CLK_Initialize( void )
 {
-	/* Initialize Generic Clock */
-	CLK_GenericClockInitialize();
-
-	/* Initialize Peripheral Clock */
-	CLK_PeripheralClockInitialize();
+    /* Initialize Peripheral Clock */
+    CLK_PeripheralClockInitialize();
 
 }
 

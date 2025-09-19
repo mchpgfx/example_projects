@@ -245,7 +245,7 @@ typedef enum
 } DRV_STATE;
 
 const char *DRIVER_NAME = "SDL2 Virtual HWC";
-static volatile DRV_STATE sliderChanged;
+static volatile DRV_STATE state;
 static gfxRect srcRect, destRect;
 static unsigned int vsyncCount = 0;
 static unsigned int activeLayer = 0;
@@ -369,11 +369,11 @@ static gfxResult GFX_SIM_BufferBlit(const gfxPixelBuffer *source,
 
 void GFX_SIM_Update()
 {
-    switch (sliderChanged)
+    switch (state)
     {
     case INIT:
     {
-        sliderChanged = DRAW;
+        state = DRAW;
         break;
     }
     case DRAW:
@@ -492,7 +492,7 @@ gfxResult GFX_SIM_BlitBuffer(int32_t x,
                               int32_t y,
                               gfxPixelBuffer *buf)
 {
-    if (sliderChanged != DRAW)
+    if (state != DRAW)
         return GFX_FAILURE;
 
     gfxPixelBuffer_SetLocked(buf, GFX_TRUE);

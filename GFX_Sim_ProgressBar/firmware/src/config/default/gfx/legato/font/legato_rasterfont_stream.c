@@ -39,7 +39,7 @@ struct FontStream
 {
     leFontStream fontStream;
 
-    leStreamState sliderChanged;
+    leStreamState state;
 
     leRasterFont* font;
     leFontGlyph info;

@@ -87,6 +87,19 @@
                 <itemPath>../src/config/default/gfx/legato/string/legato_string.h</itemPath>
                 <itemPath>../src/config/default/gfx/legato/string/legato_dynamicstring.h</itemPath>
               </logicalFolder>
+              <logicalFolder name="vector" displayName="vector" projectFiles="true">
+                <itemPath>../src/config/default/gfx/legato/vector/legato_aabb.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_linef.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_obb.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_plane.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_point.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/core/legato_real_i16.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/core/legato_real_u8.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_rectf.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector2.h</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_kernel.h</itemPath>
+              </logicalFolder>
               <logicalFolder name="widget" displayName="widget" projectFiles="true">
                 <logicalFolder name="arc" displayName="arc" projectFiles="true">
                   <itemPath>../src/config/default/gfx/legato/widget/arc/legato_widget_arc.h</itemPath>
@@ -243,9 +256,37 @@
           <itemPath>../src/config/default/device.h</itemPath>
           <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
+          <itemPath>../src/config/default/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="default" displayName="default" projectFiles="true">
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="GFX_Sim_Image_default"
+                     displayName="GFX_Sim_Image_default"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>GFX_Sim_Image_default/components/dfp.yml</itemPath>
+          <itemPath>GFX_Sim_Image_default/components/sys_input.yml</itemPath>
+          <itemPath>GFX_Sim_Image_default/components/core.yml</itemPath>
+          <itemPath>GFX_Sim_Image_default/components/HarmonyCore.yml</itemPath>
+          <itemPath>GFX_Sim_Image_default/components/gfx_legato.yml</itemPath>
+          <itemPath>GFX_Sim_Image_default/components/mgs_web_sim.yml</itemPath>
+          <itemPath>GFX_Sim_Image_default/components/sys_time.yml</itemPath>
+        </logicalFolder>
+        <itemPath>GFX_Sim_Image_default/mcc-config.mc4</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -372,6 +413,28 @@
                 <itemPath>../src/config/default/gfx/legato/string/legato_fixedstring.c</itemPath>
                 <itemPath>../src/config/default/gfx/legato/string/legato_string_renderer_stream.c</itemPath>
                 <itemPath>../src/config/default/gfx/legato/string/legato_dynamicstring.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="vector" displayName="vector" projectFiles="true">
+                <itemPath>../src/config/default/gfx/legato/vector/legato_aa.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_aabb.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_linef.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_obb.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_plane.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_point.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/core/legato_real_i16.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/core/legato_real_u8.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_rectf.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector2.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_arc_fill.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_arc_stroke.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_convexpoly_fill.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_hline.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_kernel.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_line.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_point.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_rect_fill.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_rect_stroke.c</itemPath>
+                <itemPath>../src/config/default/gfx/legato/vector/legato_vector_vline.c</itemPath>
               </logicalFolder>
               <logicalFolder name="widget" displayName="widget" projectFiles="true">
                 <logicalFolder name="arc" displayName="arc" projectFiles="true">
@@ -548,12 +611,6 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-      <itemPath>GFXImage.mc3</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -565,7 +622,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool></platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.30</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

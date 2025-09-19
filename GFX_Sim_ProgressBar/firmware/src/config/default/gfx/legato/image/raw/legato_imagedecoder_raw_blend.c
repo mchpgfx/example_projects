@@ -64,8 +64,8 @@ static leResult stage_BlendRGBA8888(leRawDecodeStage* stage)
     }
     else
     {
-        resultClr = leRenderer_GetPixel(blendStage.base.sliderChanged->targetX,
-                                        blendStage.base.sliderChanged->targetY);
+        resultClr = leRenderer_GetPixel(blendStage.base.state->targetX,
+                                        blendStage.base.state->targetY);
 
         resultClr = leColorConvert(stage->state->targetMode,
                                    LE_COLOR_MODE_RGBA_8888,
@@ -89,8 +89,8 @@ static leResult stage_BlendARGB8888(leRawDecodeStage* stage)
     }
     else
     {
-        resultClr = leRenderer_GetPixel(blendStage.base.sliderChanged->targetX,
-                                        blendStage.base.sliderChanged->targetY);
+        resultClr = leRenderer_GetPixel(blendStage.base.state->targetX,
+                                        blendStage.base.state->targetY);
 
         resultClr = leColorConvert(stage->state->targetMode,
                                    LE_COLOR_MODE_ARGB_8888,
@@ -128,7 +128,7 @@ leResult _leRawImageDecoder_BlendStage_Internal(leRawDecodeState* state)
         return LE_FAILURE;
     }
 
-    blendStage.base.sliderChanged = state;
+    blendStage.base.state = state;
 
     _leRawImageDecoder_InjectStage(state, (void*)&blendStage);
 

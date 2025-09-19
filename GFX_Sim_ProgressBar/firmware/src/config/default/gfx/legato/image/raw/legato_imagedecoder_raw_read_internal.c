@@ -52,28 +52,28 @@ static struct InternalReadStage LE_COHERENT_ATTR internalReadStage;
 
 static void colorDecode(void)
 {
-    leRawSourceReadOperation* op = &internalReadStage.base.sliderChanged->readOperation[internalReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
     // get a pixel from the sourced image
-    op->data = lePixelBufferGet_Unsafe(&internalReadStage.base.sliderChanged->source->buffer,
+    op->data = lePixelBufferGet_Unsafe(&internalReadStage.base.state->source->buffer,
                                        op->x,
                                        op->y);
 }
 
 static void indexDecode(void)
 {
-    leRawSourceReadOperation* op = &internalReadStage.base.sliderChanged->readOperation[internalReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
-    op->data = lePixelBufferGetIndex_Unsafe(&internalReadStage.base.sliderChanged->source->buffer,
+    op->data = lePixelBufferGetIndex_Unsafe(&internalReadStage.base.state->source->buffer,
                                             op->bufferIndex);
 }
 
 static void rleSequentialDecode(void)
 {
-    leRawSourceReadOperation* op = &internalReadStage.base.sliderChanged->readOperation[internalReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
-    op->data = leGetRLEDataAtIndex(internalReadStage.base.sliderChanged->source->buffer.pixels,
-                                   internalReadStage.base.sliderChanged->source->buffer.pixel_count,
+    op->data = leGetRLEDataAtIndex(internalReadStage.base.state->source->buffer.pixels,
+                                   internalReadStage.base.state->source->buffer.pixel_count,
                                    op->bufferIndex,
                                    &internalReadStage.lastBlock,
                                    &internalReadStage.lastOffset);
@@ -81,13 +81,13 @@ static void rleSequentialDecode(void)
 
 static void rleRandomDecode(void)
 {
-    leRawSourceReadOperation* op = &internalReadStage.base.sliderChanged->readOperation[internalReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
     internalReadStage.lastBlock = 0;
     internalReadStage.lastOffset = 0;
 
-    op->data = leGetRLEDataAtIndex(internalReadStage.base.sliderChanged->source->buffer.pixels,
-                                   internalReadStage.base.sliderChanged->source->buffer.pixel_count,
+    op->data = leGetRLEDataAtIndex(internalReadStage.base.state->source->buffer.pixels,
+                                   internalReadStage.base.state->source->buffer.pixel_count,
                                    op->bufferIndex,
                                    &internalReadStage.lastBlock,
                                    &internalReadStage.lastOffset);
@@ -97,15 +97,15 @@ static void indexRLESequentialDecode(void)
 {
     uint32_t srcClr;
 
-    leRawSourceReadOperation* op = &internalReadStage.base.sliderChanged->readOperation[internalReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
     // get the offset into the index table
     srcClr = leGetOffsetFromIndexAndBPP(op->bufferIndex,
                                         internalReadStage.imgBPP);
 
     // perform RLE lookup
-    srcClr = leGetRLEDataAtIndex(internalReadStage.base.sliderChanged->source->buffer.pixels,
-                                 internalReadStage.base.sliderChanged->source->buffer.pixel_count,
+    srcClr = leGetRLEDataAtIndex(internalReadStage.base.state->source->buffer.pixels,
+                                 internalReadStage.base.state->source->buffer.pixel_count,
                                  srcClr,
                                  &internalReadStage.lastBlock,
                                  &internalReadStage.lastOffset);
@@ -113,7 +113,7 @@ static void indexRLESequentialDecode(void)
     // get the value from the RLE block
     srcClr = leGetDiscreteValueAtIndex(op->bufferIndex,
                                        srcClr,
-                                       internalReadStage.base.sliderChanged->source->buffer.mode);
+                                       internalReadStage.base.state->source->buffer.mode);
 
     op->data = srcClr;
 }
@@ -122,7 +122,7 @@ static void indexRLERandomDecode(void)
 {
     uint32_t srcClr;
 
-    leRawSourceReadOperation* op = &internalReadStage.base.sliderChanged->readOperation[internalReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &internalReadStage.base.state->readOperation[internalReadStage.base.state->readIndex];
 
     // get the offset into the index table
     srcClr = leGetOffsetFromIndexAndBPP(op->bufferIndex,
@@ -132,8 +132,8 @@ static void indexRLERandomDecode(void)
     internalReadStage.lastOffset = 0;
 
     // perform RLE lookup
-    srcClr = leGetRLEDataAtIndex(internalReadStage.base.sliderChanged->source->buffer.pixels,
-                                 internalReadStage.base.sliderChanged->source->buffer.pixel_count,
+    srcClr = leGetRLEDataAtIndex(internalReadStage.base.state->source->buffer.pixels,
+                                 internalReadStage.base.state->source->buffer.pixel_count,
                                  srcClr,
                                  &internalReadStage.lastBlock,
                                  &internalReadStage.lastOffset);
@@ -141,18 +141,18 @@ static void indexRLERandomDecode(void)
     // get the value from the RLE block
     srcClr = leGetDiscreteValueAtIndex(op->bufferIndex,
                                        srcClr,
-                                       internalReadStage.base.sliderChanged->source->buffer.mode);
+                                       internalReadStage.base.state->source->buffer.mode);
 
     op->data = srcClr;
 }
 
 static leResult stage_decode(struct InternalReadStage* stage)
 {
-    stage->base.sliderChanged->readIndex = 0;
+    stage->base.state->readIndex = 0;
 
-    for(stage->base.sliderChanged->readIndex = 0;
-        stage->base.sliderChanged->readIndex < stage->base.sliderChanged->readCount;
-        stage->base.sliderChanged->readIndex++)
+    for(stage->base.state->readIndex = 0;
+        stage->base.state->readIndex < stage->base.state->readCount;
+        stage->base.state->readIndex++)
     {
         internalReadStage.decode();
     }
@@ -167,7 +167,7 @@ leResult _leRawImageDecoder_ReadStage_Internal(leRawDecodeState* state)
     internalReadStage.dataSize = leColorInfoTable[state->source->buffer.mode].size;
     internalReadStage.imgBPP = leColorInfoTable[state->source->buffer.mode].bppOrdinal;
 
-    internalReadStage.base.sliderChanged = state;
+    internalReadStage.base.state = state;
 
     if(LE_COLOR_MODE_IS_INDEX(state->source->buffer.mode) == LE_TRUE)
     {

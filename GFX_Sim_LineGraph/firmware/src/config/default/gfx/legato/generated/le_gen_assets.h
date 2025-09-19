@@ -66,7 +66,7 @@ extern const lePalette leGlobalPalette;
  * Name:         Font0
  * Height:       21
  * Baseline:     14
- * Style:        Plain
+ * Style:        Antialias
  * Glyph Count:  95
  * Range Count:  11
  * Glyph Ranges: 0x20-0x7E
@@ -78,7 +78,7 @@ extern leRasterFont Font0;
  * Name:         Category_font
  * Height:       37
  * Baseline:     9
- * Style:        Plain
+ * Style:        Antialias
  * Glyph Count:  95
  * Range Count:  6
  * Glyph Ranges: 0x20-0x7E

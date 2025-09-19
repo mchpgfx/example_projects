@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -55,13 +55,13 @@
 #include "peripheral/pio/plib_pio.h"
 #include "peripheral/aic/plib_aic.h"
 #include "gfx/driver/controller/lcdc/drv_gfx_lcdc.h"
+#include "peripheral/tc/plib_tc0.h"
 #include "peripheral/flexcom/twi/master/plib_flexcom6_twi_master.h"
 #include "peripheral/rtc/plib_rtc.h"
-#include "peripheral/tc/plib_tc0.h"
 #include "peripheral/lcdc/plib_lcdc.h"
-#include "system/time/sys_time.h"
-#include "driver/i2c/drv_i2c.h"
 #include "gfx/canvas/gfx_canvas_api.h"
+#include "driver/i2c/drv_i2c.h"
+#include "system/time/sys_time.h"
 #include "system/input/sys_input.h"
 #include "gfx/driver/processor/gfx2d/drv_gfx2d.h"
 #include "bsp/bsp.h"
@@ -83,13 +83,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "SAM9X60D1G"
-#define DEVICE_ARCH			 "ARM926EJ-S"
-#define DEVICE_FAMILY		 "SAM9"
-#define DEVICE_SERIES		 "SAM9X"
+#define DEVICE_NAME          "SAM9X60D1G"
+#define DEVICE_ARCH          "ARM926EJ-S"
+#define DEVICE_FAMILY        "SAM9"
+#define DEVICE_SERIES        "SAM9X6"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 600000000
+#define CPU_CLOCK_FREQUENCY 600000000U
 
 // *****************************************************************************
 // *****************************************************************************

@@ -27,7 +27,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\default.mgsws
   hash: 2ee25931aa22ea12d399aa0acad76deb065d0db429f1a71e19c5aed3b6aeefb6
 - file: ..\src\config\default\definitions.h
-  hash: fa3240bd0ff4b009a4cd7100a2e4384c61be753915d0585739b25e1ba57500f8
+  hash: 3aa679f9a3100235f153e928aad7139d16adf942e0d157e6caf38a93a7c0306a
 - file: ..\src\config\default\device.h
   hash: acb64d9364cbdb4c10b3c12569353ed2f17cbcc6932a35fffbc46ae8a7843010
 - file: ..\src\config\default\device_cache.h
@@ -183,7 +183,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\gfx\legato\image\mono\legato_imagedecoder_mono_read_stream.c
   hash: f9d136caf93a756039b4266cf1d31cfde80b6d3c80235525d5741dd749441905
 - file: ..\src\config\default\gfx\legato\image\png\legato_imagedecoder_png.c
-  hash: 11093aacc4d3ddaa36ae5d00e49581cccde5dc1eb616de8badea5781fc93e439
+  hash: aae055f19a2c3718501ca176973eb4ed16314037e31ba4668fa89e15927d2e4d
 - file: ..\src\config\default\gfx\legato\image\png\legato_imagedecoder_png.h
   hash: 0f74efbf18c6f0c4b2860212d3b0e0c7c1d9b93cf88cc1a33819b1f3441d0cc0
 - file: ..\src\config\default\gfx\legato\image\png\lodepng.c
@@ -263,13 +263,13 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\gfx\legato\string\legato_fixedstring.h
   hash: 6d7277817970099d958cb451d88a69046f556485d2df711b1e7b2940ffa47fce
 - file: ..\src\config\default\gfx\legato\string\legato_string.c
-  hash: 1849e47edfdb44bfc2cb9a13cd4773db675723483d206211441c738f7283ca53
+  hash: f18f1a860a4d70828d0a330e982e3ce140c6558a4e061ecd86ece9932a498399
 - file: ..\src\config\default\gfx\legato\string\legato_string.h
   hash: e74efaaa47db2917d42ffb156f3c98afb92ccccd074f66e4abb1798c9234fce3
 - file: ..\src\config\default\gfx\legato\string\legato_string_renderer.c
-  hash: ee320cc6223fcc86b6008757f09576a4f54633d2330070e045cbb698ab53d46a
+  hash: fd57aeedd6f64db00d0af671edce03e510be8ccba76338021fd56700e3ffd10b
 - file: ..\src\config\default\gfx\legato\string\legato_string_renderer.h
-  hash: b789853766e5f86b25fce44d88d1cebb8373829c28570a3d06c13fbddc6a4b58
+  hash: c15770160de0f68e98da79ab307a477b3d8cde73caa61b06291d68283bf989e3
 - file: ..\src\config\default\gfx\legato\string\legato_string_renderer_stream.c
   hash: 8f1fdff388a799204996d414c0f6d974cef3c3bbdd8da2983ace5ac97cf16368
 - file: ..\src\config\default\gfx\legato\string\legato_stringtable.c
@@ -277,7 +277,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\gfx\legato\string\legato_stringtable.h
   hash: cbcc1a9026a6ee50f02e490f4a8cafc41fd59e4fc356a59ef8f9748d5761eae3
 - file: ..\src\config\default\gfx\legato\string\legato_stringutils.c
-  hash: 67aa0cac053fba350b92daf40d636615fa56b4bd3eabb1b93aabd64d991c9f80
+  hash: 151b38716741c2338fa25f50f8c67c9081a81db3f99d17375ba3b480972134bb
 - file: ..\src\config\default\gfx\legato\string\legato_stringutils.h
   hash: 6de75c1c3395daeafcd2f127d58ac5319a8054d948a5f984f73cd1c796030834
 - file: ..\src\config\default\gfx\legato\string\legato_tablestring.c
@@ -351,11 +351,11 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\gfx\legato\widget\bargraph\legato_widget_bar_graph_skin_classic.c
   hash: d1392d45deba7cf0caca94d2f5f3fef92927bde7e827003d95356654c22ba178
 - file: ..\src\config\default\gfx\legato\widget\button\legato_widget_button.c
-  hash: b88864c12223bc73b60e239a9bde41877a87f87525866e2ce7a38d9bf608fdc0
+  hash: 8750fd7295d02365468b0a9808d92ffbb5272f2040ee94057fcd1edcc12c8321
 - file: ..\src\config\default\gfx\legato\widget\button\legato_widget_button.h
   hash: ddb018ba4b754896c5bcaf46c6a1a3c558a92e763bd0a538d37000095c33aeb8
 - file: ..\src\config\default\gfx\legato\widget\button\legato_widget_button_skin_classic.c
-  hash: 4f3a39d6a8f21c0fdf633c1fb6d1d5c93f33c372d82d4aa2f1e5d34340861cbe
+  hash: c99c1e79399b7c9055b76b738fd20e3ec70add733f376614fb5a82f3c675d6e0
 - file: ..\src\config\default\gfx\legato\widget\checkbox\legato_widget_checkbox.c
   hash: 27c455d514f130a8cf2d4604f9d725cc2b8ff6e20b4a59fd3d5e302ce21856c8
 - file: ..\src\config\default\gfx\legato\widget\checkbox\legato_widget_checkbox.h
@@ -433,7 +433,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\gfx\legato\widget\label\legato_widget_label.h
   hash: 022a0de66de27ed503c07852959b98e6e4c1aa50f881d6c05de1d57cd6ab70ba
 - file: ..\src\config\default\gfx\legato\widget\label\legato_widget_label_skin_classic.c
-  hash: dbdc96905c6f8e1cfb3cbe839ed8249553ea5bc45885f38373d63b24c62adc0e
+  hash: 1fb7d15c95f7459fd7dca120fa27ea7b213933fa18d1ef924dcbc2b79ea0a3d3
 - file: ..\src\config\default\gfx\legato\widget\legato_editwidget.c
   hash: f0806e33541567d976c5181100c8c681b93b56fe8eb3757fff45957ad0e3c738
 - file: ..\src\config\default\gfx\legato\widget\legato_editwidget.h

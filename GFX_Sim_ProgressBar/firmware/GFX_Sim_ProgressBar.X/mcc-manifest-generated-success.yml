@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: GFX_Sim_ProgressBar
-creation_date: 2025-07-15T10:29:23.601+03:00[Europe/Athens]
+creation_date: 2025-09-19T14:40:26.342-07:00[America/Phoenix]
 operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
@@ -18,6 +18,6 @@ device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name:
   version: Bundled}
 packs: {name: SAM9X7_DFP, version: 1.9.170}
 modules:
-- {name: csp, type: HARMONY, version: v3.22.4}
-- {name: core, type: HARMONY, version: v3.15.2}
-- {name: gfx, type: HARMONY, version: v3.16.1}
+- {name: csp, type: HARMONY, version: v3.23.0}
+- {name: core, type: HARMONY, version: v3.15.5}
+- {name: gfx, type: HARMONY, version: v3.16.2}

@@ -52,6 +52,8 @@ void legato_updateScreenState(void)
     {
         legato_hideCurrentScreen();
 
+        leEvent_ClearList();
+
         switch(changingToScreen)
         {
             case screenID_Screen0:

@@ -5650,7 +5650,7 @@ static unsigned addUnknownChunks(ucvector* out, unsigned char* data, size_t data
 
 unsigned lodepng_encode(unsigned char** out, size_t* outsize,
                         const unsigned char* image, unsigned w, unsigned h,
-                        LodePNGState* sliderChanged)
+                        LodePNGState* state)
 {
   LodePNGInfo info;
   ucvector outv;
@@ -5660,56 +5660,56 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
   /*provide some proper output values if error will happen*/
   *out = 0;
   *outsize = 0;
-  sliderChanged->error = 0;
+  state->error = 0;
 
   lodepng_info_init(&info);
-  lodepng_info_copy(&info, &sliderChanged->info_png);
+  lodepng_info_copy(&info, &state->info_png);
 
-  if((info.color.colortype == LCT_PALETTE || sliderChanged->encoder.force_palette)
+  if((info.color.colortype == LCT_PALETTE || state->encoder.force_palette)
       && (info.color.palettesize == 0 || info.color.palettesize > 256))
   {
-    sliderChanged->error = 68; /*invalid palette size, it is only allowed to be 1-256*/
-    return sliderChanged->error;
+    state->error = 68; /*invalid palette size, it is only allowed to be 1-256*/
+    return state->error;
   }
 
-  if(sliderChanged->encoder.auto_convert)
+  if(state->encoder.auto_convert)
   {
-    sliderChanged->error = lodepng_auto_choose_color(&info.color, image, w, h, &sliderChanged->info_raw);
+    state->error = lodepng_auto_choose_color(&info.color, image, w, h, &state->info_raw);
   }
-  if(sliderChanged->error) return sliderChanged->error;
+  if(state->error) return state->error;
 
-  if(sliderChanged->encoder.zlibsettings.btype > 2)
+  if(state->encoder.zlibsettings.btype > 2)
   {
-    CERROR_RETURN_ERROR(sliderChanged->error, 61); /*error: unexisting btype*/
+    CERROR_RETURN_ERROR(state->error, 61); /*error: unexisting btype*/
   }
-  if(sliderChanged->info_png.interlace_method > 1)
+  if(state->info_png.interlace_method > 1)
   {
-    CERROR_RETURN_ERROR(sliderChanged->error, 71); /*error: unexisting interlace mode*/
+    CERROR_RETURN_ERROR(state->error, 71); /*error: unexisting interlace mode*/
   }
 
-  sliderChanged->error = checkColorValidity(info.color.colortype, info.color.bitdepth);
-  if(sliderChanged->error) return sliderChanged->error; /*error: unexisting color type given*/
-  sliderChanged->error = checkColorValidity(sliderChanged->info_raw.colortype, sliderChanged->info_raw.bitdepth);
-  if(sliderChanged->error) return sliderChanged->error; /*error: unexisting color type given*/
+  state->error = checkColorValidity(info.color.colortype, info.color.bitdepth);
+  if(state->error) return state->error; /*error: unexisting color type given*/
+  state->error = checkColorValidity(state->info_raw.colortype, state->info_raw.bitdepth);
+  if(state->error) return state->error; /*error: unexisting color type given*/
 
-  if(!lodepng_color_mode_equal(&sliderChanged->info_raw, &info.color))
+  if(!lodepng_color_mode_equal(&state->info_raw, &info.color))
   {
     unsigned char* converted;
     size_t size = (w * h * (size_t)lodepng_get_bpp(&info.color) + 7) / 8;
 
     converted = (unsigned char*)lodepng_malloc(size);
-    if(!converted && size) sliderChanged->error = 83; /*alloc fail*/
-    if(!sliderChanged->error)
+    if(!converted && size) state->error = 83; /*alloc fail*/
+    if(!state->error)
     {
-      sliderChanged->error = lodepng_convert(converted, image, &info.color, &sliderChanged->info_raw, w, h);
+      state->error = lodepng_convert(converted, image, &info.color, &state->info_raw, w, h);
     }
-    if(!sliderChanged->error) preProcessScanlines(&data, &datasize, converted, w, h, &info, &sliderChanged->encoder);
+    if(!state->error) preProcessScanlines(&data, &datasize, converted, w, h, &info, &state->encoder);
     lodepng_free(converted);
   }
-  else preProcessScanlines(&data, &datasize, image, w, h, &info, &sliderChanged->encoder);
+  else preProcessScanlines(&data, &datasize, image, w, h, &info, &state->encoder);
 
   ucvector_init(&outv);
-  while(!sliderChanged->error) /*while only executed once, to break on error*/
+  while(!state->error) /*while only executed once, to break on error*/
   {
 #ifdef LODEPNG_COMPILE_ANCILLARY_CHUNKS
     size_t i;
@@ -5722,8 +5722,8 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
     /*unknown chunks between IHDR and PLTE*/
     if(info.unknown_chunks_data[0])
     {
-      sliderChanged->error = addUnknownChunks(&outv, info.unknown_chunks_data[0], info.unknown_chunks_size[0]);
-      if(sliderChanged->error) break;
+      state->error = addUnknownChunks(&outv, info.unknown_chunks_data[0], info.unknown_chunks_size[0]);
+      if(state->error) break;
     }
 #endif /*LODEPNG_COMPILE_ANCILLARY_CHUNKS*/
     /*PLTE*/
@@ -5731,7 +5731,7 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
     {
       addChunk_PLTE(&outv, &info.color);
     }
-    if(sliderChanged->encoder.force_palette && (info.color.colortype == LCT_RGB || info.color.colortype == LCT_RGBA))
+    if(state->encoder.force_palette && (info.color.colortype == LCT_RGB || info.color.colortype == LCT_RGBA))
     {
       addChunk_PLTE(&outv, &info.color);
     }
@@ -5753,13 +5753,13 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
     /*unknown chunks between PLTE and IDAT*/
     if(info.unknown_chunks_data[1])
     {
-      sliderChanged->error = addUnknownChunks(&outv, info.unknown_chunks_data[1], info.unknown_chunks_size[1]);
-      if(sliderChanged->error) break;
+      state->error = addUnknownChunks(&outv, info.unknown_chunks_data[1], info.unknown_chunks_size[1]);
+      if(state->error) break;
     }
 #endif /*LODEPNG_COMPILE_ANCILLARY_CHUNKS*/
     /*IDAT (multiple IDAT chunks must be consecutive)*/
-    sliderChanged->error = addChunk_IDAT(&outv, data, datasize, &sliderChanged->encoder.zlibsettings);
-    if(sliderChanged->error) break;
+    state->error = addChunk_IDAT(&outv, data, datasize, &state->encoder.zlibsettings);
+    if(state->error) break;
 #ifdef LODEPNG_COMPILE_ANCILLARY_CHUNKS
     /*tIME*/
     if(info.time_defined) addChunk_tIME(&outv, &info.time);
@@ -5768,17 +5768,17 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
     {
       if(strlen(info.text_keys[i]) > 79)
       {
-        sliderChanged->error = 66; /*text chunk too large*/
+        state->error = 66; /*text chunk too large*/
         break;
       }
       if(strlen(info.text_keys[i]) < 1)
       {
-        sliderChanged->error = 67; /*text chunk too small*/
+        state->error = 67; /*text chunk too small*/
         break;
       }
-      if(sliderChanged->encoder.text_compression)
+      if(state->encoder.text_compression)
       {
-        addChunk_zTXt(&outv, info.text_keys[i], info.text_strings[i], &sliderChanged->encoder.zlibsettings);
+        addChunk_zTXt(&outv, info.text_keys[i], info.text_strings[i], &state->encoder.zlibsettings);
       }
       else
       {
@@ -5786,7 +5786,7 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
       }
     }
     /*LodePNG version id in text chunk*/
-    if(sliderChanged->encoder.add_id)
+    if(state->encoder.add_id)
     {
       unsigned alread_added_id_text = 0;
       for(i = 0; i != info.text_num; ++i)
@@ -5807,24 +5807,24 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
     {
       if(strlen(info.itext_keys[i]) > 79)
       {
-        sliderChanged->error = 66; /*text chunk too large*/
+        state->error = 66; /*text chunk too large*/
         break;
       }
       if(strlen(info.itext_keys[i]) < 1)
       {
-        sliderChanged->error = 67; /*text chunk too small*/
+        state->error = 67; /*text chunk too small*/
         break;
       }
-      addChunk_iTXt(&outv, sliderChanged->encoder.text_compression,
+      addChunk_iTXt(&outv, state->encoder.text_compression,
                     info.itext_keys[i], info.itext_langtags[i], info.itext_transkeys[i], info.itext_strings[i],
-                    &sliderChanged->encoder.zlibsettings);
+                    &state->encoder.zlibsettings);
     }
 
     /*unknown chunks between IDAT and IEND*/
     if(info.unknown_chunks_data[2])
     {
-      sliderChanged->error = addUnknownChunks(&outv, info.unknown_chunks_data[2], info.unknown_chunks_size[2]);
-      if(sliderChanged->error) break;
+      state->error = addUnknownChunks(&outv, info.unknown_chunks_data[2], info.unknown_chunks_size[2]);
+      if(state->error) break;
     }
 #endif /*LODEPNG_COMPILE_ANCILLARY_CHUNKS*/
     addChunk_IEND(&outv);
@@ -5838,22 +5838,22 @@ unsigned lodepng_encode(unsigned char** out, size_t* outsize,
   *out = outv.data;
   *outsize = outv.size;
 
-  return sliderChanged->error;
+  return state->error;
 }
 
 unsigned lodepng_encode_memory(unsigned char** out, size_t* outsize, const unsigned char* image,
                                unsigned w, unsigned h, LodePNGColorType colortype, unsigned bitdepth)
 {
   unsigned error;
-  LodePNGState sliderChanged;
-  lodepng_state_init(&sliderChanged);
-  sliderChanged.info_raw.colortype = colortype;
-  sliderChanged.info_raw.bitdepth = bitdepth;
-  sliderChanged.info_png.color.colortype = colortype;
-  sliderChanged.info_png.color.bitdepth = bitdepth;
-  lodepng_encode(out, outsize, image, w, h, &sliderChanged);
-  error = sliderChanged.error;
-  lodepng_state_cleanup(&sliderChanged);
+  LodePNGState state;
+  lodepng_state_init(&state);
+  state.info_raw.colortype = colortype;
+  state.info_raw.bitdepth = bitdepth;
+  state.info_png.color.colortype = colortype;
+  state.info_png.color.bitdepth = bitdepth;
+  lodepng_encode(out, outsize, image, w, h, &state);
+  error = state.error;
+  lodepng_state_cleanup(&state);
   return error;
 }
 
@@ -6120,10 +6120,10 @@ unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h, const
   unsigned error = lodepng_decode_memory(&buffer, &w, &h, in, insize, colortype, bitdepth);
   if(buffer && !error)
   {
-    State sliderChanged;
-    sliderChanged.info_raw.colortype = colortype;
-    sliderChanged.info_raw.bitdepth = bitdepth;
-    size_t buffersize = lodepng_get_raw_size(w, h, &sliderChanged.info_raw);
+    State state;
+    state.info_raw.colortype = colortype;
+    state.info_raw.bitdepth = bitdepth;
+    size_t buffersize = lodepng_get_raw_size(w, h, &state.info_raw);
     out.insert(out.end(), &buffer[0], &buffer[buffersize]);
     lodepng_free(buffer);
   }
@@ -6137,14 +6137,14 @@ unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h,
 }
 
 unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h,
-                State& sliderChanged,
+                State& state,
                 const unsigned char* in, size_t insize)
 {
   unsigned char* buffer = NULL;
-  unsigned error = lodepng_decode(&buffer, &w, &h, &sliderChanged, in, insize);
+  unsigned error = lodepng_decode(&buffer, &w, &h, &state, in, insize);
   if(buffer && !error)
   {
-    size_t buffersize = lodepng_get_raw_size(w, h, &sliderChanged.info_raw);
+    size_t buffersize = lodepng_get_raw_size(w, h, &state.info_raw);
     out.insert(out.end(), &buffer[0], &buffer[buffersize]);
   }
   lodepng_free(buffer);
@@ -6152,10 +6152,10 @@ unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h,
 }
 
 unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h,
-                State& sliderChanged,
+                State& state,
                 const std::vector<unsigned char>& in)
 {
-  return decode(out, w, h, sliderChanged, in.empty() ? 0 : &in[0], in.size());
+  return decode(out, w, h, state, in.empty() ? 0 : &in[0], in.size());
 }
 
 #ifdef LODEPNG_COMPILE_DISK
@@ -6195,11 +6195,11 @@ unsigned encode(std::vector<unsigned char>& out,
 
 unsigned encode(std::vector<unsigned char>& out,
                 const unsigned char* in, unsigned w, unsigned h,
-                State& sliderChanged)
+                State& state)
 {
   unsigned char* buffer;
   size_t buffersize;
-  unsigned error = lodepng_encode(&buffer, &buffersize, in, w, h, &sliderChanged);
+  unsigned error = lodepng_encode(&buffer, &buffersize, in, w, h, &state);
   if(buffer)
   {
     out.insert(out.end(), &buffer[0], &buffer[buffersize]);
@@ -6210,10 +6210,10 @@ unsigned encode(std::vector<unsigned char>& out,
 
 unsigned encode(std::vector<unsigned char>& out,
                 const std::vector<unsigned char>& in, unsigned w, unsigned h,
-                State& sliderChanged)
+                State& state)
 {
-  if(lodepng_get_raw_size(w, h, &sliderChanged.info_raw) > in.size()) return 84;
-  return encode(out, in.empty() ? 0 : &in[0], w, h, sliderChanged);
+  if(lodepng_get_raw_size(w, h, &state.info_raw) > in.size()) return 84;
+  return encode(out, in.empty() ? 0 : &in[0], w, h, state);
 }
 
 #ifdef LODEPNG_COMPILE_DISK

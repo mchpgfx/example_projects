@@ -55,7 +55,7 @@ leResult screenShow_LastNameConfScreen(void)
 
     // layer 0
     root0 = leWidget_New();
-    root0->fn->setSize(root0, 1280, 800);
+    root0->fn->setSize(root0, LE_DEFAULT_SCREEN_WIDTH, LE_DEFAULT_SCREEN_HEIGHT);
     root0->fn->setBackgroundType(root0, LE_WIDGET_BACKGROUND_NONE);
     root0->fn->setMargins(root0, 0, 0, 0, 0);
     root0->flags |= LE_WIDGET_IGNOREEVENTS;
@@ -172,6 +172,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_0->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_0, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_0->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_0, &Key);
     LastNameConfScreen_keysRow1_cell_0_0->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_0, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_0->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_0, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_0->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_0, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_1 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 1);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 1, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -180,6 +181,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_1->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_1, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_1->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_1, &Key);
     LastNameConfScreen_keysRow1_cell_0_1->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_1, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_1->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_1, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_1->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_1, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_2 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 2);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 2, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -188,6 +190,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_2->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_2, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_2->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_2, &Key);
     LastNameConfScreen_keysRow1_cell_0_2->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_2, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_2->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_2, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_2->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_2, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_3 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 3);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 3, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -196,6 +199,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_3->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_3, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_3->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_3, &Key);
     LastNameConfScreen_keysRow1_cell_0_3->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_3, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_3->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_3, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_3->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_3, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_4 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 4);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 4, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -204,6 +208,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_4->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_4, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_4->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_4, &Key);
     LastNameConfScreen_keysRow1_cell_0_4->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_4, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_4->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_4, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_4->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_4, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_5 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 5);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 5, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -212,6 +217,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_5->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_5, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_5->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_5, &Key);
     LastNameConfScreen_keysRow1_cell_0_5->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_5, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_5->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_5, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_5->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_5, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_6 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 6);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 6, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -220,6 +226,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_6->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_6, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_6->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_6, &Key);
     LastNameConfScreen_keysRow1_cell_0_6->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_6, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_6->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_6, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_6->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_6, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_7 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 7);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 7, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -228,6 +235,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_7->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_7, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_7->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_7, &Key);
     LastNameConfScreen_keysRow1_cell_0_7->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_7, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_7->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_7, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_7->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_7, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_8 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 8);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 8, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -236,6 +244,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_8->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_8, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_8->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_8, &Key);
     LastNameConfScreen_keysRow1_cell_0_8->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_8, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_8->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_8, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_8->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_8, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_9 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 9);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 9, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -244,12 +253,14 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow1_cell_0_9->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_9, &KeyPressed);
     LastNameConfScreen_keysRow1_cell_0_9->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_9, &Key);
     LastNameConfScreen_keysRow1_cell_0_9->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_9, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_9->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_9, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow1_cell_0_9->fn->setImagePosition(LastNameConfScreen_keysRow1_cell_0_9, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow1_cell_0_10 = LastNameConfScreen_keysRow1->fn->getCellButton(LastNameConfScreen_keysRow1, 0, 10);
     LastNameConfScreen_keysRow1->fn->setKeyAction(LastNameConfScreen_keysRow1, 0, 10, LE_KEYPAD_CELL_ACTION_BACKSPACE);
     LastNameConfScreen_keysRow1_cell_0_10->fn->setPressedImage(LastNameConfScreen_keysRow1_cell_0_10, &BackspaceKeyPressed);
     LastNameConfScreen_keysRow1_cell_0_10->fn->setReleasedImage(LastNameConfScreen_keysRow1_cell_0_10, &BackspaceKey);
     LastNameConfScreen_keysRow1_cell_0_10->fn->setBackgroundType(LastNameConfScreen_keysRow1_cell_0_10, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow1_cell_0_10->fn->setBorderType(LastNameConfScreen_keysRow1_cell_0_10, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_pnlKeyboard->fn->addChild(LastNameConfScreen_pnlKeyboard, (leWidget*)LastNameConfScreen_keysRow1);
 
     LastNameConfScreen_keysRow2 = leKeyPadWidget_New(1, 9);
@@ -265,6 +276,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_0->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_0, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_0->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_0, &Key);
     LastNameConfScreen_keysRow2_cell_0_0->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_0, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_0->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_0, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_0->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_0, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_1 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 1);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 1, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -273,6 +285,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_1->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_1, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_1->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_1, &Key);
     LastNameConfScreen_keysRow2_cell_0_1->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_1, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_1->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_1, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_1->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_1, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_2 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 2);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 2, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -281,6 +294,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_2->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_2, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_2->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_2, &Key);
     LastNameConfScreen_keysRow2_cell_0_2->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_2, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_2->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_2, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_2->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_2, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_3 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 3);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 3, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -289,6 +303,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_3->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_3, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_3->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_3, &Key);
     LastNameConfScreen_keysRow2_cell_0_3->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_3, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_3->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_3, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_3->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_3, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_4 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 4);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 4, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -297,6 +312,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_4->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_4, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_4->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_4, &Key);
     LastNameConfScreen_keysRow2_cell_0_4->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_4, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_4->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_4, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_4->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_4, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_5 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 5);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 5, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -305,6 +321,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_5->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_5, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_5->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_5, &Key);
     LastNameConfScreen_keysRow2_cell_0_5->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_5, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_5->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_5, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_5->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_5, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_6 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 6);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 6, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -313,6 +330,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_6->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_6, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_6->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_6, &Key);
     LastNameConfScreen_keysRow2_cell_0_6->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_6, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_6->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_6, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_6->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_6, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_7 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 7);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 7, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -321,6 +339,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_7->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_7, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_7->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_7, &Key);
     LastNameConfScreen_keysRow2_cell_0_7->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_7, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_7->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_7, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_7->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_7, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow2_cell_0_8 = LastNameConfScreen_keysRow2->fn->getCellButton(LastNameConfScreen_keysRow2, 0, 8);
     LastNameConfScreen_keysRow2->fn->setKeyAction(LastNameConfScreen_keysRow2, 0, 8, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -329,6 +348,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow2_cell_0_8->fn->setPressedImage(LastNameConfScreen_keysRow2_cell_0_8, &KeyPressed);
     LastNameConfScreen_keysRow2_cell_0_8->fn->setReleasedImage(LastNameConfScreen_keysRow2_cell_0_8, &Key);
     LastNameConfScreen_keysRow2_cell_0_8->fn->setBackgroundType(LastNameConfScreen_keysRow2_cell_0_8, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow2_cell_0_8->fn->setBorderType(LastNameConfScreen_keysRow2_cell_0_8, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow2_cell_0_8->fn->setImagePosition(LastNameConfScreen_keysRow2_cell_0_8, LE_RELATIVE_POSITION_BEHIND);
     LastNameConfScreen_pnlKeyboard->fn->addChild(LastNameConfScreen_pnlKeyboard, (leWidget*)LastNameConfScreen_keysRow2);
 
@@ -345,6 +365,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_0->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_0, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_0->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_0, &Key);
     LastNameConfScreen_keysRow3_cell_0_0->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_0, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_0->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_0, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_0->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_0, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_1 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 1);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 1, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -353,6 +374,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_1->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_1, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_1->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_1, &Key);
     LastNameConfScreen_keysRow3_cell_0_1->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_1, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_1->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_1, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_1->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_1, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_2 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 2);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 2, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -361,6 +383,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_2->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_2, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_2->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_2, &Key);
     LastNameConfScreen_keysRow3_cell_0_2->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_2, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_2->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_2, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_2->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_2, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_3 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 3);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 3, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -369,6 +392,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_3->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_3, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_3->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_3, &Key);
     LastNameConfScreen_keysRow3_cell_0_3->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_3, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_3->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_3, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_3->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_3, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_4 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 4);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 4, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -377,6 +401,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_4->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_4, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_4->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_4, &Key);
     LastNameConfScreen_keysRow3_cell_0_4->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_4, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_4->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_4, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_4->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_4, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_5 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 5);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 5, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -385,6 +410,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_5->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_5, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_5->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_5, &Key);
     LastNameConfScreen_keysRow3_cell_0_5->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_5, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_5->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_5, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_5->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_5, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_6 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 6);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 6, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -393,6 +419,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_6->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_6, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_6->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_6, &Key);
     LastNameConfScreen_keysRow3_cell_0_6->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_6, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_6->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_6, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_6->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_6, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_7 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 7);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 7, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -401,6 +428,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_7->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_7, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_7->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_7, &Key);
     LastNameConfScreen_keysRow3_cell_0_7->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_7, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_7->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_7, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_7->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_7, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* LastNameConfScreen_keysRow3_cell_0_8 = LastNameConfScreen_keysRow3->fn->getCellButton(LastNameConfScreen_keysRow3, 0, 8);
     LastNameConfScreen_keysRow3->fn->setKeyAction(LastNameConfScreen_keysRow3, 0, 8, LE_KEYPAD_CELL_ACTION_APPEND);
@@ -409,6 +437,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysRow3_cell_0_8->fn->setPressedImage(LastNameConfScreen_keysRow3_cell_0_8, &KeyPressed);
     LastNameConfScreen_keysRow3_cell_0_8->fn->setReleasedImage(LastNameConfScreen_keysRow3_cell_0_8, &Key);
     LastNameConfScreen_keysRow3_cell_0_8->fn->setBackgroundType(LastNameConfScreen_keysRow3_cell_0_8, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysRow3_cell_0_8->fn->setBorderType(LastNameConfScreen_keysRow3_cell_0_8, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysRow3_cell_0_8->fn->setImagePosition(LastNameConfScreen_keysRow3_cell_0_8, LE_RELATIVE_POSITION_BEHIND);
     LastNameConfScreen_pnlKeyboard->fn->addChild(LastNameConfScreen_pnlKeyboard, (leWidget*)LastNameConfScreen_keysRow3);
 
@@ -425,6 +454,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysBtmLeft_cell_0_0->fn->setPressedImage(LastNameConfScreen_keysBtmLeft_cell_0_0, &KeyPressed);
     LastNameConfScreen_keysBtmLeft_cell_0_0->fn->setReleasedImage(LastNameConfScreen_keysBtmLeft_cell_0_0, &Key);
     LastNameConfScreen_keysBtmLeft_cell_0_0->fn->setBackgroundType(LastNameConfScreen_keysBtmLeft_cell_0_0, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysBtmLeft_cell_0_0->fn->setBorderType(LastNameConfScreen_keysBtmLeft_cell_0_0, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysBtmLeft_cell_0_0->fn->setImagePosition(LastNameConfScreen_keysBtmLeft_cell_0_0, LE_RELATIVE_POSITION_BEHIND);
     LastNameConfScreen_pnlKeyboard->fn->addChild(LastNameConfScreen_pnlKeyboard, (leWidget*)LastNameConfScreen_keysBtmLeft);
 
@@ -441,6 +471,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keysBtmRight_cell_0_0->fn->setPressedImage(LastNameConfScreen_keysBtmRight_cell_0_0, &KeyPressed);
     LastNameConfScreen_keysBtmRight_cell_0_0->fn->setReleasedImage(LastNameConfScreen_keysBtmRight_cell_0_0, &Key);
     LastNameConfScreen_keysBtmRight_cell_0_0->fn->setBackgroundType(LastNameConfScreen_keysBtmRight_cell_0_0, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keysBtmRight_cell_0_0->fn->setBorderType(LastNameConfScreen_keysBtmRight_cell_0_0, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_keysBtmRight_cell_0_0->fn->setImagePosition(LastNameConfScreen_keysBtmRight_cell_0_0, LE_RELATIVE_POSITION_BEHIND);
     LastNameConfScreen_pnlKeyboard->fn->addChild(LastNameConfScreen_pnlKeyboard, (leWidget*)LastNameConfScreen_keysBtmRight);
 
@@ -456,6 +487,7 @@ leResult screenShow_LastNameConfScreen(void)
     LastNameConfScreen_keySpace_cell_0_0->fn->setPressedImage(LastNameConfScreen_keySpace_cell_0_0, &spacekeypressed);
     LastNameConfScreen_keySpace_cell_0_0->fn->setReleasedImage(LastNameConfScreen_keySpace_cell_0_0, &spacekey);
     LastNameConfScreen_keySpace_cell_0_0->fn->setBackgroundType(LastNameConfScreen_keySpace_cell_0_0, LE_WIDGET_BACKGROUND_NONE);
+    LastNameConfScreen_keySpace_cell_0_0->fn->setBorderType(LastNameConfScreen_keySpace_cell_0_0, LE_WIDGET_BORDER_NONE);
     LastNameConfScreen_pnlKeyboard->fn->addChild(LastNameConfScreen_pnlKeyboard, (leWidget*)LastNameConfScreen_keySpace);
 
     LastNameConfScreen_keyShiftLeft = leButtonWidget_New();

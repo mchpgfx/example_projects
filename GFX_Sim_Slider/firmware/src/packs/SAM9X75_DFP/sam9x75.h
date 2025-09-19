@@ -1,35 +1,34 @@
 /*
  * Header file for ATSAM9X75
  *
- * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * SPDX-License-Identifier: Apache-2.0
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* File generated from device description version 2023-01-20T08:33:39Z */
+/* File generated from device description file (ATDF) version 2024-06-25T17:22:56Z */
 #ifndef _SAM9X75_H_
 #define _SAM9X75_H_
 
 /* Header version uses Semantic Versioning 2.0.0 (https://semver.org/) */
-#define HEADER_FORMAT_VERSION "2.1.0"
+#define HEADER_FORMAT_VERSION "2.1.1"
 
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (1)
-#define HEADER_FORMAT_VERSION_PATCH (0)
+#define HEADER_FORMAT_VERSION_PATCH (1)
 
 /* SAM9X75 definitions
   This file defines all structures and symbols for SAM9X75:
@@ -67,13 +66,13 @@
 #endif /* SKIP_INTEGER_LITERALS */
 
 /* ************************************************************************** */
-/* INTERRUPTS DEFINITIONS FOR SAM9X75                                       */
+/*                     INTERRUPTS DEFINITIONS FOR SAM9X75                     */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /* Interrupt Number Definition */
 typedef enum IRQn
 {
-/******  SAM9X75 specific Interrupt Numbers ***********************************/
+/* ******************* SAM9X75 specific Interrupt Numbers ******************* */
   EXT_FIQ_IRQn              =   0, /* 0   Advanced Interrupt Controller (AIC) */
   PIT_IRQn                  =   1, /* 1   Shared between PMC WDT PIT RSTC RTT RTC (PIT) */
   PMC_IRQn                  =   1, /* 1   Shared between PMC WDT PIT RSTC RTT RTC (PMC) */
@@ -100,7 +99,7 @@ typedef enum IRQn
   PWM_IRQn                  =  18, /* 18  Pulse Width Modulation Controller (PWM) */
   ADC_IRQn                  =  19, /* 19  Analog-to-Digital Converter (ADC)   */
   XDMAC_IRQn                =  20, /* 20  Extensible DMA Controller (XDMAC)   */
-  MATRIX_IRQn               =  21, /* 21  AHB Bus Matrix (MATRIX)             */
+  MATRIX_IRQn               =  21, /* 21  AHB Bus Matrix (MATRIX2) (MATRIX)   */
   UHPHS_IRQn                =  22, /* 22  USB Host High Speed Port (UHPHS)    */
   UDPHS_IRQn                =  23, /* 23  IP_Name (UDPHS)                     */
   GMAC_IRQn                 =  24, /* 24  Gigabit Ethernet MAC (GMAC)         */
@@ -132,7 +131,7 @@ typedef enum IRQn
   SMC_IRQn                  =  49, /* 49  Shared between MPDDRC SMC (SMC)     */
   CSI2DC_IRQn               =  52, /* 52  CSI-2 Demultiplexer Controller (CSI2DC) */
   CSI_IRQn                  =  53, /* 53  CSI Host Controller (CSI)           */
-  DSI_IRQn                  =  54, /* 54  LCD Controller (DSI)                */
+  DSI_IRQn                  =  54, /* 54  Display Serial Interface (DSI)      */
   MIPIPHY_IRQn              =  55, /* 55   (MIPIPHY)                          */
   LVDSC_IRQn                =  56, /* 56  LVDS Controller (LVDSC)             */
   LVDSPHY_IRQn              =  57, /* 57   (LVDSPHY)                          */
@@ -144,7 +143,6 @@ typedef enum IRQn
   GMAC_Q5_IRQn              =  64, /* 64  Gigabit Ethernet MAC (GMAC)         */
   GMAC_EMAC_IRQn            =  65, /* 65  Gigabit Ethernet MAC (GMAC)         */
   GMAC_MMSL_IRQn            =  66, /* 66  Gigabit Ethernet MAC (GMAC)         */
-  GMAC_TSU_IRQn             =  67, /* 67  Gigabit Ethernet MAC (GMAC)         */
   MCAN0_INT1_IRQn           =  68, /* 68  Controller Area Network (MCAN0)     */
   MCAN1_INT1_IRQn           =  69, /* 69  Controller Area Network (MCAN1)     */
 
@@ -165,7 +163,7 @@ typedef enum IRQn
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ************************************************************************** */
-/*   SOFTWARE PERIPHERAL API DEFINITION FOR SAM9X75                           */
+/*              SOFTWARE PERIPHERAL API DEFINITIONS FOR SAM9X75               */
 /* ************************************************************************** */
 #include "component/adc.h"
 #include "component/aes.h"
@@ -212,12 +210,13 @@ typedef enum IRQn
 #include "component/tdes.h"
 #include "component/trng.h"
 #include "component/udphs.h"
+#include "component/uhpfs.h"
 #include "component/uhphs.h"
 #include "component/wdt.h"
 #include "component/xdmac.h"
 
 /* ************************************************************************** */
-/*   INSTANCE DEFINITIONS FOR SAM9X75 */
+/*                      INSTANCE DEFINITIONS FOR SAM9X75                      */
 /* ************************************************************************** */
 #include "instance/adc.h"
 #include "instance/aes.h"
@@ -247,9 +246,11 @@ typedef enum IRQn
 #include "instance/i2smcc.h"
 #include "instance/isc.h"
 #include "instance/lvdsc.h"
+#include "instance/lvdsphy.h"
 #include "instance/matrix.h"
 #include "instance/mcan0.h"
 #include "instance/mcan1.h"
+#include "instance/mipiphy.h"
 #include "instance/mpddrc.h"
 #include "instance/otpc.h"
 #include "instance/pioa.h"
@@ -282,13 +283,15 @@ typedef enum IRQn
 #include "instance/tdes.h"
 #include "instance/trng.h"
 #include "instance/udphs.h"
+#include "instance/uhphs.h"
 #include "instance/uhphs_ehci.h"
+#include "instance/uhphs_ohci.h"
 #include "instance/wdt.h"
 #include "instance/xdmac.h"
 #include "instance/xlcdc.h"
 
 /* ************************************************************************** */
-/*  PERIPHERAL ID DEFINITIONS FOR SAM9X75                                     */
+/*                   PERIPHERAL ID DEFINITIONS FOR SAM9X75                    */
 /* ************************************************************************** */
 #define ID_FIQ           (  0) /* Advanced Interrupt Controller (FIQ) */
 #define ID_PIOA          (  2) /* Parallel I/O Controller A (PIOA) */
@@ -358,7 +361,7 @@ typedef enum IRQn
 #define ID_PERIPH_MAX    ( 67) /* Number of peripheral IDs */
 
 /* ************************************************************************** */
-/*   REGISTER STRUCTURE ADDRESS DEFINITIONS FOR SAM9X75                       */
+/*             REGISTER STRUCTURE ADDRESS DEFINITIONS FOR SAM9X75             */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #define ADC_REGS                         ((adc_registers_t*)0xf804c000)                /* ADC Registers Address        */
@@ -425,13 +428,15 @@ typedef enum IRQn
 #define TDES_REGS                        ((tdes_registers_t*)0xf0038000)               /* TDES Registers Address       */
 #define TRNG_REGS                        ((trng_registers_t*)0xf0030000)               /* TRNG Registers Address       */
 #define UDPHS_REGS                       ((udphs_registers_t*)0xf803c000)              /* UDPHS Registers Address      */
+#define UHPHS_OHCI_REGS                  ((uhpfs_registers_t*)0x00600000)              /* UHPHS_OHCI Registers Address */
+#define UHPHS_REGS                       ((uhphs_registers_t*)0x00700000)              /* UHPHS Registers Address      */
 #define UHPHS_EHCI_REGS                  ((uhphs_registers_t*)0x00700000)              /* UHPHS_EHCI Registers Address */
 #define WDT_REGS                         ((wdt_registers_t*)0xffffff80)                /* WDT Registers Address        */
 #define XDMAC_REGS                       ((xdmac_registers_t*)0xf0008000)              /* XDMAC Registers Address      */
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ************************************************************************** */
-/*   BASE ADDRESS DEFINITIONS FOR SAM9X75                                     */
+/*                    BASE ADDRESS DEFINITIONS FOR SAM9X75                    */
 /* ************************************************************************** */
 #define ADC_BASE_ADDRESS                 _UINT32_(0xf804c000)                          /* ADC Base Address */
 #define AES_BASE_ADDRESS                 _UINT32_(0xf0034000)                          /* AES Base Address */
@@ -497,17 +502,19 @@ typedef enum IRQn
 #define TDES_BASE_ADDRESS                _UINT32_(0xf0038000)                          /* TDES Base Address */
 #define TRNG_BASE_ADDRESS                _UINT32_(0xf0030000)                          /* TRNG Base Address */
 #define UDPHS_BASE_ADDRESS               _UINT32_(0xf803c000)                          /* UDPHS Base Address */
+#define UHPHS_OHCI_BASE_ADDRESS          _UINT32_(0x00600000)                          /* UHPHS_OHCI Base Address */
+#define UHPHS_BASE_ADDRESS               _UINT32_(0x00700000)                          /* UHPHS Base Address */
 #define UHPHS_EHCI_BASE_ADDRESS          _UINT32_(0x00700000)                          /* UHPHS_EHCI Base Address */
 #define WDT_BASE_ADDRESS                 _UINT32_(0xffffff80)                          /* WDT Base Address */
 #define XDMAC_BASE_ADDRESS               _UINT32_(0xf0008000)                          /* XDMAC Base Address */
 
 /* ************************************************************************** */
-/*   PIO DEFINITIONS FOR SAM9X75                                              */
+/*                        PIO DEFINITIONS FOR SAM9X75                         */
 /* ************************************************************************** */
 #include "pio/sam9x75.h"
 
 /* ************************************************************************** */
-/*   MEMORY MAPPING DEFINITIONS FOR SAM9X75                                   */
+/*                   MEMORY MAPPING DEFINITIONS FOR SAM9X75                   */
 /* ************************************************************************** */
 #define ECC_ROM_SIZE                   _UINT32_(0x00100000)    /* 1024kB Memory segment type: rom */
 #define SRAM0_SIZE                     _UINT32_(0x00100000)    /* 1024kB Memory segment type: ram */
@@ -518,7 +525,6 @@ typedef enum IRQn
 #define EBI_CS0_SIZE                   _UINT32_(0x10000000)    /* 262144kB Memory segment type: ram */
 #define EBI_CS1_SIZE                   _UINT32_(0x10000000)    /* 262144kB Memory segment type: ram */
 #define EBI_MPDDR_SIZE                 _UINT32_(0x10000000)    /* 262144kB Memory segment type: ram */
-#define SDRAM_CS_SIZE                  _UINT32_(0x10000000)    /* 262144kB Memory segment type: ram */
 #define EBI_CS2_SIZE                   _UINT32_(0x10000000)    /* 262144kB Memory segment type: ram */
 #define EBI_NF_SIZE                    _UINT32_(0x10000000)    /* 262144kB Memory segment type: ram */
 #define QSPIMEM_SIZE                   _UINT32_(0x20000000)    /* 524288kB Memory segment type: ram */
@@ -526,6 +532,7 @@ typedef enum IRQn
 #define SDMMC1_SIZE                    _UINT32_(0x10000000)    /* 262144kB Memory segment type: ram */
 #define CSI2DC_META_SIZE               _UINT32_(0x00100000)    /* 1024kB Memory segment type: ram */
 #define OTPC_SIZE                      _UINT32_(0x00001000)    /*    4kB Memory segment type: ram */
+#define PERIPHERALS_SIZE               _UINT32_(0x10000000)    /* 262144kB Memory segment type: io */
 
 #define ECC_ROM_ADDR                   _UINT32_(0x00100000)    /* ECC_ROM base address (type: rom)*/
 #define SRAM0_ADDR                     _UINT32_(0x00300000)    /* SRAM0 base address (type: ram)*/
@@ -536,7 +543,6 @@ typedef enum IRQn
 #define EBI_CS0_ADDR                   _UINT32_(0x10000000)    /* EBI_CS0 base address (type: ram)*/
 #define EBI_CS1_ADDR                   _UINT32_(0x20000000)    /* EBI_CS1 base address (type: ram)*/
 #define EBI_MPDDR_ADDR                 _UINT32_(0x20000000)    /* EBI_MPDDR base address (type: ram)*/
-#define SDRAM_CS_ADDR                  _UINT32_(0x20000000)    /* SDRAM_CS base address (type: ram)*/
 #define EBI_CS2_ADDR                   _UINT32_(0x30000000)    /* EBI_CS2 base address (type: ram)*/
 #define EBI_NF_ADDR                    _UINT32_(0x30000000)    /* EBI_NF base address (type: ram)*/
 #define QSPIMEM_ADDR                   _UINT32_(0x60000000)    /* QSPIMEM base address (type: ram)*/
@@ -544,19 +550,18 @@ typedef enum IRQn
 #define SDMMC1_ADDR                    _UINT32_(0x90000000)    /* SDMMC1 base address (type: ram)*/
 #define CSI2DC_META_ADDR               _UINT32_(0xd0000000)    /* CSI2DC_META base address (type: ram)*/
 #define OTPC_ADDR                      _UINT32_(0xeff00000)    /* OTPC base address (type: ram)*/
+#define PERIPHERALS_ADDR               _UINT32_(0xf0000000)    /* PERIPHERALS base address (type: io)*/
 
 /* ************************************************************************** */
-/*   DEVICE SIGNATURES FOR SAM9X75                                            */
+/*                       DEVICE SIGNATURES FOR SAM9X75                        */
 /* ************************************************************************** */
 #define CHIP_JTAGID                    _UINT32_(0X00000000)
 #define CHIP_CIDR                      _UINT32_(0X89750030)
 #define CHIP_EXID                      _UINT32_(0X00000085)
 
 /* ************************************************************************** */
-/*   ELECTRICAL DEFINITIONS FOR SAM9X75                                       */
+/*                     ELECTRICAL DEFINITIONS FOR SAM9X75                     */
 /* ************************************************************************** */
-
-
 
 #ifdef __cplusplus
 }

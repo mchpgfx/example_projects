@@ -38,7 +38,7 @@
 #define RLE_HEADER_SIZE 2
 #define RLE_BLOCK_SIZE_MAX 8
 
-void _leRawImageDecoder_InjectStage(leRawDecodeState* sliderChanged,
+void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
 struct StreamReadStage
@@ -70,16 +70,16 @@ static leResult exec(struct StreamReadStage* stage);
 
 static leResult advanceStage(void)
 {
-    streamReadStage.base.sliderChanged->readIndex += 1;
+    streamReadStage.base.state->readIndex += 1;
 
-    if(streamReadStage.base.sliderChanged->readIndex < streamReadStage.base.sliderChanged->readCount)
+    if(streamReadStage.base.state->readIndex < streamReadStage.base.state->readCount)
     {
         return LE_FAILURE;
     }
     else
     {
         // reset for next iteration
-        streamReadStage.base.sliderChanged->readIndex = 0;
+        streamReadStage.base.state->readIndex = 0;
 
         return LE_SUCCESS;
     }
@@ -107,7 +107,7 @@ static leResult rleHeaderDecode(struct StreamReadStage* stage)
 
     // read the header data
     if(leStream_Read(&streamReadStage.stream,
-                     (uint32_t)streamReadStage.base.sliderChanged->source->header.address,
+                     (uint32_t)streamReadStage.base.state->source->header.address,
                      RLE_HEADER_SIZE,
                      (void*)&streamReadStage.rleLengthSize,
                      rleHeaderDataReady) == LE_FAILURE)
@@ -180,7 +180,7 @@ static leResult exec(struct StreamReadStage* stage)
     if(streamReadStage.stalled == LE_TRUE)
         return LE_FAILURE;
 
-    op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+    op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     // attempt to decode a pixel value
     // calculate byte offset of desired index
@@ -194,7 +194,7 @@ static leResult exec(struct StreamReadStage* stage)
     {
         op->data = leGetDiscreteValueAtIndex(op->bufferIndex,
                                              streamReadStage.rleData,
-                                             streamReadStage.base.sliderChanged->source->buffer.mode);
+                                             streamReadStage.base.state->source->buffer.mode);
     }
     // request more data
     else
@@ -220,7 +220,7 @@ static leResult exec(struct StreamReadStage* stage)
             {
                 op->data = leGetDiscreteValueAtIndex(op->bufferIndex,
                                                      streamReadStage.rleData,
-                                                     streamReadStage.base.sliderChanged->source->buffer.mode);
+                                                     streamReadStage.base.state->source->buffer.mode);
             }
             // get the next RLE block
             else
@@ -245,13 +245,13 @@ static leResult exec_blocking(struct StreamReadStage* stage)
     uint32_t i;
     leRawSourceReadOperation* op;
 
-    stage->base.sliderChanged->readIndex = 0;
+    stage->base.state->readIndex = 0;
 
-    for(stage->base.sliderChanged->readIndex = 0;
-        stage->base.sliderChanged->readIndex < stage->base.sliderChanged->readCount;
-        stage->base.sliderChanged->readIndex++)
+    for(stage->base.state->readIndex = 0;
+        stage->base.state->readIndex < stage->base.state->readCount;
+        stage->base.state->readIndex++)
     {
-        op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+        op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
         // attempt to decode a pixel value
         // calculate byte offset of desired index
@@ -265,12 +265,12 @@ static leResult exec_blocking(struct StreamReadStage* stage)
         {
             op->data = leGetDiscreteValueAtIndex(op->bufferIndex,
                                                  streamReadStage.rleData,
-                                                 streamReadStage.base.sliderChanged->source->buffer.mode);
+                                                 streamReadStage.base.state->source->buffer.mode);
         }
         // request more data
         else
         {
-            if(op->bufferIndex >= streamReadStage.base.sliderChanged->source->buffer.pixel_count)
+            if(op->bufferIndex >= streamReadStage.base.state->source->buffer.pixel_count)
                 return LE_SUCCESS;
 
             stage->rleDecodeCount = 0;
@@ -319,14 +319,14 @@ static leResult exec_blocking(struct StreamReadStage* stage)
                 {
                     op->data = leGetDiscreteValueAtIndex(op->bufferIndex,
                                                          streamReadStage.rleData,
-                                                         streamReadStage.base.sliderChanged->source->buffer.mode);
+                                                         streamReadStage.base.state->source->buffer.mode);
 
                     break;
                 }
             }
         }
 
-        streamReadStage.base.sliderChanged->readIndex += 1;
+        streamReadStage.base.state->readIndex += 1;
     }
 
     return LE_SUCCESS;
@@ -339,12 +339,12 @@ static void cleanup(struct StreamReadStage* stage)
     leStream_Close(&streamReadStage.stream);
 }
 
-leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* sliderChanged)
+leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* state)
 {
     memset(&streamReadStage, 0, sizeof(streamReadStage));
 
     leStream_Init(&streamReadStage.stream,
-                  (struct leStreamDescriptor*)sliderChanged->source,
+                  (struct leStreamDescriptor*)state->source,
                   LE_ASSET_DECODER_PIXEL_CACHE_SIZE,
                   leRawImageDecoderScratchBuffer,
                   NULL);
@@ -354,7 +354,7 @@ leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* sliderCha
         return LE_FAILURE;
     }
 
-    streamReadStage.base.sliderChanged = sliderChanged;
+    streamReadStage.base.state = state;
     streamReadStage.base.cleanup = (void*)cleanup;
 
     if(leStream_IsBlocking(&streamReadStage.stream) == LE_TRUE)
@@ -363,7 +363,7 @@ leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* sliderCha
 
         // read the header data
         leStream_Read(&streamReadStage.stream,
-                      (uint32_t)streamReadStage.base.sliderChanged->source->header.address,
+                      (uint32_t)streamReadStage.base.state->source->header.address,
                       RLE_HEADER_SIZE,
                       (void*)&streamReadStage.rleLengthSize,
                       NULL);
@@ -377,9 +377,9 @@ leResult _leRawImageDecoder_ReadStage_StreamRLEIndex(leRawDecodeState* sliderCha
         streamReadStage.base.exec = (void*)rleHeaderDecode;
     }
 
-    streamReadStage.imgBPP = leColorInfoTable[sliderChanged->source->buffer.mode].bppOrdinal;
+    streamReadStage.imgBPP = leColorInfoTable[state->source->buffer.mode].bppOrdinal;
 
-    _leRawImageDecoder_InjectStage(sliderChanged, (void*)&streamReadStage);
+    _leRawImageDecoder_InjectStage(state, (void*)&streamReadStage);
 
     return LE_SUCCESS;
 }

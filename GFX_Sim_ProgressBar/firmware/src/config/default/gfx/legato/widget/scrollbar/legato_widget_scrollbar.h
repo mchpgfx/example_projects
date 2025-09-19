@@ -151,7 +151,7 @@ typedef struct leScrollBarWidget
 
     const leScrollBarWidgetVTable* fn;
 
-    leScrollBarState sliderChanged; // scrollbar input state
+    leScrollBarState state; // scrollbar input state
     leOrientation alignment; // scroll bar direction
 
     uint32_t max; // maximum scroll value

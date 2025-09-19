@@ -1,35 +1,34 @@
 /*
  * Header file for ATSAMA5D27
  *
- * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * SPDX-License-Identifier: Apache-2.0
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* File generated from device description version 2022-10-28T12:33:49Z */
+/* File generated from device description file (ATDF) version 2025-07-15T11:00:00Z */
 #ifndef _SAMA5D27_H_
 #define _SAMA5D27_H_
 
 /* Header version uses Semantic Versioning 2.0.0 (https://semver.org/) */
-#define HEADER_FORMAT_VERSION "2.1.0"
+#define HEADER_FORMAT_VERSION "2.1.1"
 
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (1)
-#define HEADER_FORMAT_VERSION_PATCH (0)
+#define HEADER_FORMAT_VERSION_PATCH (1)
 
 /* SAMA5D27 definitions
   This file defines all structures and symbols for SAMA5D27:
@@ -67,13 +66,13 @@
 #endif /* SKIP_INTEGER_LITERALS */
 
 /* ************************************************************************** */
-/* CMSIS DEFINITIONS FOR SAMA5D27                                           */
+/*                       CMSIS DEFINITIONS FOR SAMA5D27                       */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /* Interrupt Number Definition */
 typedef enum IRQn
 {
-/******  SAMA5D27 specific Interrupt Numbers ***********************************/
+/* ****************** SAMA5D27 specific Interrupt Numbers ******************* */
   SAIC_IRQn                 =   0, /* 0   Advanced Interrupt Controller (SAIC) */
   PMU_IRQn                  =   2, /* 2   PMU (PMU)                           */
   PIT_IRQn                  =   3, /* 3   Periodic Interval Timer (PIT)       */
@@ -162,11 +161,11 @@ typedef enum IRQn
 /* CMSIS includes */
 #include "core_ca.h"
 #if defined USE_CMSIS_INIT
-#include "system_sama5d2.h"
+#include "system_sama5d27.h"
 #endif /* USE_CMSIS_INIT */
 
 /* ************************************************************************** */
-/*   SOFTWARE PERIPHERAL API DEFINITION FOR SAMA5D27                          */
+/*              SOFTWARE PERIPHERAL API DEFINITIONS FOR SAMA5D27              */
 /* ************************************************************************** */
 #include "component/acc.h"
 #include "component/adc.h"
@@ -207,6 +206,7 @@ typedef enum IRQn
 #include "component/smc.h"
 #include "component/spi.h"
 #include "component/ssc.h"
+#include "component/syscwp.h"
 #include "component/tc.h"
 #include "component/tdes.h"
 #include "component/trng.h"
@@ -218,7 +218,7 @@ typedef enum IRQn
 #include "component/xdmac.h"
 
 /* ************************************************************************** */
-/*   INSTANCE DEFINITIONS FOR SAMA5D27 */
+/*                     INSTANCE DEFINITIONS FOR SAMA5D27                      */
 /* ************************************************************************** */
 #include "instance/acc.h"
 #include "instance/adc.h"
@@ -248,6 +248,10 @@ typedef enum IRQn
 #include "instance/mpddrc.h"
 #include "instance/pdmic.h"
 #include "instance/pio.h"
+#include "instance/pioa.h"
+#include "instance/piob.h"
+#include "instance/pioc.h"
+#include "instance/piod.h"
 #include "instance/pit.h"
 #include "instance/pmc.h"
 #include "instance/ptc.h"
@@ -271,6 +275,7 @@ typedef enum IRQn
 #include "instance/spi1.h"
 #include "instance/ssc0.h"
 #include "instance/ssc1.h"
+#include "instance/syscwp.h"
 #include "instance/tc0.h"
 #include "instance/tc1.h"
 #include "instance/tdes.h"
@@ -288,7 +293,7 @@ typedef enum IRQn
 #include "instance/xdmac1.h"
 
 /* ************************************************************************** */
-/*  PERIPHERAL ID DEFINITIONS FOR SAMA5D27                                    */
+/*                   PERIPHERAL ID DEFINITIONS FOR SAMA5D27                   */
 /* ************************************************************************** */
 #define ID_PIT           (  3) /* Periodic Interval Timer (PIT) */
 #define ID_WDT           (  4) /* Watchdog Timer (WDT) */
@@ -357,7 +362,7 @@ typedef enum IRQn
 #define ID_PERIPH_MAX    ( 78) /* Number of peripheral IDs */
 
 /* ************************************************************************** */
-/*   REGISTER STRUCTURE ADDRESS DEFINITIONS FOR SAMA5D27                      */
+/*            REGISTER STRUCTURE ADDRESS DEFINITIONS FOR SAMA5D27             */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #define ACC_REGS                         ((acc_registers_t*)0xf804a000)                /* ACC Registers Address        */
@@ -411,6 +416,7 @@ typedef enum IRQn
 #define SPI1_REGS                        ((spi_registers_t*)0xfc000000)                /* SPI1 Registers Address       */
 #define SSC0_REGS                        ((ssc_registers_t*)0xf8004000)                /* SSC0 Registers Address       */
 #define SSC1_REGS                        ((ssc_registers_t*)0xfc004000)                /* SSC1 Registers Address       */
+#define SYSCWP_REGS                      ((syscwp_registers_t*)0xf8048194)             /* SYSCWP Registers Address     */
 #define TC0_REGS                         ((tc_registers_t*)0xf800c000)                 /* TC0 Registers Address        */
 #define TC1_REGS                         ((tc_registers_t*)0xf8010000)                 /* TC1 Registers Address        */
 #define TDES_REGS                        ((tdes_registers_t*)0xfc044000)               /* TDES Registers Address       */
@@ -429,7 +435,7 @@ typedef enum IRQn
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ************************************************************************** */
-/*   BASE ADDRESS DEFINITIONS FOR SAMA5D27                                    */
+/*                   BASE ADDRESS DEFINITIONS FOR SAMA5D27                    */
 /* ************************************************************************** */
 #define ACC_BASE_ADDRESS                 _UINT32_(0xf804a000)                          /* ACC Base Address */
 #define ADC_BASE_ADDRESS                 _UINT32_(0xfc030000)                          /* ADC Base Address */
@@ -482,6 +488,7 @@ typedef enum IRQn
 #define SPI1_BASE_ADDRESS                _UINT32_(0xfc000000)                          /* SPI1 Base Address */
 #define SSC0_BASE_ADDRESS                _UINT32_(0xf8004000)                          /* SSC0 Base Address */
 #define SSC1_BASE_ADDRESS                _UINT32_(0xfc004000)                          /* SSC1 Base Address */
+#define SYSCWP_BASE_ADDRESS              _UINT32_(0xf8048194)                          /* SYSCWP Base Address */
 #define TC0_BASE_ADDRESS                 _UINT32_(0xf800c000)                          /* TC0 Base Address */
 #define TC1_BASE_ADDRESS                 _UINT32_(0xf8010000)                          /* TC1 Base Address */
 #define TDES_BASE_ADDRESS                _UINT32_(0xfc044000)                          /* TDES Base Address */
@@ -499,12 +506,12 @@ typedef enum IRQn
 #define XDMAC1_BASE_ADDRESS              _UINT32_(0xf0004000)                          /* XDMAC1 Base Address */
 
 /* ************************************************************************** */
-/*   PIO DEFINITIONS FOR SAMA5D27                                             */
+/*                        PIO DEFINITIONS FOR SAMA5D27                        */
 /* ************************************************************************** */
 #include "pio/sama5d27.h"
 
 /* ************************************************************************** */
-/*   MEMORY MAPPING DEFINITIONS FOR SAMA5D27                                  */
+/*                  MEMORY MAPPING DEFINITIONS FOR SAMA5D27                   */
 /* ************************************************************************** */
 #define EBI_CS0_SIZE                   _UINT32_(0x10000000)    /* 262144kB Memory segment type: other */
 #define DDR_CS_SIZE                    _UINT32_(0x20000000)    /* 524288kB Memory segment type: other */
@@ -532,6 +539,7 @@ typedef enum IRQn
 #define DAP_SIZE                       _UINT32_(0x00100000)    /* 1024kB Memory segment type: other */
 #define PTCMEM_SIZE                    _UINT32_(0x00100000)    /* 1024kB Memory segment type: other */
 #define SECURAM_SIZE                   _UINT32_(0x00004000)    /*   16kB Memory segment type: other */
+#define L2CC_SIZE                      _UINT32_(0x00100000)    /* 1024kB Memory segment type: ram */
 
 #define EBI_CS0_ADDR                   _UINT32_(0x10000000)    /* EBI_CS0 base address (type: other)*/
 #define DDR_CS_ADDR                    _UINT32_(0x20000000)    /* DDR_CS base address (type: other)*/
@@ -559,19 +567,18 @@ typedef enum IRQn
 #define DAP_ADDR                       _UINT32_(0x00700000)    /* DAP base address (type: other)*/
 #define PTCMEM_ADDR                    _UINT32_(0x00800000)    /* PTCMEM base address (type: other)*/
 #define SECURAM_ADDR                   _UINT32_(0xf8044000)    /* SECURAM base address (type: other)*/
+#define L2CC_ADDR                      _UINT32_(0x00a00000)    /* L2CC base address (type: ram)*/
 
 /* ************************************************************************** */
-/*   DEVICE SIGNATURES FOR SAMA5D27                                           */
+/*                       DEVICE SIGNATURES FOR SAMA5D27                       */
 /* ************************************************************************** */
 #define CHIP_JTAGID                    _UINT32_(0X05B3F03F)
-#define CHIP_CIDR                      _UINT32_(0X8A5C08C0)
-#define CHIP_EXID                      _UINT32_(0X00000002)
+#define CHIP_CIDR                      _UINT32_(0X8A5C08C4)
+#define CHIP_EXID                      _UINT32_(0X00000011)
 
 /* ************************************************************************** */
-/*   ELECTRICAL DEFINITIONS FOR SAMA5D27                                      */
+/*                    ELECTRICAL DEFINITIONS FOR SAMA5D27                     */
 /* ************************************************************************** */
-
-
 
 #ifdef __cplusplus
 }

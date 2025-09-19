@@ -55,6 +55,9 @@
 APP_DATA appData;
 char valueBuffer[32] = {0};
 
+leFixedString sliderStr;                           //Legato string object
+leChar tempBuffer[32] = {0};
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -99,6 +102,14 @@ void APP_Initialize ( void )
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */
+}
+
+void Screen0_OnShow(void)
+{
+    leFixedString_Constructor(&sliderStr, tempBuffer, 12);
+    sliderStr.fn->setFont(&sliderStr, leStringTable_GetStringFont(leGetState()->stringTable,
+                                                              stringID_Slider,
+                                                              0));     
 }
 
 void event_Screen0_SliderWidget1_OnValueChanged(leSliderWidget* scr)

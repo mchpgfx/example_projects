@@ -35,7 +35,7 @@ leResult screenShow_Logo_Screen(void)
 
     // layer 0
     root0 = leWidget_New();
-    root0->fn->setSize(root0, 800, 480);
+    root0->fn->setSize(root0, LE_DEFAULT_SCREEN_WIDTH, LE_DEFAULT_SCREEN_HEIGHT);
     root0->fn->setBackgroundType(root0, LE_WIDGET_BACKGROUND_NONE);
     root0->fn->setMargins(root0, 0, 0, 0, 0);
     root0->flags |= LE_WIDGET_IGNOREEVENTS;
@@ -58,7 +58,7 @@ leResult screenShow_Logo_Screen(void)
     Logo_Screen_KeyPadWidget_cell_0_0->fn->setString(Logo_Screen_KeyPadWidget_cell_0_0, (leString*)&string_No1);
     Logo_Screen_KeyPadWidget_cell_0_0->fn->setPressedImage(Logo_Screen_KeyPadWidget_cell_0_0, &PressedImg2);
     Logo_Screen_KeyPadWidget_cell_0_0->fn->setReleasedImage(Logo_Screen_KeyPadWidget_cell_0_0, &ReleasedImg);
-    Logo_Screen_KeyPadWidget_cell_0_0->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_0_0, LE_WIDGET_BACKGROUND_NONE);
+    Logo_Screen_KeyPadWidget_cell_0_0->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_0_0, LE_WIDGET_BACKGROUND_FILL);
     Logo_Screen_KeyPadWidget_cell_0_0->fn->setBorderType(Logo_Screen_KeyPadWidget_cell_0_0, LE_WIDGET_BORDER_BEVEL);
     Logo_Screen_KeyPadWidget_cell_0_0->fn->setImagePosition(Logo_Screen_KeyPadWidget_cell_0_0, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* Logo_Screen_KeyPadWidget_cell_0_1 = Logo_Screen_KeyPadWidget->fn->getCellButton(Logo_Screen_KeyPadWidget, 0, 1);
@@ -67,7 +67,7 @@ leResult screenShow_Logo_Screen(void)
     Logo_Screen_KeyPadWidget_cell_0_1->fn->setString(Logo_Screen_KeyPadWidget_cell_0_1, (leString*)&string_No2);
     Logo_Screen_KeyPadWidget_cell_0_1->fn->setPressedImage(Logo_Screen_KeyPadWidget_cell_0_1, &PressedImg2);
     Logo_Screen_KeyPadWidget_cell_0_1->fn->setReleasedImage(Logo_Screen_KeyPadWidget_cell_0_1, &ReleasedImg);
-    Logo_Screen_KeyPadWidget_cell_0_1->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_0_1, LE_WIDGET_BACKGROUND_NONE);
+    Logo_Screen_KeyPadWidget_cell_0_1->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_0_1, LE_WIDGET_BACKGROUND_FILL);
     Logo_Screen_KeyPadWidget_cell_0_1->fn->setBorderType(Logo_Screen_KeyPadWidget_cell_0_1, LE_WIDGET_BORDER_BEVEL);
     Logo_Screen_KeyPadWidget_cell_0_1->fn->setImagePosition(Logo_Screen_KeyPadWidget_cell_0_1, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* Logo_Screen_KeyPadWidget_cell_1_0 = Logo_Screen_KeyPadWidget->fn->getCellButton(Logo_Screen_KeyPadWidget, 1, 0);
@@ -76,7 +76,7 @@ leResult screenShow_Logo_Screen(void)
     Logo_Screen_KeyPadWidget_cell_1_0->fn->setString(Logo_Screen_KeyPadWidget_cell_1_0, (leString*)&string_No3);
     Logo_Screen_KeyPadWidget_cell_1_0->fn->setPressedImage(Logo_Screen_KeyPadWidget_cell_1_0, &PressedImg2);
     Logo_Screen_KeyPadWidget_cell_1_0->fn->setReleasedImage(Logo_Screen_KeyPadWidget_cell_1_0, &ReleasedImg);
-    Logo_Screen_KeyPadWidget_cell_1_0->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_1_0, LE_WIDGET_BACKGROUND_NONE);
+    Logo_Screen_KeyPadWidget_cell_1_0->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_1_0, LE_WIDGET_BACKGROUND_FILL);
     Logo_Screen_KeyPadWidget_cell_1_0->fn->setBorderType(Logo_Screen_KeyPadWidget_cell_1_0, LE_WIDGET_BORDER_BEVEL);
     Logo_Screen_KeyPadWidget_cell_1_0->fn->setImagePosition(Logo_Screen_KeyPadWidget_cell_1_0, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* Logo_Screen_KeyPadWidget_cell_1_1 = Logo_Screen_KeyPadWidget->fn->getCellButton(Logo_Screen_KeyPadWidget, 1, 1);
@@ -85,7 +85,7 @@ leResult screenShow_Logo_Screen(void)
     Logo_Screen_KeyPadWidget_cell_1_1->fn->setString(Logo_Screen_KeyPadWidget_cell_1_1, (leString*)&string_No4);
     Logo_Screen_KeyPadWidget_cell_1_1->fn->setPressedImage(Logo_Screen_KeyPadWidget_cell_1_1, &PressedImg2);
     Logo_Screen_KeyPadWidget_cell_1_1->fn->setReleasedImage(Logo_Screen_KeyPadWidget_cell_1_1, &ReleasedImg);
-    Logo_Screen_KeyPadWidget_cell_1_1->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_1_1, LE_WIDGET_BACKGROUND_NONE);
+    Logo_Screen_KeyPadWidget_cell_1_1->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_1_1, LE_WIDGET_BACKGROUND_FILL);
     Logo_Screen_KeyPadWidget_cell_1_1->fn->setBorderType(Logo_Screen_KeyPadWidget_cell_1_1, LE_WIDGET_BORDER_BEVEL);
     Logo_Screen_KeyPadWidget_cell_1_1->fn->setImagePosition(Logo_Screen_KeyPadWidget_cell_1_1, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* Logo_Screen_KeyPadWidget_cell_2_0 = Logo_Screen_KeyPadWidget->fn->getCellButton(Logo_Screen_KeyPadWidget, 2, 0);
@@ -94,7 +94,7 @@ leResult screenShow_Logo_Screen(void)
     Logo_Screen_KeyPadWidget_cell_2_0->fn->setString(Logo_Screen_KeyPadWidget_cell_2_0, (leString*)&string_No5);
     Logo_Screen_KeyPadWidget_cell_2_0->fn->setPressedImage(Logo_Screen_KeyPadWidget_cell_2_0, &PressedImg2);
     Logo_Screen_KeyPadWidget_cell_2_0->fn->setReleasedImage(Logo_Screen_KeyPadWidget_cell_2_0, &ReleasedImg);
-    Logo_Screen_KeyPadWidget_cell_2_0->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_2_0, LE_WIDGET_BACKGROUND_NONE);
+    Logo_Screen_KeyPadWidget_cell_2_0->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_2_0, LE_WIDGET_BACKGROUND_FILL);
     Logo_Screen_KeyPadWidget_cell_2_0->fn->setBorderType(Logo_Screen_KeyPadWidget_cell_2_0, LE_WIDGET_BORDER_BEVEL);
     Logo_Screen_KeyPadWidget_cell_2_0->fn->setImagePosition(Logo_Screen_KeyPadWidget_cell_2_0, LE_RELATIVE_POSITION_BEHIND);
     leButtonWidget* Logo_Screen_KeyPadWidget_cell_2_1 = Logo_Screen_KeyPadWidget->fn->getCellButton(Logo_Screen_KeyPadWidget, 2, 1);
@@ -103,7 +103,7 @@ leResult screenShow_Logo_Screen(void)
     Logo_Screen_KeyPadWidget_cell_2_1->fn->setString(Logo_Screen_KeyPadWidget_cell_2_1, (leString*)&string_No6);
     Logo_Screen_KeyPadWidget_cell_2_1->fn->setPressedImage(Logo_Screen_KeyPadWidget_cell_2_1, &PressedImg2);
     Logo_Screen_KeyPadWidget_cell_2_1->fn->setReleasedImage(Logo_Screen_KeyPadWidget_cell_2_1, &ReleasedImg);
-    Logo_Screen_KeyPadWidget_cell_2_1->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_2_1, LE_WIDGET_BACKGROUND_NONE);
+    Logo_Screen_KeyPadWidget_cell_2_1->fn->setBackgroundType(Logo_Screen_KeyPadWidget_cell_2_1, LE_WIDGET_BACKGROUND_FILL);
     Logo_Screen_KeyPadWidget_cell_2_1->fn->setBorderType(Logo_Screen_KeyPadWidget_cell_2_1, LE_WIDGET_BORDER_BEVEL);
     Logo_Screen_KeyPadWidget_cell_2_1->fn->setImagePosition(Logo_Screen_KeyPadWidget_cell_2_1, LE_RELATIVE_POSITION_BEHIND);
     Logo_Screen_KeyPadWidget->fn->setKeyClickEventCallback(Logo_Screen_KeyPadWidget, event_Logo_Screen_KeyPadWidget_OnKeyClick);

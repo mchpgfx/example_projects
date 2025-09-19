@@ -35,7 +35,7 @@
 
 #define cache leRawImageDecoderScratchBuffer
 
-void _leRawImageDecoder_InjectStage(leRawDecodeState* sliderChanged,
+void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
                                     leRawDecodeStage* stage);
 
 enum StageState
@@ -53,7 +53,7 @@ struct StreamReadStage
 
     lePixelBuffer readBuffer;
 
-    enum StageState sliderChanged;
+    enum StageState state;
 
     leStream stream;
 };
@@ -62,16 +62,16 @@ static LE_COHERENT_ATTR struct StreamReadStage streamReadStage;
 
 static leResult advanceStage(void)
 {
-    streamReadStage.base.sliderChanged->readIndex += 1;
+    streamReadStage.base.state->readIndex += 1;
 
-    if(streamReadStage.base.sliderChanged->readIndex < streamReadStage.base.sliderChanged->readCount)
+    if(streamReadStage.base.state->readIndex < streamReadStage.base.state->readCount)
     {
         return LE_FAILURE;
     }
     else
     {
         // reset for next iteration
-        streamReadStage.base.sliderChanged->readIndex = 0;
+        streamReadStage.base.state->readIndex = 0;
 
         streamReadStage.state = SS_DONE;
 
@@ -83,7 +83,7 @@ static void indexDataReady(leStream* strm)
 {
     (void)strm; // unused
 
-    leRawSourceReadOperation* op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     streamReadStage.readBuffer.pixels = &op->data;
 
@@ -115,16 +115,16 @@ static leResult exec_nonblocking(struct StreamReadStage* stage)
     }
 
     // attempt to decode a pixel value
-    leRawSourceReadOperation* op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+    leRawSourceReadOperation* op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
     // calculate the offset of the desired pixel in bytes
     offs = leGetOffsetFromIndexAndBPP(op->bufferIndex,
-                                      leColorInfoTable[streamReadStage.base.sliderChanged->source->buffer.mode].bppOrdinal);
+                                      leColorInfoTable[streamReadStage.base.state->source->buffer.mode].bppOrdinal);
 
     // read an index value
     if(leStream_Read(&streamReadStage.stream,
-                     (uint32_t)streamReadStage.base.sliderChanged->source->header.address + offs,
-                     leColorInfoTable[streamReadStage.base.sliderChanged->source->buffer.mode].size,
+                     (uint32_t)streamReadStage.base.state->source->header.address + offs,
+                     leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
                      (uint8_t*)&op->data,
                      indexDataReady) == LE_FAILURE)
     {
@@ -156,22 +156,22 @@ static leResult exec_blocking(struct StreamReadStage* stage)
     uint32_t offs;
     leRawSourceReadOperation* op;
 
-    stage->base.sliderChanged->readIndex = 0;
+    stage->base.state->readIndex = 0;
 
-    for(stage->base.sliderChanged->readIndex = 0;
-        stage->base.sliderChanged->readIndex < stage->base.sliderChanged->readCount;
-        stage->base.sliderChanged->readIndex++)
+    for(stage->base.state->readIndex = 0;
+        stage->base.state->readIndex < stage->base.state->readCount;
+        stage->base.state->readIndex++)
     {
-        op = &streamReadStage.base.sliderChanged->readOperation[streamReadStage.base.sliderChanged->readIndex];
+        op = &streamReadStage.base.state->readOperation[streamReadStage.base.state->readIndex];
 
         // calculate the offset of the desired pixel in bytes
         offs = leGetOffsetFromIndexAndBPP(op->bufferIndex,
-                                          leColorInfoTable[streamReadStage.base.sliderChanged->source->buffer.mode].bppOrdinal);
+                                          leColorInfoTable[streamReadStage.base.state->source->buffer.mode].bppOrdinal);
 
         // read an index value
         while(leStream_Read(&streamReadStage.stream,
-                           (uint32_t)streamReadStage.base.sliderChanged->source->header.address + offs,
-                           leColorInfoTable[streamReadStage.base.sliderChanged->source->buffer.mode].size,
+                           (uint32_t)streamReadStage.base.state->source->header.address + offs,
+                           leColorInfoTable[streamReadStage.base.state->source->buffer.mode].size,
                            (uint8_t*)&op->data,
                            NULL) != LE_SUCCESS)
         { }
@@ -182,7 +182,7 @@ static leResult exec_blocking(struct StreamReadStage* stage)
         op->data = lePixelBufferGetIndex_Unsafe(&streamReadStage.readBuffer,
                                                 op->bufferIndex % streamReadStage.mod);
 
-        streamReadStage.base.sliderChanged->readIndex += 1;
+        streamReadStage.base.state->readIndex += 1;
 
         /*printf("%i, %i, %u\n", op->x,
                                op->y,
@@ -199,15 +199,15 @@ static void cleanup(struct StreamReadStage* stage)
     leStream_Close(&streamReadStage.stream);
 }
 
-leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* sliderChanged)
+leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* state)
 {
     memset(&streamReadStage, 0, sizeof(streamReadStage));
 
-    if(sliderChanged->source->buffer.mode == LE_COLOR_MODE_INDEX_1)
+    if(state->source->buffer.mode == LE_COLOR_MODE_INDEX_1)
     {
         streamReadStage.mod = 8;
     }
-    else if(sliderChanged->source->buffer.mode == LE_COLOR_MODE_INDEX_4)
+    else if(state->source->buffer.mode == LE_COLOR_MODE_INDEX_4)
     {
         streamReadStage.mod = 2;
     }
@@ -217,7 +217,7 @@ leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* sliderChange
     }
 
     leStream_Init(&streamReadStage.stream,
-                  (struct leStreamDescriptor*)sliderChanged->source,
+                  (struct leStreamDescriptor*)state->source,
                   LE_ASSET_DECODER_PIXEL_CACHE_SIZE,
                   leRawImageDecoderScratchBuffer,
                   NULL);
@@ -227,7 +227,7 @@ leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* sliderChange
         return LE_FAILURE;
     }
 
-    streamReadStage.base.sliderChanged = sliderChanged;
+    streamReadStage.base.state = state;
     streamReadStage.base.cleanup = (void*)cleanup;
 
     if(leStream_IsBlocking(&streamReadStage.stream) == LE_TRUE)
@@ -239,13 +239,13 @@ leResult _leRawImageDecoder_ReadStage_StreamIndex(leRawDecodeState* sliderChange
         streamReadStage.base.exec = (void*)exec_nonblocking;
     }
 
-    lePixelBufferCreate(leColorInfoTable[sliderChanged->source->buffer.mode].size,
+    lePixelBufferCreate(leColorInfoTable[state->source->buffer.mode].size,
                         1,
-                        sliderChanged->source->buffer.mode,
+                        state->source->buffer.mode,
                         NULL,
                         &streamReadStage.readBuffer);
 
-    _leRawImageDecoder_InjectStage(sliderChanged, (void*)&streamReadStage);
+    _leRawImageDecoder_InjectStage(state, (void*)&streamReadStage);
 
     return LE_SUCCESS;
 }

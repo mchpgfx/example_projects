@@ -1,0 +1,135 @@
+configVersion: 1.0.0
+componentName: sys_input
+coreVersion: 5.9.1
+device: SAM9X60
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: sys_input
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: gfx
+  type: package
+  version: v3.17.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition: {}
+  symbols:
+    INPUT_SYS_RTOS_TASK_C:
+      attributes:
+        id: INPUT_SYS_RTOS_TASK_C
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'false'
+          type: Boolean
+        type: Attributes
+      type: File
+    MaxEvents:
+      attributes:
+        id: MaxEvents
+        label: Max Events
+      type: Integer
+    MaxListeners:
+      attributes:
+        id: MaxListeners
+        label: Max Listeners
+      type: Integer
+    RTOSEnabled:
+      attributes:
+        id: RTOSEnabled
+        label: RTOS Support Enabled
+      children:
+      - children:
+        - attributes:
+            id: sys_input
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    RTOSStackSize:
+      attributes:
+        id: RTOSStackSize
+        label: Stack Size
+      type: Integer
+    RTOSTaskDelay:
+      attributes:
+        id: RTOSTaskDelay
+        label: Task Delay
+      type: Integer
+    RTOSTaskPriority:
+      attributes:
+        id: RTOSTaskPriority
+        label: Task Priority
+      type: Integer
+    RTOSUseDelay:
+      attributes:
+        id: RTOSUseDelay
+        label: Use Task Delay?
+      type: Boolean
+    TransformTouchCoords:
+      attributes:
+        id: TransformTouchCoords
+        label: Transform Touch Panel coordinates
+      type: Boolean
+    TransformTouchCoords_DisplayH:
+      attributes:
+        id: TransformTouchCoords_DisplayH
+        label: Display Height
+      type: Integer
+    TransformTouchCoords_DisplayW:
+      attributes:
+        id: TransformTouchCoords_DisplayW
+        label: Display Width
+      type: Integer
+    TransformTouchCoords_InvertX:
+      attributes:
+        id: TransformTouchCoords_InvertX
+        label: Invert X Coordinate
+      type: Boolean
+    TransformTouchCoords_InvertY:
+      attributes:
+        id: TransformTouchCoords_InvertY
+        label: Invert Y Coordinate
+      type: Boolean
+    TransformTouchCoords_Orientation:
+      attributes:
+        id: TransformTouchCoords_Orientation
+        label: Touch Origin Orientation
+      type: Combo
+    TransformTouchCoords_SwapXY:
+      attributes:
+        id: TransformTouchCoords_SwapXY
+        label: Swap touch panel X & Y coordinates
+      type: Boolean
+    TransformTouchCoords_TouchH:
+      attributes:
+        id: TransformTouchCoords_TouchH
+        label: Touch Height
+      type: Integer
+    TransformTouchCoords_TouchW:
+      attributes:
+        id: TransformTouchCoords_TouchW
+        label: Touch Width
+      type: Integer
+    demoModeIdleTimeout:
+      attributes:
+        id: demoModeIdleTimeout
+        label: Idle Timeout (seconds)
+      type: Integer
+    demoModeReplayDelay:
+      attributes:
+        id: demoModeReplayDelay
+        label: Replay Delay (seconds)
+      type: Integer
+    enableDemoMode:
+      attributes:
+        id: enableDemoMode
+        label: Enable Demo mode?
+      type: Boolean
+  userData: {}

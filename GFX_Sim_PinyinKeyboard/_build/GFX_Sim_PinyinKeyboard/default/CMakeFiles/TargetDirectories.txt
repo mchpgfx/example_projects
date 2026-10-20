@@ -1,6 +1,0 @@
-C:/Users/C76718/MPLABProjects/GFX_Sim_PinyinKeyboard/_build/GFX_Sim_PinyinKeyboard/default/CMakeFiles/GFX_Sim_PinyinKeyboard_default_default_XC32_assembleWithPreprocess.dir
-C:/Users/C76718/MPLABProjects/GFX_Sim_PinyinKeyboard/_build/GFX_Sim_PinyinKeyboard/default/CMakeFiles/GFX_Sim_PinyinKeyboard_default_default_XC32_compile.dir
-C:/Users/C76718/MPLABProjects/GFX_Sim_PinyinKeyboard/_build/GFX_Sim_PinyinKeyboard/default/CMakeFiles/GFX_Sim_PinyinKeyboard_default_image_b03nhQ0e.dir
-C:/Users/C76718/MPLABProjects/GFX_Sim_PinyinKeyboard/_build/GFX_Sim_PinyinKeyboard/default/CMakeFiles/GFX_Sim_PinyinKeyboard_default_Bin2Hex.dir
-C:/Users/C76718/MPLABProjects/GFX_Sim_PinyinKeyboard/_build/GFX_Sim_PinyinKeyboard/default/CMakeFiles/edit_cache.dir
-C:/Users/C76718/MPLABProjects/GFX_Sim_PinyinKeyboard/_build/GFX_Sim_PinyinKeyboard/default/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,115 @@
+configVersion: 1.0.0
+componentName: gfx_legato
+coreVersion: 5.9.1
+device: SAM9X60
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: gfx_legato
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: gfx
+  type: package
+  version: v3.17.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: gfx_driver
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: mgs_web_sim
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: mgs_web_sim_drv_cap
+            type: String
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: gfx_legato
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: gfx_legato
+          x: '399'
+          y: '158'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    LeGPUConnected:
+      attributes:
+        id: LeGPUConnected
+        label: LeGPUConnected
+      type: Boolean
+    driverInitName:
+      attributes:
+        id: driverInitName
+        label: driverInitName
+      children:
+      - children:
+        - attributes:
+            id: gfx_legato
+            value: gfxSimulatorDriver
+          type: Dynamic
+        type: Values
+      type: String
+    enableInputEvents:
+      attributes:
+        id: enableInputEvents
+        label: Enable Input Event Interface?
+      type: Boolean
+    enablePerformanceMetrics:
+      attributes:
+        id: enablePerformanceMetrics
+        label: Enable Performance Metrics?
+      type: Boolean
+    enableUsageMonitorPrint:
+      attributes:
+        id: enableUsageMonitorPrint
+        label: Print Metrics?
+      type: Boolean
+    libraryTaskPeriod:
+      attributes:
+        id: libraryTaskPeriod
+        label: GFX library update interval (ms)
+      type: Integer
+    periodUsageMonitorOutput:
+      attributes:
+        id: periodUsageMonitorOutput
+        label: Usage Monitor Output period (seconds)
+      type: Integer
+    rtosEnableTaskDelay:
+      attributes:
+        id: rtosEnableTaskDelay
+        label: Use Task Delay?
+      type: Boolean
+    rtosTaskDelay:
+      attributes:
+        id: rtosTaskDelay
+        label: Task Delay
+      type: Integer
+    rtosTaskPriority:
+      attributes:
+        id: rtosTaskPriority
+        label: Task Priority
+      type: Integer
+    rtosTaskSize:
+      attributes:
+        id: rtosTaskSize
+        label: Stack Size
+      type: Integer
+  userData: {}
